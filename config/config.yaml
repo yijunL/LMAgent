@@ -46,6 +46,6 @@ recagent_memory: recagent
 play_role: False
 # list of api keys for LLM API
 api_keys:
-  - sk-nllqSQZXUcE0KocTB28904481846487bA2FfF82a9039Ca03
+  - apikey
 
 
