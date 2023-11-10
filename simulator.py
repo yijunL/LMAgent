@@ -919,7 +919,7 @@ class Simulator:
                         agent_id=agent_id, action="LEAVE", content=f"{name} does nothing."
                     )
                 )
-        elif "Webcast" in choice:
+        elif "WEBCAST" in choice:
             contacts = self.data.get_all_contacts(agent_id)
             self.logger.info(f"{name} is performing a online live webcast.")
             observation = f"{name} wants to conduct a live webcast to recommend goods to his fans."
