@@ -409,7 +409,7 @@ class RecAgent(GenerativeAgent):
             "{agent_name} must take only ONE of the actions below:\n"
             + "(1) Enter the Shopping System. If so, {agent_name} will be recommended some products, from which {agent_name} can buy some products or search for products by himself.\n"
             + "(2) Enter the Social Media. {agent_name} can chat with friends or publish a post to all friends of {agent_name}. If {agent_name} recently bough some products they might want to enter the Social Media, otherwise they might enter the Shopping System.\n"
-            + "(3) Perform a Live Webcast. If so, {self.name} will recommend many products to his fans on the webcast.\n"
+            + "(3) Perform a Live Webcast. If so, {agent_name} will recommend many products to his fans on the webcast.\n"
             + "What action would {agent_name} like to take? Respond in one line."
             + "\nPlease note! Make sure that the actions taken by {agent_name} comply with the {agent_name}'s description, such as age, traits, status, interest, feature, etc."
             + "\nPlease note! If and only if {agent_name}'s status is 'Network Anchor', {agent_name} can perform online live broadcast."
