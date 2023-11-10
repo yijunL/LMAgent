@@ -562,7 +562,11 @@ class RecAgent(GenerativeAgent):
         (2) Publish posting to all acquaintances. [POST]:: what to say.
         """
         call_to_action_template = (
-            "{agent_name} must take one of the two actions below:\n(1)Chat with one acquaintance about products recently bough on shopping system: {watched_history}, or products heared about on social media: {heared_history}.\n(2) Publish posting to all acquaintances about products recently bough on shopping system: {watched_history}, or heared about on social media: {heared_history}, or something else you want to know."
+            "{agent_name} must take one of the two actions below:\n"
+            +"(1) Chat with one acquaintance.\n"
+            # +" about products recently bough on shopping system: {watched_history}, or products heared about on social media: {heared_history}.\n"
+            +"(2) Publish posting to all acquaintances.\n"
+            # +" about products recently bough on shopping system: {watched_history}, or heared about on social media: {heared_history}, or something else you want to know."
             + "\nWhat action would {agent_name} like to take?  Respond in one line."
             + "\nIf {agent_name} want to chat with one acquaintance, write:\n[CHAT]:: acquaintance's name"
             + "\nIf {agent_name} want to publish posting to all acquaintances, write:\n[POST]:: what to post\n"

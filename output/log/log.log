@@ -1,0 +1,28 @@
+2023-11-10 12:46:28 - INFO - run_demo - <module> - os.getpid()=9984
+2023-11-10 12:46:28 - INFO - run_demo - <module> - 
+active_agent_threshold: 100
+active_method: random
+active_prob: 1
+agent_num: 10
+api_keys: ['sk-nllqSQZXUcE0KocTB28904481846487bA2FfF82a9039Ca03']
+epoch: 30
+execution_mode: serial
+index_name: data/faiss_index
+interaction_path: data/interaction.csv
+interval: 5h
+item_path: data/item.csv
+llm: gpt-3.5
+log_name: 9984
+max_retries: 3
+max_token: 2048
+page_size: 5
+play_role: False
+rec_model: Random
+recagent_memory: recagent
+relationship_path: data/relationship_25+1anchor.csv
+simulator_dir: data/simulator
+simulator_restore_file_name: None
+temperature: 0.3
+user_path: data/user_25+1anchor.csv
+verbose: True
+2023-11-10 12:46:30 - INFO - simulator - load_simulator - Simulator loaded.
