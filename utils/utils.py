@@ -368,8 +368,8 @@ def get_feature_description(feature):
     """Get description of given features."""
     descriptions = {
         "Watcher": "Enjoy buying products in the shopping system, and provide feedback and ratings to the shopping system.",
-        "Explorer": "Like to search for products heard of before and expand product experiences, also like check products in detail.",
-        "Critic": "Demanding high standards for products and the shopping system, like to criticize both the shopping system and the products.",
+        "Explorer": "Like to search for products heard of before, also like check product's detail in the shopping system.",
+        "Critic": "Demanding high standards for products, like to criticize both the shopping system and the products.",
         "Chatter": "Enjoy chatting with friends, trust friends' recommendations.",
         "Poster": "Enjoy publicly posting on social media and sharing content and insights with more people."
     }
