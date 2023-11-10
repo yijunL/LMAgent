@@ -1,4 +1,5 @@
 data/simulator
-.pkl
+*.pkl
+*.log
 output/*
-config/*
+*.yaml
