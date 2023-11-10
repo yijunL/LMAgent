@@ -9,7 +9,7 @@ from utils import utils
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "-c", "--config_file", type=str, default="config/config.yaml", help="Path to config file"
+        "-c", "--config_file", type=str, default="config/dev_config.yaml", help="Path to config file"
     )
     parser.add_argument(
         "-o", "--output_file", type=str, default="messages.json", help="Path to output file"
