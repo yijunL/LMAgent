@@ -298,7 +298,7 @@ class Data:
 
     def get_items_for_webcast(self, num_product):
         """
-        Randomly select several items: name + description + details
+        Randomly select several items: name + description + details.
         """
         products = ""
         for i in range(num_product):

@@ -703,6 +703,7 @@ class RecAgent(GenerativeAgent):
         )
         return result
     def perform_webcast(self, observation, products, now) -> str:
+        """Performing webcast to all fans."""
         call_to_action_template = (
             "{agent_name} is an influential internet celebrity anchor who wants to recommend some products to his fans."
             + "\nHere are some products {agent_name} can recommend to his fans:" + products
