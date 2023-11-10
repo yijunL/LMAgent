@@ -888,7 +888,7 @@ class Simulator:
                                 agent_id=self.agents[i].id,
                                 action="POST",
                                 content=self.agents[i].name
-                                + " observes that"
+                                + " observes that "
                                 + agent.name
                                 + " posts: "
                                 + observation,
@@ -899,7 +899,7 @@ class Simulator:
                                 agent_id=self.agents[i].id,
                                 action="POST",
                                 content=self.agents[i].name
-                                + " observes that"
+                                + " observes that "
                                 + agent.name
                                 + " posts: "
                                 + observation,
@@ -960,7 +960,7 @@ class Simulator:
                             agent_id=self.agents[i].id,
                             action="Webcast",
                             content=self.agents[i].name
-                            + " observes that"
+                            + " observes that "
                             + agent.name
                             + " recommended in the live webcast: "
                             + observation,
@@ -971,7 +971,7 @@ class Simulator:
                             agent_id=self.agents[i].id,
                             action="Webcast",
                             content=self.agents[i].name
-                            + " observes that"
+                            + " observes that "
                             + agent.name
                             + " recommended in the live webcast: "
                             + observation,
