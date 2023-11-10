@@ -1,4 +1,5 @@
 import csv
+import numpy as np
 from langchain.vectorstores import FAISS
 from langchain.embeddings import OpenAIEmbeddings
 
@@ -251,6 +252,18 @@ class Data:
         """
         return [self.items[item_id]["description"] for item_id in item_ids]
 
+    def get_item_details_by_id(self, item_ids):
+        """
+        Get details of items by item id.
+        """
+        return [self.items[item_id]["detail"] for item_id in item_ids]
+    
+    def get_item_name_by_id(self, item_ids):
+        """
+        Get name of items by item id.
+        """
+        return [self.items[item_id]["name"] for item_id in item_ids]
+    
     def get_item_description_by_name(self, item_names):
         """
         Get description of items by item name.
@@ -282,3 +295,15 @@ class Data:
             if not found:
                 item_descriptions.append("")
         return item_descriptions
+
+    def get_items_for_webcast(self, num_product):
+        """
+        Randomly select several items: name + description + details.
+        """
+        products = ""
+        for i in range(num_product):
+            id_product = np.random.randint(0,self.get_item_num())
+            name_product = self.get_item_name_by_id([id_product])[0]
+            products += 'Product '+ str(i+1) + ': ' + 'Name: ' + name_product + '. Description: ' + str(self.get_item_description_by_id([id_product])[0])  + '. Details: ' + str(self.get_item_details_by_id([id_product])[0]) + ' '
+
+        return products

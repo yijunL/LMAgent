@@ -413,7 +413,7 @@ class RecAgent(GenerativeAgent):
             + "(3) Perform a Live Webcast. If so, {agent_name} will recommend many products to his fans on the webcast.\n"
             + "What action would {agent_name} like to take? Respond in one line."
             + "\nPlease note! Make sure that the actions taken by {agent_name} comply with the {agent_name}'s description, such as age, traits, status, interest, feature, etc."
-            + "\nPlease note! If and only if {agent_name}'s status is 'Network Anchor', {agent_name} can perform online live broadcast."
+            + "\nPlease note! If and only if {agent_name}'s status is 'Network Anchor', {agent_name} can perform online live broadcast. "
             + "Network anchor can only take the action of Performing a Live Webcast."
             + "\nIf {agent_name} wants to enter the Shopping System, write:\n [SHOPPING]:: {agent_name} enters the Shopping System"
             + "\nIf {agent_name} wants to enter the Social Media, write:\n [SOCIAL]:: {agent_name} enters the Social Media"
@@ -703,11 +703,13 @@ class RecAgent(GenerativeAgent):
             },
         )
         return result
-    def perform_webcast(self, observation, now) -> str:
+    def perform_webcast(self, observation, products, now) -> str:
+        """Performing webcast to all fans."""
         call_to_action_template = (
             "{agent_name} is an influential internet celebrity anchor who wants to recommend some products to his fans."
-            + "\n{agent_name} needs to introduce several products in detail, such as their names, main purpose, benefits, prices, etc., and recommend them to his fans."
-            + "The items chosen by {agent_name} can be of interest to him or can be targeted recommendations for what people on social media want."
+            + "\nHere are some products {agent_name} can recommend to his fans:" + products
+            + "\nIn addition to the above products available, {agent_name} can also make targeted recommendations on what people on social media want, as well as selecting items he's interested in."
+            + "\n{agent_name} needs to introduce several products in detail, such as their names, main purpose, benefits, prices, etc. "
             + "{agent_name}’s recommended tone should match the style of the webcast."
             + "\nIf you were {agent_name}, what would you say on a live webcast?"
             + "\nAll occurrences of movie names should be enclosed with <>"
