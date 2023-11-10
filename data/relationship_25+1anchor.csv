@@ -1,0 +1,145 @@
+user_1,user_2,relationship,closeness
+0,1,friend,0.925816051
+1,0,friend,0.925816051
+0,3,friend,0.851517179
+3,0,friend,0.851517179
+0,22,colleague,0.25
+22,0,colleague,0.25
+0,13,friend,0.9
+13,0,friend,0.9
+1,13,friend,0.9
+13,1,friend,0.9
+1,25,neighbor,0.368258028
+25,1,partner,0.368258028
+1,7,friend,0.85
+7,1,friend,0.85
+1,8,colleague,0.6
+8,1,colleague,0.6
+1,18,acquaintance,0.6
+18,1,acquaintance,0.6
+2,5,colleague,0.4
+5,2,colleague,0.4
+2,7,acquaintance,0.65
+7,2,acquaintance,0.65
+2,22,acquaintance,0.6
+22,2,acquaintance,0.6
+2,23,friend,0.8
+23,2,friend,0.8
+3,8,colleague,0.2
+8,3,colleague,0.2
+3,18,friend,0.6
+18,3,friend,0.6
+5,6,acquaintance,0.6
+6,5,acquaintance,0.6
+5,17,friend,0.8
+17,5,friend,0.8
+6,17,friend,0.8
+17,6,friend,0.8
+7,17,colleague,0.3
+17,7,colleague,0.3
+8,18,acquaintance,0.6
+18,8,acquaintance,0.6
+9,19,friend,0.7
+19,9,friend,0.7
+9,10,acquaintance,0.6
+10,9,acquaintance,0.6
+9,21,friend,0.8
+21,9,friend,0.8
+10,19,colleague,0.2
+19,10,colleague,0.2
+10,22,friend,0.85
+22,10,friend,0.85
+11,12,acquaintance,0.6
+12,11,acquaintance,0.6
+11,18,friend,0.9
+18,11,friend,0.9
+12,19,colleague,0.4
+19,12,colleague,0.4
+12,14,friend,0.85
+14,12,friend,0.85
+12,17,acquaintance,0.65
+17,12,acquaintance,0.65
+13,25,neighbor,0.5
+25,13,acquaintance,0.5
+13,17,colleague,0.35
+17,13,colleague,0.35
+14,19,acquaintance,0.6
+19,14,acquaintance,0.6
+14,17,friend,0.92
+17,14,friend,0.92
+15,23,parent,0.9
+23,15,child,0.9
+15,21,acquaintance,0.6
+21,15,acquaintance,0.6
+15,24,friend,0.8
+24,15,friend,0.8
+16,17,friend,0.85
+17,16,friend,0.85
+16,18,acquaintance,0.55
+18,16,acquaintance,0.55
+17,19,acquaintance,0.6
+19,17,acquaintance,0.6
+17,24,friend,0.8
+24,17,friend,0.8
+18,22,acquaintance,0.65
+22,18,acquaintance,0.65
+19,22,friend,0.75
+22,19,friend,0.75
+20,22,friend,0.85
+22,20,friend,0.85
+21,23,friend,0.8
+23,21,friend,0.8
+22,24,friend,0.8
+24,22,friend,0.8
+23,8,father,0.9
+8,23,child,0.9
+23,6,friend,0.73
+6,23,friend,0.73
+24,25,friend,0.8
+25,24,friend,0.8
+25,21,acquaintance,0.32
+21,25,partner,0.32
+25,3,father,0.9
+3,25,child,0.9
+4,0,fan,0.8
+0,4,online anchor that the person follows,0.8
+4,1,fan,0.75
+1,4,online anchor that the person follows,0.75
+4,2,fan,0.75
+2,4,online anchor that the person follows,0.75
+4,3,fan,0.85
+3,4,online anchor that the person follows,0.85
+4,25,fan,0.75
+25,4,online anchor that the person follows,0.75
+4,6,fan,0.75
+6,4,online anchor that the person follows,0.75
+4,7,fan,0.75
+7,4,online anchor that the person follows,0.75
+4,8,fan,0.75
+8,4,online anchor that the person follows,0.75
+4,9,fan,0.75
+9,4,online anchor that the person follows,0.75
+4,10,fan,0.75
+10,4,online anchor that the person follows,0.75
+4,11,fan,0.68
+11,4,online anchor that the person follows,0.68
+4,13,fan,0.68
+13,4,online anchor that the person follows,0.68
+4,15,fan,0.68
+15,4,online anchor that the person follows,0.68
+4,16,fan,0.68
+16,4,online anchor that the person follows,0.68
+4,17,fan,0.68
+17,4,online anchor that the person follows,0.68
+4,18,fan,0.75
+18,4,online anchor that the person follows,0.75
+4,20,fan,0.65
+20,4,online anchor that the person follows,0.65
+4,21,fan,0.65
+21,4,online anchor that the person follows,0.65
+4,22,fan,0.65
+22,4,online anchor that the person follows,0.65
+4,23,fan,0.65
+23,4,online online anchor that the person follows that the person follows,0.65
+4,24,fan,0.65
+24,4,online anchor that the person follows,0.65
