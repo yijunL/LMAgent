@@ -1,87 +1,0 @@
-nohup: ignoring input
-/home/liuyijun27/.local/lib/python3.11/site-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: /opt/conda/envs/main did not contain ['libcudart.so', 'libcudart.so.11.0', 'libcudart.so.12.0'] as expected! Searching further paths...
-  warn(msg)
-/home/liuyijun27/.local/lib/python3.11/site-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('/usr/local/nvidia/lib'), PosixPath('/home/liuyijun27/.local/lib/python3.11/site-packages/cv2/../../lib64'), PosixPath('/usr/local/nvidia/lib64')}
-  warn(msg)
-/home/liuyijun27/.local/lib/python3.11/site-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: /home/liuyijun27/.local/lib/python3.11/site-packages/cv2/../../lib64:/usr/local/nvidia/lib:/usr/local/nvidia/lib64 did not contain ['libcudart.so', 'libcudart.so.11.0', 'libcudart.so.12.0'] as expected! Searching further paths...
-  warn(msg)
-/home/liuyijun27/.local/lib/python3.11/site-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('tcp'), PosixPath('//10.255.0.1'), PosixPath('443')}
-  warn(msg)
-/home/liuyijun27/.local/lib/python3.11/site-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('lib/python/site-packages')}
-  warn(msg)
-/home/liuyijun27/.local/lib/python3.11/site-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('dockerhub.mlops.jd.com/notebook/cuda11.7-cudnn8-devel-ubuntu20.04-py38-pytorch2.0.0-jupyterlab3.2.9'), PosixPath('v0.6')}
-  warn(msg)
-/home/liuyijun27/.local/lib/python3.11/site-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('dockerhub.mlops.jd.com/ai-platform/nvidia-amd/cuda'), PosixPath('11.7.0-cudnn8-devel-ubuntu20.04')}
-  warn(msg)
-/home/liuyijun27/.local/lib/python3.11/site-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('/notebook/public-resource/notebook-liuyijun27-p40-llm-ycar')}
-  warn(msg)
-/home/liuyijun27/.local/lib/python3.11/site-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('http'), PosixPath('8888/notebook/public-resource/notebook-liuyijun27-p40-llm-ycar'), PosixPath('//notebook-liuyijun27-p40-llm-ycar-0')}
-  warn(msg)
-/home/liuyijun27/.local/lib/python3.11/site-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: Found duplicate ['libcudart.so', 'libcudart.so.11.0', 'libcudart.so.12.0'] files: {PosixPath('/usr/local/cuda/lib64/libcudart.so'), PosixPath('/usr/local/cuda/lib64/libcudart.so.11.0')}.. We'll flip a coin and try one of these, in order to fail forward.
-Either way, this might cause trouble in the future:
-If you get `CUDA error: invalid device function` errors, the above might be the cause and the solution is to make sure only one ['libcudart.so', 'libcudart.so.11.0', 'libcudart.so.12.0'] in the paths that we search based on your env.
-  warn(msg)
-/home/liuyijun27/.local/lib/python3.11/site-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: Compute capability < 7.5 detected! Only slow 8-bit matmul is supported for your GPU!
-  warn(msg)
-
-===================================BUG REPORT===================================
-Welcome to bitsandbytes. For bug reports, please run
-
-python -m bitsandbytes
-
- and submit this information together with your error trace to: https://github.com/TimDettmers/bitsandbytes/issues
-================================================================================
-bin /home/liuyijun27/.local/lib/python3.11/site-packages/bitsandbytes/libbitsandbytes_cuda117_nocublaslt.so
-CUDA_SETUP: WARNING! libcudart.so not found in any environmental path. Searching in backup paths...
-CUDA SETUP: CUDA runtime path found: /usr/local/cuda/lib64/libcudart.so
-CUDA SETUP: Highest compute capability among GPUs detected: 6.1
-CUDA SETUP: Detected CUDA version 117
-CUDA SETUP: Loading binary /home/liuyijun27/.local/lib/python3.11/site-packages/bitsandbytes/libbitsandbytes_cuda117_nocublaslt.so...
-[2023-10-23 14:50:45,027] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
-Loading checkpoint shards:   0%|                                                                 | 0/7 [00:00<?, ?it/s]Loading checkpoint shards:  14%|████████▏                                                | 1/7 [00:01<00:08,  1.46s/it]Loading checkpoint shards:  29%|████████████████▎                                        | 2/7 [00:03<00:07,  1.56s/it]Loading checkpoint shards:  43%|████████████████████████▍                                | 3/7 [00:04<00:06,  1.62s/it]Loading checkpoint shards:  57%|████████████████████████████████▌                        | 4/7 [00:06<00:04,  1.63s/it]Loading checkpoint shards:  71%|████████████████████████████████████████▋                | 5/7 [00:08<00:03,  1.67s/it]Loading checkpoint shards:  86%|████████████████████████████████████████████████▊        | 6/7 [00:09<00:01,  1.67s/it]Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████| 7/7 [00:10<00:00,  1.45s/it]Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████| 7/7 [00:10<00:00,  1.55s/it]
-INFO:1707:os.getpid()=1707
-INFO:1707:
-active_agent_threshold: 100
-active_method: random
-active_prob: 1
-agent_num: 10
-api_keys: ['sk-nllqSQZXUcE0KocTB28904481846487bA2FfF82a9039Ca03']
-epoch: 30
-execution_mode: serial
-index_name: data/faiss_index
-interaction_path: data/interaction.csv
-interval: 5h
-item_path: data/item.csv
-llm: custom
-log_file: simulation.log
-log_name: 1707
-max_retries: 3
-max_token: 1500
-output_file: output/message/messages.json
-page_size: 5
-play_role: False
-rec_model: Random
-recagent_memory: recagent
-relationship_path: data/relationship_1000.csv
-simulator_dir: data/simulator
-simulator_restore_file_name: None
-temperature: 0.3
-user_path: data/user_1000.csv
-verbose: True
-Load faiss db from local
-  0%|                                                                                           | 0/10 [00:00<?, ?it/s]100%|████████████████████████████████████████████████████████████████████████████████| 10/10 [00:00<00:00, 2460.72it/s]
-INFO:1707:Simulator loaded.
-INFO:1707:Round 1
-2 has no contact.
-3 has no contact.
-4 has no contact.
-5 has no contact.
-6 has no contact.
-7 has no contact.
-8 has no contact.
-9 has no contact.
-  0%|                                                                                           | 0/10 [00:00<?, ?it/s]INFO:1707:David Smith enters the recommender system.
-INFO:1707:David Smith is recommended ['<Doctor Dolittle>;;The movie <Doctor Dolittle > is a musical comedy film about a doctor who discovers that he can talk to animals.', "<Man Bites Dog (C'est arrivé près de chez vous)>;;<Man Bites Dog> is a dark comedy/mockumentary film about a documentary crew following a charismatic serial killer named Ben as he goes about his daily routine of murdering people.", '<Highlander>;;Highlander  is a fantasy action-adventure film about an immortal Scottish swordsman named Connor MacLeod (played by Christopher Lambert) who must battle against other immortals in a centuries-long quest for the ultimate prize: the ability to become mortal.', '<The Man with the Golden Gun>;;<The Man with the Golden Gun> is a James Bond film released in 1974.', '<The Slums of Beverly Hills>;;<The Slums of Beverly Hills> is a coming-of-age comedy-drama film that follows the story of a teenage girl named Vivian who is growing up in poverty with her father and two younger brothers in the Beverly Hills neighborhood of Los Angeles in the 1970s.'].
-INFO:1707:David Smith leaves the recommender system.
- 10%|████████▎                                                                          | 1/10 [01:14<11:12, 74.74s/it]INFO:1707:David Miller enters the recommender system.
-INFO:1707:David Miller is recommended ['<Money Train>;;<Money Train> is an action-comedy film released in 1995.', '<Snowriders>;;<Snowriders> is a documentary film that explores the history and culture of snowboarding.', '<All Dogs Go to Heaven>;;<All Dogs Go to Heaven> is an animated musical film about a dog named Charlie B.', '<Funny Farm>;;<Funy Farm> is a comedy movie from 1988, directed by George Roy Hill and starring Chevy Chase.', '<The Cat from Outer Space>;;<The Cat from Outer Space> is a 1978 science fiction comedy film about an extraterrestrial cat named Zunar-J-5/9 Doric-4-7, or Jake for short, who crash-lands on Earth and befriends a scientist named Frank and his team.'].
