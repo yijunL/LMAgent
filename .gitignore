@@ -1,3 +1,4 @@
 data/simulator
 .pkl
 output/*
+config/config.yaml
