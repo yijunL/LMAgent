@@ -923,7 +923,7 @@ class Simulator:
             contacts = self.data.get_all_contacts(agent_id)
             self.logger.info(f"{name} is performing a online live webcast.")
             observation = f"{name} wants to conduct a live webcast to recommend goods to his fans."
-            products = self.data.get_items_for_webcast(2) 
+            products = self.data.get_items_for_webcast(2) # num = 2
             observation = agent.perform_webcast(observation, products, self.now)
             item_names = utils.extract_item_names(observation, "SOCIAL")
             self.logger.info(agent.name + " recommended in the live webcast: " + observation)
