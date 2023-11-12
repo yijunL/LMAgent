@@ -97,7 +97,8 @@ def main():
     # base64_csv2img(base64_path, 659)  # for test
 
     # pic for posts
-    prompt_post = "The accompanying image of the post. The image matches the text below: \nJust got my new Nike Air Force 1 sneakers form the shopping system, they're incredibly comfortable and stylish! Highly recommed them to all my acquaintances."
+    # prompt_post = "The accompanying image of the post. The image matches the text below: \nJust got my new Nike Air Force 1 sneakers form the shopping system, they're incredibly comfortable and stylish! Highly recommed them to all my acquaintances."
+    prompt_post = "The accompanying image of the post. The image matches the text below: \nHey everyone! Looking for recommendations on high-quality kitchen appliances, especially interested in finding a reliable camping stove for outdoor adventures. Any suggestions?"
     post_pic_base64 = get_base64(prompt_post)
     base642img(post_pic_base64)
 
