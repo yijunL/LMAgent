@@ -696,6 +696,7 @@ class RecAgent(GenerativeAgent):
         )
 
         result = self._generate_reaction(observation, call_to_action_template, now)
+        # generate pic
         post_prompt = "The accompanying image of the post. The image matches the text below:\n" + result
         post_pic = get_base64(post_prompt)
 

@@ -852,7 +852,7 @@ class Simulator:
                 self.social_stat.post_num += 1
                 self.logger.info(f"{name} is posting.")
                 observation = f"{name} want to post for all acquaintances."
-                observation = agent.publish_posting(observation, self.now)
+                observation, post_pic_base64 = agent.publish_posting(observation, self.now)   
                 item_names = utils.extract_item_names(observation, "SOCIAL")
                 self.logger.info(agent.name + " posted: " + observation)
                 if agent.event.action_type == "idle":
@@ -867,20 +867,20 @@ class Simulator:
                     Message(
                         agent_id=agent_id,
                         action="POST",
-                        content=agent.name + " posts: " + observation,
+                        content=agent.name + " posts: " + observation + "\npic: " + post_pic_base64,   # add pic
                     )
                 )
                 self.round_msg.append(
                     Message(
                         agent_id=agent_id,
                         action="POST",
-                        content=agent.name + " posts: " + observation,
+                        content=agent.name + " posts: " + observation + "\npic: " + post_pic_base64,   # add pic 
                     )
                 )
                 for i in self.agents.keys():
                     if self.agents[i].name in contacts:
                         self.agents[i].memory.add_memory(
-                            agent.name + " posts: " + observation, now=self.now
+                            agent.name + " posts: " + observation, now=self.now  # other agents can't see the message
                         )
                         self.agents[i].update_heared_history(item_names)
                         message.append(
