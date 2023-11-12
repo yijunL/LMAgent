@@ -1,6 +1,7 @@
 import re
 from datetime import datetime
 from typing import Any, Dict, List, Optional, Tuple
+from utils.item_pic import get_base64
 
 from pydantic import BaseModel, Field
 
@@ -695,6 +696,9 @@ class RecAgent(GenerativeAgent):
         )
 
         result = self._generate_reaction(observation, call_to_action_template, now)
+        post_prompt = "The accompanying image of the post. The image matches the text below:\n" + result
+        post_pic = get_base64(post_prompt)
+
         self.memory.save_context(
             {},
             {
@@ -702,7 +706,7 @@ class RecAgent(GenerativeAgent):
                 self.memory.now_key: now,
             },
         )
-        return result
+        return result, post_pic
     def perform_webcast(self, observation, products, now) -> str:
         """Performing webcast to all fans."""
         call_to_action_template = (

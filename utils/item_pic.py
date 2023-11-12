@@ -93,41 +93,48 @@ def base64_csv2img(base64_path, id):
 def main():
     file_path = "data/item.csv"
     base64_path = "data/base64.csv"
-
+    
     # base64_csv2img(base64_path, 659)  # for test
-    items = {}
-    with open(file_path, "r", encoding='utf-8', newline="") as file:
-        reader = csv.reader(file)
-        next(reader)  # Skip the header line
-        for row in reader:
-            item_id, title, genre, description, detail = row
-            items[int(item_id)] = {
-                "name": title.strip(),
-                "genre": genre,
-                "description": description.strip(),
-                "detail": detail.strip(),
-                "inter_cnt":0,
-                "mention_cnt":0
-            }
 
-    # print(items[0])
-    continu = 657
-    for i in range(len(items.keys())):
-        if i > continu:
-            one_name = items[i]["name"]
-            one_description = items[i]["description"]
-            one_prompt = one_name + ", " + one_description
-            # print(one_prompt)
+    # pic for posts
+    prompt_post = "The accompanying image of the post. The image matches the text below: \nJust got my new Nike Air Force 1 sneakers form the shopping system, they're incredibly comfortable and stylish! Highly recommed them to all my acquaintances."
+    post_pic_base64 = get_base64(prompt_post)
+    base642img(post_pic_base64)
+
+    # pic for items
+    # items = {}
+    # with open(file_path, "r", encoding='utf-8', newline="") as file:
+    #     reader = csv.reader(file)
+    #     next(reader)  # Skip the header line
+    #     for row in reader:
+    #         item_id, title, genre, description, detail = row
+    #         items[int(item_id)] = {
+    #             "name": title.strip(),
+    #             "genre": genre,
+    #             "description": description.strip(),
+    #             "detail": detail.strip(),
+    #             "inter_cnt":0,
+    #             "mention_cnt":0
+    #         }
+
+    # # print(items[0])
+    # continu = 657
+    # for i in range(len(items.keys())):
+    #     if i > continu:
+    #         one_name = items[i]["name"]
+    #         one_description = items[i]["description"]
+    #         one_prompt = one_name + ", " + one_description
+    #         # print(one_prompt)
             
-            one_base64 = get_base64(one_prompt)
-            if one_base64 == "":
-                continue
-            one_csv = [str(i), one_base64]
-            with open(base64_path, mode="a", newline="") as file:
-                writer = csv.writer(file)
-                writer.writerow(one_csv)
-                file.close()
-            print(i)
+    #         one_base64 = get_base64(one_prompt)
+    #         if one_base64 == "":
+    #             continue
+    #         one_csv = [str(i), one_base64]
+    #         with open(base64_path, mode="a", newline="") as file:
+    #             writer = csv.writer(file)
+            #     writer.writerow(one_csv)
+            #     file.close()
+            # print(i)
 
 
 if __name__ == '__main__':
