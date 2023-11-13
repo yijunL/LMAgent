@@ -238,7 +238,7 @@ def chat_format(msg: Dict):
     html_text += f'<div style="background-color: #FAE1D1; color: black; padding: 10px; border-radius: 10px; max-width: 80%;">'
     html_text += f'{msg["content"]}'
     html_text += f"</div></div>"
-    
+
     return html_text
 
 
@@ -248,15 +248,51 @@ def rec_format(msg: Dict):
     Args:
         msg (Dict): The message.
     """
-    html_text = "<br>"
-    avatar = get_avatar2(msg["agent_id"])
-    html_text += (
-        f'<div style="display: flex; align-items: center; margin-bottom: 10px;">'
-    )
-    html_text += f'<img src="{avatar}" style="width: 10%; height: 10%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;">'
-    html_text += f'<div style="background-color: #D9E8F5; color: black; padding: 10px; border-radius: 10px; max-width: 80%;">'
-    html_text += f'{msg["content"]}'
-    html_text += f"</div></div>"
+
+    if("is recommended" in msg["content"]):   # 被推荐商品时的可视化
+        pic_per_raw = 3
+        
+        raw_text = msg["content"].split("**##")[0]
+        pro_desc = eval(re.findall(r'\[(.*?)\]', raw_text))
+        pics = msg["content"].split("**##")[1].split("##**")
+        html_text = "<br>"
+        html_text += (
+            f'<div style="display: flex; justify-content: space-between; margin-bottom: 10px;">'
+        )
+        accu_pic = []
+        for i in range(len(pics)):
+            if((i+1)%pic_per_raw==0):
+                html_text += f"</div>"
+                html_text += (
+                    f'<div style="display: flex; justify-content: space-between; margin-bottom: 10px;">'
+                )
+                for ac in accu_pic:
+                    html_text += f'<div style="background-color: #D9E8F5;text-align: center; color: black;display: flex; padding: 10px; border-radius: 10px; width: 30%;"><p>{pro_desc[ac]}</p></div>'
+                html_text += f"</div>"
+                accu_pic = []
+                
+            html_text += f'<img src="{pics[i]}" style="width: 31%; height: 10%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;">'
+            accu_pic.append(i)
+            
+        if(len(accu_pic)!=0):
+            html_text += f"</div>"
+            html_text += (
+                f'<div style="display: flex; justify-content: space-between; margin-bottom: 10px;">'
+            )
+            for ac in accu_pic:
+                html_text += f'<div style="background-color: #D9E8F5;text-align: center; color: black;display: flex; padding: 10px; border-radius: 10px; width: 30%;"><p>{pro_desc[ac]}</p></div>'
+            html_text += f"</div>"
+            accu_pic = []
+    else:
+        html_text = "<br>"
+        avatar = get_avatar2(msg["agent_id"])
+        html_text += (
+            f'<div style="display: flex; align-items: center; margin-bottom: 10px;">'
+        )
+        html_text += f'<img src="{avatar}" style="width: 10%; height: 10%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;">'
+        html_text += f'<div style="background-color: #D9E8F5; color: black; padding: 10px; border-radius: 10px; max-width: 80%;">'
+        html_text += f'{msg["content"]}'
+        html_text += f"</div></div>"
 
     return html_text
 
