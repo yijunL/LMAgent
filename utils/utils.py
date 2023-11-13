@@ -238,6 +238,7 @@ def chat_format(msg: Dict):
     html_text += f'<div style="background-color: #FAE1D1; color: black; padding: 10px; border-radius: 10px; max-width: 80%;">'
     html_text += f'{msg["content"]}'
     html_text += f"</div></div>"
+    
     return html_text
 
 
@@ -256,6 +257,7 @@ def rec_format(msg: Dict):
     html_text += f'<div style="background-color: #D9E8F5; color: black; padding: 10px; border-radius: 10px; max-width: 80%;">'
     html_text += f'{msg["content"]}'
     html_text += f"</div></div>"
+
     return html_text
 
 

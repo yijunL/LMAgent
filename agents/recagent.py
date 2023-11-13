@@ -418,7 +418,7 @@ class RecAgent(GenerativeAgent):
             + "Network anchor can only take the action of Performing a Live Webcast."
             + "\nIf {agent_name} wants to enter the Shopping System, write:\n [SHOPPING]:: {agent_name} enters the Shopping System"
             + "\nIf {agent_name} wants to enter the Social Media, write:\n [SOCIAL]:: {agent_name} enters the Social Media"
-            + "\nIf {agent_name} wants to perform a online live webcast, weite:\n[WEBCAST]::{agent_name} performs a Live Webcast"
+            + "\nIf {agent_name} wants to perform a online live webcast, weite:\n [WEBCAST]::{agent_name} performs a Live Webcast"
             # + "\nIf {agent_name} wants to do nothing, write:\n [NOTHING]:: {agent_name} does nothing"
         )
         # + "(1) Enter the Shopping System. If so, {self.name} will be recommended some products, from which {self.name} can buy some products, or search for products by himself.\n"

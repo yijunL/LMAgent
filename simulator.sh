@@ -1,1 +1,1 @@
-python -u simulator.py --config_file config/config.yaml --output_file messages.json --log_file simulation.log
+python -u simulator.py --config_file config/dev_config.yaml --output_file messages.json --log_file simulation.log

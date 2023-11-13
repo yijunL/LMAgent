@@ -323,9 +323,10 @@ class Demo:
                 time.sleep(self.sleep_time)
 
     def launch_demo(self):
-        with gr.Blocks(theme="soft", title="RecAgent Demo", css=self.css_path) as demo:
+        with gr.Blocks(theme="soft", title="CusAgent Demo", css=self.css_path) as demo:
             with gr.Row(variant="panel"):
-                with gr.Column(scale=2, elem_classes=["column-container"]):
+                with gr.Column(scale=1, elem_classes=["column-container"]):
+
                     background = self.init_background()
                     image_output = gr.Image(
                         value=cv2.cvtColor(background, cv2.COLOR_BGR2RGB),
@@ -342,6 +343,17 @@ class Demo:
                         value=self.init_round_info, elem_classes=["round"]
                     )
 
+                    rec_pic = gr.HTML(value=get_avatar1("rec1"))
+                    rec_output = gr.HTML(
+                        value="",
+                        show_label=False,
+                        elem_classes=[
+                            "textbox_size",
+                            "scrollable-textbox",
+                            "textbox-font",
+                        ],
+                    )
+
                     chat_pic = gr.HTML(value=get_avatar1("cha1"))
                     chat_output = gr.HTML(
                         value="",
@@ -353,16 +365,7 @@ class Demo:
                         ],
                     )
 
-                    rec_pic = gr.HTML(value=get_avatar1("rec1"))
-                    rec_output = gr.HTML(
-                        value="",
-                        show_label=False,
-                        elem_classes=[
-                            "textbox_size",
-                            "scrollable-textbox",
-                            "textbox-font",
-                        ],
-                    )
+
 
                     soc_pic = gr.HTML(value=get_avatar1("soc1"))
                     soc_output = gr.HTML(
