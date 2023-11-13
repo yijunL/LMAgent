@@ -17,7 +17,7 @@ class Data:
         self.tot_relationship_num=0
         self.netwerk_density=0.
         self.role_id=-1
-        self.load_items(config["item_path"])
+        self.load_items(config["item_path"], config["item_pic_path"])
         self.load_users(config["user_path"])
         self.load_relationship(config["relationship_path"])
         self.load_faiss_db(config["index_name"])
@@ -56,7 +56,7 @@ class Data:
                 self.users[user_1]["contact"][user_2]=relationship
                 self.tot_relationship_num+=1
 
-    def load_items(self, file_path):
+    def load_items(self, file_path, pic_path):
         """
         Load items from local file.
         """
@@ -73,6 +73,14 @@ class Data:
                     "inter_cnt":0,
                     "mention_cnt":0
                 }
+
+        # load pic 
+        with open(pic_path, "r", encoding='utf-8', newline="") as file:
+            reader = csv.reader(file)
+            # next(reader)  # Skip the header line
+            for row in reader:
+                item_id, pic_base64 = row
+                self.items[int(item_id)]["pic"] = pic_base64
 
     def load_users(self, file_path):
         """
@@ -263,6 +271,12 @@ class Data:
         Get name of items by item id.
         """
         return [self.items[item_id]["name"] for item_id in item_ids]
+    
+    def get_item_pic_by_id(self, item_ids):
+        """
+        Get pic of items by item id.
+        """
+        return [self.items[item_id]["pic"] for item_id in item_ids]
     
     def get_item_description_by_name(self, item_names):
         """

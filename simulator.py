@@ -241,11 +241,15 @@ class Simulator:
                 )
             )
             leave = False
-            rec_items = self.recsys.get_full_sort_items(agent_id)
+            rec_items, rec_items_pics = self.recsys.get_full_sort_items(agent_id)
             page = 0
             cnt = 0
             searched_name = None
             while not leave:
+                rec_items_pics_page = rec_items_pics[page*self.recsys.page_size:(page+1)*self.recsys.page_size]
+                pic_str = ""
+                for item_pic_idx in range(len(rec_items_pics_page)):
+                    pic_str = pic_str + rec_items_pics_page[item_pic_idx] + "##**"
                 self.logger.info(
                     f"{name} is recommended {rec_items[page*self.recsys.page_size:(page+1)*self.recsys.page_size]}."
                 )
@@ -253,14 +257,14 @@ class Simulator:
                     Message(
                         agent_id=agent_id,
                         action="SHOPPING",
-                        content=f"{name} is recommended {rec_items[page*self.recsys.page_size:(page+1)*self.recsys.page_size]}.",
+                        content=f"{name} is recommended {rec_items[page*self.recsys.page_size:(page+1)*self.recsys.page_size]}." + "**##" + pic_str ,
                     )
                 )
                 self.round_msg.append(
                     Message(
                         agent_id=agent_id,
                         action="SHOPPING",
-                        content=f"{name} is recommended {rec_items[page*self.recsys.page_size:(page+1)*self.recsys.page_size]}.",
+                        content=f"{name} is recommended {rec_items[page*self.recsys.page_size:(page+1)*self.recsys.page_size]}." + "**##" + pic_str ,
                     )
                 )
                 observation = f"{name} is browsing the shopping system."
@@ -867,20 +871,20 @@ class Simulator:
                     Message(
                         agent_id=agent_id,
                         action="POST",
-                        content=agent.name + " posts: " + observation + "\npic: " + post_pic_base64,   # add pic
+                        content=agent.name + " posts: " + observation + "**##" + post_pic_base64,   # add pic
                     )
                 )
                 self.round_msg.append(
                     Message(
                         agent_id=agent_id,
                         action="POST",
-                        content=agent.name + " posts: " + observation + "\npic: " + post_pic_base64,   # add pic 
+                        content=agent.name + " posts: " + observation + "**##" + post_pic_base64,   # add pic 
                     )
                 )
                 for i in self.agents.keys():
                     if self.agents[i].name in contacts:
                         self.agents[i].memory.add_memory(
-                            agent.name + " posts: " + observation, now=self.now  # other agents can't see the message
+                            agent.name + " posts: " + observation, now=self.now  # other agents can't see the pic
                         )
                         self.agents[i].update_heared_history(item_names)
                         message.append(
