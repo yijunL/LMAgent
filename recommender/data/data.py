@@ -318,6 +318,6 @@ class Data:
         for i in range(num_product):
             id_product = np.random.randint(0,self.get_item_num())
             name_product = self.get_item_name_by_id([id_product])[0]
-            products += 'Product '+ str(i+1) + ': ' + 'Name: ' + name_product + '. Description: ' + str(self.get_item_description_by_id([id_product])[0])  + '. Details: ' + str(self.get_item_details_by_id([id_product])[0]) + ' '
+            products += 'Product '+ str(i+1) + ': ' + 'Name: ' + name_product + '. Description: ' + str(self.get_item_description_by_id([id_product])[0])  + '. ' # + 'Details: ' + str(self.get_item_details_by_id([id_product])[0]) + ' '
 
         return products

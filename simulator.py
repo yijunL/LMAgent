@@ -939,20 +939,23 @@ class Simulator:
                     target_agent=None,
                     action_type="webcasting",
                 )
-            message.append(
-                Message(
-                    agent_id=agent_id,
-                    action="Webcast",
-                    content=agent.name + " recommended in the live webcast: " + observation,
+
+            observation_list = observation.split('.')
+            for one_sentence in observation_list:
+                message.append(
+                    Message(
+                        agent_id=agent_id,
+                        action="Webcast",
+                        content= agent.name + " recommended in the live webcast: " + one_sentence.replace('\n', ''),
+                    )
                 )
-            )
-            self.round_msg.append(
-                Message(
-                    agent_id=agent_id,
-                    action="Webcast",
-                    content=agent.name + " recommended in the live webcast: " + observation,
+                self.round_msg.append(
+                    Message(
+                        agent_id=agent_id,
+                        action="Webcast",
+                        content= agent.name + " recommended in the live webcast: " + one_sentence.replace('\n', ''),
+                    )
                 )
-            )
             for i in self.agents.keys():
                 if self.agents[i].name in contacts:
                     self.agents[i].memory.add_memory(
