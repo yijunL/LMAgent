@@ -1,9 +1,9 @@
 id,name,gender,age,traits,status,interest,feature
-0,Jiaqi Li,male,33,"good at recommendations, popular, enthusiastic, humorous, and good at live streaming",network anchor,"fashion, Beauty, skin care,  electronics, household, maternal and child products",Poster;Chatter
+0,David Smith,male,25,"compassionate, caring, ambitious, optimistic",photographer,"shopping , electronics , Camping stoves ",Explorer;Watcher
 1,David Miller,female,39,"fun-loving, creative, practical, energetic, patient",writer,"outdoor , Seat covers ,Kitchen Appliances",Watcher;Critic;Chatter
 2,James Brown,male,70,"independent, creative, patient, empathetic",engineer,"shopping , Keyboards , Non-fiction ",Watcher;
 3,Sarah Miller,female,33,"independent, compassionate",farmer, Kids ,Critic;Explorer;Watcher
-4,David Smith,male,25,"compassionate, caring, ambitious, optimistic",photographer,"shopping , electronics , Camping stoves ",Explorer;Watcher
+4,Jiaqi Li,male,33,"good at recommendations, popular, enthusiastic, humorous, and good at live streaming",network anchor,"fashion, Beauty, skin care,  electronics, household, maternal and child products",Poster;Chatter
 5,John Taylor,male,68,optimistic,doctor," Guitars , fashion , Outdoor , Activewear",Poster;Chatter
 6,Sarah Williams,female,51,meticulous,musician,"online shopping , beauty , Sofas , Oral Care",Watcher;Explorer;Chatter
 7,James Jones,male,59,"practical, fun-loving, creative, ambitious, caring",farmer,Communication,Watcher;Poster

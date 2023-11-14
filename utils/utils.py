@@ -11,6 +11,8 @@ from yacs.config import CfgNode
 import os
 from langchain.chat_models import ChatOpenAI
 
+USER_NAME = []
+
 
 # logger
 def set_logger(log_file, name="default"):
@@ -184,6 +186,38 @@ def get_avatar2(idx):
     base64_str = cv2.imencode(".png", img)[1].tostring()
     return "data:image/png;base64," + base64.b64encode(base64_str).decode("utf-8")
 
+def highlight_items(new_content: str):
+
+    for name in [
+        "David",
+        "Smith",
+        "Eve",
+        "Tommie",
+        "Jake",
+        "Lily",
+        "Alice",
+        "Sophia",
+        "Rachel",
+        "Lei",
+        "Max",
+        "Emma",
+        "Ella",
+        "Sen",
+        "James",
+        "Ben",
+        "Isabella",
+        "Mia",
+        "Henry",
+        "Charlotte",
+        "Olivia",
+        "Michael",
+        "Jiaqi"
+    ]:
+        html_span = "<span style=\"color: red;\">" + name + "</span>"
+        new_content = new_content.replace(name, html_span)
+    new_content = new_content.replace("['", '<span style=\"color: #06A279;\">[\'')
+    new_content = new_content.replace("']", "']</span>")
+    return new_content
 
 def html_format(orig_content: str):
     """
@@ -236,7 +270,7 @@ def chat_format(msg: Dict):
     )
     html_text += f'<img src="{avatar}" style="width: 10%; height: 10%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;">'
     html_text += f'<div style="background-color: #FAE1D1; color: black; padding: 10px; border-radius: 10px; max-width: 80%;">'
-    html_text += f'{msg["content"]}'
+    html_text += f'{highlight_items(msg["content"])}'
     html_text += f"</div></div>"
 
     return html_text
@@ -257,15 +291,20 @@ def rec_format(msg: Dict):
     html_text += f'<div style="background-color: #D9E8F5; color: black; padding: 10px; border-radius: 10px; max-width: 80%;">'
 
     if("**##" in msg["content"]):   # visualization when being recommended or buying or checking.
-        if("is recommended" in msg["content"]):
-            html_text += f'"{msg["content"].split("is recommended")[0]}" is recommended:'
-        else:
-            html_text += f'{msg["content"].split("**##")[0]}'
-        html_text += f"</div></div>"
 
         pic_per_raw = 3
         raw_text = msg["content"].split("**##")[0]
         pro_desc = eval('['+re.findall(r'\[(.*?)\]', raw_text)[0]+']')
+
+        if("is recommended" in raw_text):
+            html_text += f'"{highlight_items(raw_text.split("is recommended")[0])}" is recommended:'
+        else:
+            html_text += f'{highlight_items(raw_text)}'
+        html_text += f"</div></div>"
+
+        # pic_per_raw = 3
+        # raw_text = msg["content"].split("**##")[0]
+        # pro_desc = eval('['+re.findall(r'\[(.*?)\]', raw_text)[0]+']')
 
         pics = msg["content"].split("**##")[1].split("##**")[:-1]
 
@@ -300,9 +339,9 @@ def rec_format(msg: Dict):
             html_text += f"</div>"
             accu_pic = []
             
-        temp_html = open("tmp.html","w")
-        temp_html.write(html_text)
-        temp_html.close()
+        # temp_html = open("tmp.html","w")
+        # temp_html.write(html_text)
+        # temp_html.close()
     else:
         html_text += f'{msg["content"]}'
         html_text += f"</div></div>"
