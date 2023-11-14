@@ -256,8 +256,11 @@ def rec_format(msg: Dict):
     html_text += f'<img src="{avatar}" style="width: 10%; height: 10%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;">'
     html_text += f'<div style="background-color: #D9E8F5; color: black; padding: 10px; border-radius: 10px; max-width: 80%;">'
 
-    if("is recommended" in msg["content"]):   # 被推荐商品时的可视化
-        html_text += f'"{msg["content"].split("is recommended")[0]}" is recommended:'
+    if("**##" in msg["content"]):   # visualization when being recommended or buying or checking.
+        if("is recommended" in msg["content"]):
+            html_text += f'"{msg["content"].split("is recommended")[0]}" is recommended:'
+        else:
+            html_text += f'{msg["content"].split("**##")[0]}'
         html_text += f"</div></div>"
 
         pic_per_raw = 3
