@@ -327,57 +327,31 @@ class Demo:
             with gr.Row(variant="panel"):
                 with gr.Column(scale=1, elem_classes=["column-container"]):
 
-                    background = self.init_background()
-                    image_output = gr.Image(
-                        value=cv2.cvtColor(background, cv2.COLOR_BGR2RGB),
-                        label="Demo",
-                        show_label=False,
-                    )
-                    relation_output = gr.Image(
-                        value="./asset/img/v_1/relations2.png",
-                        label="Relations",
-                        show_label=False,
-                    )
-                with gr.Column(scale=1, elem_classes=["border", "column-container"]):
-                    round_output = gr.HTML(
-                        value=self.init_round_info, elem_classes=["round"]
-                    )
-
                     rec_pic = gr.HTML(value=get_avatar1("rec1"))
                     rec_output = gr.HTML(
                         value="",
                         show_label=False,
                         elem_classes=[
-                            "textbox_size",
+                            "shopbox_size",
                             "scrollable-textbox",
                             "textbox-font",
+                            "border",
                         ],
                     )
 
-                    chat_pic = gr.HTML(value=get_avatar1("cha1"))
-                    chat_output = gr.HTML(
-                        value="",
-                        show_label=False,
-                        elem_classes=[
-                            "textbox_size",
-                            "scrollable-textbox",
-                            "textbox-font",
-                        ],
-                    )
-
-
-
-                    soc_pic = gr.HTML(value=get_avatar1("soc1"))
-                    soc_output = gr.HTML(
-                        value="",
-                        show_label=False,
-                        elem_classes=[
-                            "textbox_size",
-                            "scrollable-textbox",
-                            "textbox-font",
-                        ],
-                    )
-
+                    with gr.Row():
+                        log_pic = gr.HTML(value=get_avatar1("log1"))
+                    with gr.Row():
+                        log_output = gr.HTML(
+                            value="",
+                            show_label=False,
+                            elem_classes=[
+                                "logbox_size",
+                                "scrollable-textbox",
+                                "textbox-font",
+                                "border",
+                            ],
+                        )
                     with gr.Row(variant="panel", elem_classes=["button-container"]):
                         play_btn = gr.Button(
                             "Play",
@@ -392,19 +366,72 @@ class Demo:
                             elem_classes=["btn_font", "btn_size"],
                         )
 
-            with gr.Row():
-                log_pic = gr.HTML(value=get_avatar1("log1"), elem_classes=["log"])
-            with gr.Row():
-                log_output = gr.HTML(
-                    value="",
-                    show_label=False,
-                    elem_classes=[
-                        "logbox_size",
-                        "scrollable-textbox",
-                        "textbox-font",
-                        "border",
-                    ],
-                )
+                with gr.Column(scale=1, elem_classes=["border", "column-container"]):
+                    round_output = gr.HTML(
+                        value=self.init_round_info, elem_classes=["round"]
+                    )
+
+                    chat_pic = gr.HTML(value=get_avatar1("cha1"))
+                    chat_output = gr.HTML(
+                        value="",
+                        show_label=False,
+                        elem_classes=[
+                            "textbox_size",
+                            "scrollable-textbox",
+                            "textbox-font",
+                        ],
+                    )
+
+                    soc_pic = gr.HTML(value=get_avatar1("soc1"))
+                    soc_output = gr.HTML(
+                        value="",
+                        show_label=False,
+                        elem_classes=[
+                            "textbox_size",
+                            "scrollable-textbox",
+                            "textbox-font",
+                        ],
+                    )
+
+                    background = self.init_background()
+                    image_output = gr.Image(
+                        value=cv2.cvtColor(background, cv2.COLOR_BGR2RGB),
+                        label="Demo",
+                        show_label=False,
+                    )
+                    # relation_output = gr.Image(
+                    #     value="./asset/img/v_1/relations2.png",
+                    #     label="Relations",
+                    #     show_label=False,
+                    # )
+
+                    # with gr.Row(variant="panel", elem_classes=["button-container"]):
+                    #     play_btn = gr.Button(
+                    #         "Play",
+                    #         variant="primary",
+                    #         elem_id="play_btn",
+                    #         elem_classes=["btn_font", "btn_size"],
+                    #     )
+                    #     reset_btn = gr.Button(
+                    #         "Reset",
+                    #         variant="primary",
+                    #         elem_id="reset_btn",
+                    #         elem_classes=["btn_font", "btn_size"],
+                    #     )
+
+            # with gr.Row():
+            #     log_pic = gr.HTML(value=get_avatar1("log1"), elem_classes=["log"])
+            # with gr.Row():
+            #     log_output = gr.HTML(
+            #         value="",
+            #         show_label=False,
+            #         elem_classes=[
+            #             "logbox_size",
+            #             "scrollable-textbox",
+            #             "textbox-font",
+            #             "border",
+            #         ],
+            #     )
 
             play_btn.click(
                 fn=self.execute_play,

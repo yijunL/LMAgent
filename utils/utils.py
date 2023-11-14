@@ -193,32 +193,32 @@ def html_format(orig_content: str):
     """
     new_content = orig_content.replace("<", "")
     new_content = new_content.replace(">", "")
-    for name in [
-        "Eve",
-        "Tommie",
-        "Jake",
-        "Lily",
-        "Alice",
-        "Sophia",
-        "Rachel",
-        "Lei",
-        "Max",
-        "Emma",
-        "Ella",
-        "Sen",
-        "James",
-        "Ben",
-        "Isabella",
-        "Mia",
-        "Henry",
-        "Charlotte",
-        "Olivia",
-        "Michael",
-    ]:
-        html_span = "<span style='color: red;'>" + name + "</span>"
-        new_content = new_content.replace(name, html_span)
-    new_content = new_content.replace("['", '<span style="color: #06A279;">[\'')
-    new_content = new_content.replace("']", "']</span>")
+    # for name in [
+    #     "Eve",
+    #     "Tommie",
+    #     "Jake",
+    #     "Lily",
+    #     "Alice",
+    #     "Sophia",
+    #     "Rachel",
+    #     "Lei",
+    #     "Max",
+    #     "Emma",
+    #     "Ella",
+    #     "Sen",
+    #     "James",
+    #     "Ben",
+    #     "Isabella",
+    #     "Mia",
+    #     "Henry",
+    #     "Charlotte",
+    #     "Olivia",
+    #     "Michael",
+    # ]:
+    #     html_span = "<span style=\"color: red;\">" + name + "</span>"
+    #     new_content = new_content.replace(name, html_span)
+    # new_content = new_content.replace("['", '<span style=\"color: #06A279;\">[\'')
+    # new_content = new_content.replace("']", "']</span>")
     return new_content
 
 
@@ -257,31 +257,35 @@ def rec_format(msg: Dict):
     html_text += f'<div style="background-color: #D9E8F5; color: black; padding: 10px; border-radius: 10px; max-width: 80%;">'
 
     if("is recommended" in msg["content"]):   # 被推荐商品时的可视化
-        html_text += f'{msg["content"].split("is recommended")[0]+":"}'
+        html_text += f'"{msg["content"].split("is recommended")[0]}" is recommended:'
         html_text += f"</div></div>"
 
         pic_per_raw = 3
         raw_text = msg["content"].split("**##")[0]
-        pro_desc = eval(re.findall(r'\[(.*?)\]', raw_text))
-        pics = msg["content"].split("**##")[1].split("##**")
-        html_text = "<br>"
+        pro_desc = eval('['+re.findall(r'\[(.*?)\]', raw_text)[0]+']')
+
+        pics = msg["content"].split("**##")[1].split("##**")[:-1]
+
+        pics = ["data:image/png;base64," + pi for pi in pics]
+
+        html_text += "<br>"
         html_text += (
             f'<div style="display: flex; justify-content: space-between; margin-bottom: 10px;">'
         )
         accu_pic = []
         for i in range(len(pics)):
+            html_text += f'<img src="{pics[i]}" style="width: 31%; height: 31%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;">'
+            accu_pic.append(i)
+            
             if((i+1)%pic_per_raw==0):
                 html_text += f"</div>"
                 html_text += (
                     f'<div style="display: flex; justify-content: space-between; margin-bottom: 10px;">'
                 )
                 for ac in accu_pic:
-                    html_text += f'<div style="background-color: #D9E8F5;text-align: center; color: black;display: flex; padding: 10px; border-radius: 10px; width: 30%;"><p>{pro_desc[ac]}</p></div>'
-                html_text += f"</div>"
+                    html_text += f'<div style="background-color: #D9E8F5;text-align: center; color: black;display: flex; padding: 10px; border-radius: 10px; width: 30%;"><p>"{pro_desc[ac]}"</p></div>'
+                html_text += f'</div><br><div style="display: flex; justify-content: space-between; margin-bottom: 10px;">'
                 accu_pic = []
-                
-            html_text += f'<img src="{pics[i]}" style="width: 31%; height: 10%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;">'
-            accu_pic.append(i)
             
         if(len(accu_pic)!=0):
             html_text += f"</div>"
@@ -289,12 +293,17 @@ def rec_format(msg: Dict):
                 f'<div style="display: flex; justify-content: space-between; margin-bottom: 10px;">'
             )
             for ac in accu_pic:
-                html_text += f'<div style="background-color: #D9E8F5;text-align: center; color: black;display: flex; padding: 10px; border-radius: 10px; width: 30%;"><p>{pro_desc[ac]}</p></div>'
+                html_text += f'<div style="background-color: #D9E8F5;text-align: center; color: black;display: flex; padding: 10px; border-radius: 10px; width: 30%;"><p>"{pro_desc[ac]}"</p></div>'
             html_text += f"</div>"
             accu_pic = []
+            
+        temp_html = open("tmp.html","w")
+        temp_html.write(html_text)
+        temp_html.close()
     else:
         html_text += f'{msg["content"]}'
         html_text += f"</div></div>"
+
 
     return html_text
 
