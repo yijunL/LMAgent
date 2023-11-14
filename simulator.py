@@ -301,20 +301,24 @@ class Simulator:
                     if len(item_names) == 0:
                         item_names = action.split(";")
                         item_names = [s.strip(" \"'\t\n") for s in item_names]
-
+                    
+                    buy_items_pics = self.data.get_item_pic_by_name(item_names)
+                    buy_pic_str = ""
+                    for buy_pic_idx in range(len(buy_items_pics)):
+                        buy_pic_str = buy_pic_str + buy_items_pics[buy_pic_idx] + "##**"
                     self.logger.info(f"{name} bought {item_names}")
                     message.append(
                         Message(
                             agent_id=agent_id,
                             action="SHOPPING",
-                            content=f"{name} bought {item_names}.",
+                            content=f"{name} bought {item_names}. " + "**##" + buy_pic_str ,
                         )
                     )
                     self.round_msg.append(
                         Message(
                             agent_id=agent_id,
                             action="SHOPPING",
-                            content=f"{name} bought {item_names}.",
+                            content=f"{name} bought {item_names}."  + "**##" + buy_pic_str ,
                         )
                     )
                     agent.update_watched_history(item_names)
@@ -443,25 +447,31 @@ class Simulator:
                         continue
                     item_name = item_names[0]
                     search_items = self.recsys.get_search_items(item_name)
+
+                    search_items_pics = self.data.get_item_pic_by_name(search_items)
+                    serch_pic_str = ""
+                    for search_pic_idx in range(len(search_items_pics)):
+                        serch_pic_str = serch_pic_str + search_items_pics[search_pic_idx] + "##**"
                     self.logger.info(f"Recommender returned {search_items}.")
                     message.append(
                         Message(
                             agent_id=agent_id,
                             action="SHOPPING",
-                            content=f"Recommender returned {search_items}.",
+                            content=f"Recommender returned {search_items}." + "**##" + serch_pic_str ,
                         )
                     )
                     self.round_msg.append(
                         Message(
                             agent_id=agent_id,
                             action="SHOPPING",
-                            content=f"Recommender returned {search_items}.",
+                            content=f"Recommender returned {search_items}." "**##" + serch_pic_str ,
                         )
                     )
                     if len(search_items) != 0:
                         rec_items = search_items
                         page = 0
                         searched_name = item_name
+                        rec_items_pics = search_items_pics
                     else:
                         agent.memory.add_memory(
                             f"There are no items related to {item_name} in the system.",
@@ -532,19 +542,24 @@ class Simulator:
                         detail_choice = agent.check_item_detail_action(observation, self.now, item_names[0], item_details[0])
                         if("BUY" in detail_choice):
                             duration = 2 * len(item_names)
+
+                            checkbuy_items_pics = self.data.get_item_pic_by_name(item_names)
+                            checkbuy_pic_str = ""
+                            for checkbuy_pic_idx in range(len(checkbuy_items_pics)):
+                                checkbuy_pic_str = checkbuy_pic_str + checkbuy_items_pics[checkbuy_pic_idx] + "##**"
                             self.logger.info(f"{name} bought {item_names}")
                             message.append(
                                 Message(
                                     agent_id=agent_id,
                                     action="SHOPPING",
-                                    content=f"{name} bought {item_names}.",
+                                    content=f"{name} bought {item_names}." + "**##" + checkbuy_pic_str,
                                 )
                             )
                             self.round_msg.append(
                                 Message(
                                     agent_id=agent_id,
                                     action="SHOPPING",
-                                    content=f"{name} bought {item_names}.",
+                                    content=f"{name} bought {item_names}." + "**##" + checkbuy_pic_str,
                                 )
                             )
                             agent.update_watched_history(item_names)
@@ -941,21 +956,51 @@ class Simulator:
                 )
 
             observation_list = observation.split('.')
-            for one_sentence in observation_list:
+            sentence_idx = 0
+            num_sentence = 2  # the number of sentences in one message
+            while sentence_idx < len(observation_list)-num_sentence:
+                sentences = observation_list[sentence_idx: sentence_idx+num_sentence]
+                sent = ''
+                for one_sentence in sentences:
+                    one_sentence = one_sentence.replace('\n', '') + '.'
+                    sent += one_sentence
                 message.append(
                     Message(
                         agent_id=agent_id,
                         action="Webcast",
-                        content= agent.name + " recommended in the live webcast: " + one_sentence.replace('\n', ''),
+                        content= agent.name + " recommended in the live webcast: " + sent,
                     )
                 )
                 self.round_msg.append(
                     Message(
                         agent_id=agent_id,
                         action="Webcast",
-                        content= agent.name + " recommended in the live webcast: " + one_sentence.replace('\n', ''),
+                        content= agent.name + " recommended in the live webcast: " + sent,
                     )
                 )
+                sentence_idx += num_sentence
+            
+            sentences_f = observation_list[sentence_idx:-1]
+            sent_f = ''
+            for one_sentence_f in sentences_f:
+                one_sentence_f = one_sentence_f.replace('\n', '') + '.'
+                sent_f += one_sentence_f
+            sent_f += observation_list[-1]
+            message.append(
+                Message(
+                    agent_id=agent_id,
+                    action="Webcast",
+                    content= agent.name + " recommended in the live webcast: " + sent_f,
+                )
+            )
+            self.round_msg.append(
+                Message(
+                    agent_id=agent_id,
+                    action="Webcast",
+                    content= agent.name + " recommended in the live webcast: " + sent_f,
+                )
+            )
+
             for i in self.agents.keys():
                 if self.agents[i].name in contacts:
                     self.agents[i].memory.add_memory(

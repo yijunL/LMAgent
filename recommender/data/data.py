@@ -278,6 +278,24 @@ class Data:
         """
         return [self.items[item_id]["pic"] for item_id in item_ids]
     
+    def get_item_pic_by_name(self, item_names):
+        """
+        Get pic of items by item name.
+        """
+        # item_ids = self.get_item_ids(item_names)
+        item_ids = []
+        for item in item_names:
+            found = False
+            for item_id, item_info in self.items.items():
+                if item_info["name"] == item.strip(" <>"):
+                    item_ids.append(item_id)
+                    found = True
+                    break
+            if not found:
+                item_ids.append("")
+
+        return [self.items[item_id]["pic"] for item_id in item_ids]
+    
     def get_item_description_by_name(self, item_names):
         """
         Get description of items by item name.
@@ -321,3 +339,5 @@ class Data:
             products += 'Product '+ str(i+1) + ': ' + 'Name: ' + name_product + '. Description: ' + str(self.get_item_description_by_id([id_product])[0])  + '. ' # + 'Details: ' + str(self.get_item_details_by_id([id_product])[0]) + ' '
 
         return products
+    
+
