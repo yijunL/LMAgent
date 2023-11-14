@@ -264,6 +264,8 @@ class Demo:
                 rec_log = rec_format(msg)
             elif msg["action"] == "POST":
                 social_log = social_format(msg)
+            elif msg["action"] == "WEBCAST":
+                social_log = social_format(msg)
             round_log = round_format(round, self.agent_dict[msg["agent_id"]])
         return log, chat_log, rec_log, social_log, round_log
 
