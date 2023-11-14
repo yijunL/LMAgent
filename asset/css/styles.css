@@ -15,17 +15,17 @@
 
 .textbox_size {
     width: 100%;
-    height: 160px;
+    height: 130px;
 }
 
 .shopbox_size {
     width: 100%;
-    height: 550px;
+    height: 400px;
 }
 
 .logbox_size {
     width: 100%;
-    height: 250px;
+    height: 150px;
 }
 
 .btn_size {
@@ -49,9 +49,8 @@
 .textbox-font {
     color: black;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 30px;
     font-family: "黑体", Arial, sans-serif;
-
 }
 .log {
     width: 30%;

@@ -255,7 +255,7 @@ class Demo:
         social_log = ""
         round_log = ""
         for msg in data:
-            log += msg["content"]
+            log += msg["content"].split("**##")[0]
             # log += '\n\n'
             log += "<br><br>"
             if msg["action"] == "CHAT":
