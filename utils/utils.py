@@ -270,8 +270,24 @@ def chat_format(msg: Dict):
     )
     html_text += f'<img src="{avatar}" style="width: 10%; height: 10%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;">'
     html_text += f'<div style="background-color: #FAE1D1; color: black; padding: 10px; border-radius: 10px; max-width: 80%;">'
-    html_text += f'{highlight_items(msg["content"])}'
-    html_text += f"</div></div>"
+
+    if("**##" in msg["content"]):   # visualization when being recommended or buying or checking.
+        raw_text = msg["content"].split("**##")[0]
+        pics = msg["content"].split("**##")[1]
+        pics = "data:image/png;base64," + pics
+
+        html_text += f'{highlight_items(raw_text)}'
+        html_text += f'</div></div><br><div style="display: flex; justify-content: space-between; margin-bottom: 10px;">'
+        html_text += f'<img src="{pics}" style="margin-left: 11%; width: 50%; height: 50%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;"></div>'
+
+        # temp_html = open("tmp.html","w")
+        # temp_html.write(html_text)
+        # temp_html.close()
+
+    else:
+        html_text += f'{highlight_items(msg["content"])}'
+        html_text += f"</div></div>"
+
 
     return html_text
 
@@ -343,7 +359,7 @@ def rec_format(msg: Dict):
         # temp_html.write(html_text)
         # temp_html.close()
     else:
-        html_text += f'{msg["content"]}'
+        html_text += f'{highlight_items(msg["content"])}'
         html_text += f"</div></div>"
 
 
@@ -363,8 +379,24 @@ def social_format(msg: Dict):
     )
     html_text += f'<img src="{avatar}" style="width: 10%; height: 10%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;">'
     html_text += f'<div style="background-color: #DFEED5; color: black; padding: 10px; border-radius: 10px; max-width: 80%;">'
-    html_text += f'{msg["content"]}'
-    html_text += f"</div></div>"
+    
+    if("**##" in msg["content"]):   # visualization when being recommended or buying or checking.
+        raw_text = msg["content"].split("**##")[0]
+        pics = msg["content"].split("**##")[1]
+        pics = "data:image/png;base64," + pics
+
+        html_text += f'{highlight_items(raw_text)}'
+        html_text += f'</div></div><br><div style="display: flex; justify-content: space-between; margin-bottom: 10px;">'
+        html_text += f'<img src="{pics}" style="margin-left: 11%; width: 50%; height: 50%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;"></div>'
+
+        # temp_html = open("tmp.html","w")
+        # temp_html.write(html_text)
+        # temp_html.close()
+
+    else:
+        html_text += f'{highlight_items(msg["content"])}'
+        html_text += f"</div></div>"
+
     return html_text
 
 

@@ -417,7 +417,7 @@ class RecAgent(GenerativeAgent):
             + "\nPlease note! If and only if {agent_name}'s status is 'Network Anchor', {agent_name} can perform online live broadcast. "
             + "Network anchor can only take the action of Performing a Live Webcast."
             + "\nIf {agent_name} wants to enter the Shopping System, write:\n [SHOPPING]:: {agent_name} enters the Shopping System"
-            # + "\nIf {agent_name} wants to enter the Social Media, write:\n [SOCIAL]:: {agent_name} enters the Social Media"
+            + "\nIf {agent_name} wants to enter the Social Media, write:\n [SOCIAL]:: {agent_name} enters the Social Media"
             + "\nIf {agent_name} wants to perform a online live webcast, weite:\n [WEBCAST]::{agent_name} performs a Live Webcast"
             # + "\nIf {agent_name} wants to do nothing, write:\n [NOTHING]:: {agent_name} does nothing"
         )
@@ -574,7 +574,7 @@ class RecAgent(GenerativeAgent):
             +"(2) Publish posting to all acquaintances.\n"
             # +" about products recently bough on shopping system: {watched_history}, or heared about on social media: {heared_history}, or something else you want to know."
             + "\nWhat action would {agent_name} like to take?  Respond in one line."
-            + "\nIf {agent_name} want to chat with one acquaintance, write:\n[CHAT]:: acquaintance's name"
+            # + "\nIf {agent_name} want to chat with one acquaintance, write:\n[CHAT]:: acquaintance's name"
             + "\nIf {agent_name} want to publish posting to all acquaintances, write:\n[POST]:: what to post\n"
             + "\n\n"
         )
