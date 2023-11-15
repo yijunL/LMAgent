@@ -452,16 +452,16 @@ class RecAgent(GenerativeAgent):
         """
         call_to_action_template = (
             "{agent_name} must choose one of the four actions below:\n"
-            "(1) Buy ONLY ONE product from the recommended list.\n"
+            # "(1) Buy ONLY ONE product from the recommended list.\n"
             "(2) Check ONLY ONE product detail from the recommended list."
-            "(3) See the next page.\n"
-            "(4) Search for a specific item.\n"
-            "(5) Leave the shopping system."
+            # "(3) See the next page.\n"
+            # "(4) Search for a specific item.\n"
+            # "(5) Leave the shopping system."
             + "\nIf {agent_name} has recently heard about a particular product on social media, {agent_name} might want to search for that product on the shopping system."
-            + "\nTo buy a product from the recommended list, write:\n[BUY]:: <product name>;;description."
+            # + "\nTo buy a product from the recommended list, write:\n[BUY]:: <product name>;;description."
             + "\nTo check a product detail from the recommended list, write:\n[DETAIL]:: <product name>;;description."
-            + "\nTo see the next page, write:\n[NEXT]:: {agent_name} views the next page."
-            + "\nTo search for a specific item, write:\n[SEARCH]:: {agent_name} want to search something."
+            # + "\nTo see the next page, write:\n[NEXT]:: {agent_name} views the next page."
+            # + "\nTo search for a specific item, write:\n[SEARCH]:: {agent_name} want to search something."
             + "\nTo leave the shopping system, write:\n[LEAVE]:: {agent_name} leaves the shopping system."
         )
         full_result = self._generate_reaction(observation, call_to_action_template, now)

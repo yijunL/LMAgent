@@ -505,23 +505,22 @@ class Simulator:
                         item_names
                     )
                     
-                    self.logger.info(f"{name} checks {item_names}'s details.")
-                    message.append(
-                        Message(
-                            agent_id=agent_id,
-                            action="SHOPPING",
-                            content=f"{name} checks {item_names}'s details.",
-                        )
-                    )
-                    self.round_msg.append(
-                        Message(
-                            agent_id=agent_id,
-                            action="SHOPPING",
-                            content=f"{name} checks {item_names}'s details.",
-                        )
-                    )
-                    
                     if(len(item_details)==0):
+                        self.logger.info(f"{name} checks {item_names}'s details.")
+                        message.append(
+                            Message(
+                                agent_id=agent_id,
+                                action="SHOPPING",
+                                content=f"{name} checks {item_names}'s details.",
+                            )
+                        )
+                        self.round_msg.append(
+                            Message(
+                                agent_id=agent_id,
+                                action="SHOPPING",
+                                content=f"{name} checks {item_names}'s details.",
+                            )
+                        )
                         self.logger.info(f"{name} do nothing and continue browsing the shopping system.")
                         message.append(
                             Message(
@@ -539,14 +538,31 @@ class Simulator:
                         )
                         continue
                     else:
+                        checkbuy_items_pics = self.data.get_item_pic_by_name(item_names)
+                        checkbuy_pic_str = ""
+                        for checkbuy_pic_idx in range(len(checkbuy_items_pics)):
+                            checkbuy_pic_str = checkbuy_pic_str + checkbuy_items_pics[checkbuy_pic_idx] + "##**"
+
+                        self.logger.info(f"{name} checks {item_names}'s details: "+item_details)
+                        message.append(
+                            Message(
+                                agent_id=agent_id,
+                                action="SHOPPING",
+                                content=f"{name} checks {item_names}'s details: "+item_details+ "**##" + checkbuy_pic_str,
+                            )
+                        )
+                        self.round_msg.append(
+                            Message(
+                                agent_id=agent_id,
+                                action="SHOPPING",
+                                content=f"{name} checks {item_names}'s details: "+item_details+ "**##" + checkbuy_pic_str,
+                            )
+                        )
+
                         detail_choice = agent.check_item_detail_action(observation, self.now, item_names[0], item_details[0])
                         if("BUY" in detail_choice):
                             duration = 2 * len(item_names)
 
-                            checkbuy_items_pics = self.data.get_item_pic_by_name(item_names)
-                            checkbuy_pic_str = ""
-                            for checkbuy_pic_idx in range(len(checkbuy_items_pics)):
-                                checkbuy_pic_str = checkbuy_pic_str + checkbuy_items_pics[checkbuy_pic_idx] + "##**"
                             self.logger.info(f"{name} bought {item_names}")
                             message.append(
                                 Message(
