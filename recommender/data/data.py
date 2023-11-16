@@ -292,15 +292,8 @@ class Data:
                     found = True
                     break
             if not found:
-                item_ids.append("")
-        pics = []
-        for item_id in item_ids:
-            if(item_id==""):
-                item_id = 0   #Fix bug: Key Error
-            pics.append(self.items[item_id]["pic"])
-
-        return pics
-        # return [self.items[item_id]["pic"] for item_id in item_ids]
+                item_ids.append(0)  #Fix bug: Key Error
+        return [self.items[item_id]["pic"] for item_id in item_ids]
     
     def get_item_description_by_name(self, item_names):
         """
