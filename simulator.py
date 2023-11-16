@@ -543,19 +543,19 @@ class Simulator:
                         for checkbuy_pic_idx in range(len(checkbuy_items_pics)):
                             checkbuy_pic_str = checkbuy_pic_str + checkbuy_items_pics[checkbuy_pic_idx] + "##**"
 
-                        self.logger.info(f"{name} checks {item_names}'s details: "+item_details)
+                        self.logger.info(f"{name} checks {item_names}'s details: "+str(item_details))
                         message.append(
                             Message(
                                 agent_id=agent_id,
                                 action="SHOPPING",
-                                content=f"{name} checks {item_names}'s details: "+item_details+ "**##" + checkbuy_pic_str,
+                                content=f"{name} checks {item_names}'s details: "+str(item_details)+ "**##" + checkbuy_pic_str,
                             )
                         )
                         self.round_msg.append(
                             Message(
                                 agent_id=agent_id,
                                 action="SHOPPING",
-                                content=f"{name} checks {item_names}'s details: "+item_details+ "**##" + checkbuy_pic_str,
+                                content=f"{name} checks {item_names}'s details: "+str(item_details)+ "**##" + checkbuy_pic_str,
                             )
                         )
 
@@ -971,7 +971,7 @@ class Simulator:
                     action_type="webcasting",
                 )
 
-            observation_list = observation.split('.')
+            observation_list = re.split(r'[。？.?]', observation)
             sentence_idx = 0
             num_sentence = 2  # the number of sentences in one message
             while sentence_idx < len(observation_list)-num_sentence:
@@ -983,14 +983,14 @@ class Simulator:
                 message.append(
                     Message(
                         agent_id=agent_id,
-                        action="Webcast",
+                        action="WEBCAST",
                         content= agent.name + " recommended in the live webcast: " + sent,
                     )
                 )
                 self.round_msg.append(
                     Message(
                         agent_id=agent_id,
-                        action="Webcast",
+                        action="WEBCAST",
                         content= agent.name + " recommended in the live webcast: " + sent,
                     )
                 )
@@ -1005,14 +1005,14 @@ class Simulator:
             message.append(
                 Message(
                     agent_id=agent_id,
-                    action="Webcast",
+                    action="WEBCAST",
                     content= agent.name + " recommended in the live webcast: " + sent_f,
                 )
             )
             self.round_msg.append(
                 Message(
                     agent_id=agent_id,
-                    action="Webcast",
+                    action="WEBCAST",
                     content= agent.name + " recommended in the live webcast: " + sent_f,
                 )
             )
@@ -1026,7 +1026,7 @@ class Simulator:
                     message.append(
                         Message(
                             agent_id=self.agents[i].id,
-                            action="Webcast",
+                            action="WEBCAST",
                             content=self.agents[i].name
                             + " observes that "
                             + agent.name
@@ -1037,7 +1037,7 @@ class Simulator:
                     self.round_msg.append(
                         Message(
                             agent_id=self.agents[i].id,
-                            action="Webcast",
+                            action="WEBCAST",
                             content=self.agents[i].name
                             + " observes that "
                             + agent.name

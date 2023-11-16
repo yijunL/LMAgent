@@ -211,7 +211,7 @@ def highlight_items(new_content: str):
         "Charlotte",
         "Olivia",
         "Michael",
-        "Jiaqi"
+        "Jiaqi Li"
     ]:
         html_span = "<span style=\"color: red;\">" + name + "</span>"
         new_content = new_content.replace(name, html_span)
@@ -312,15 +312,20 @@ def rec_format(msg: Dict):
         raw_text = msg["content"].split("**##")[0]
         pro_desc = eval('['+re.findall(r'\[(.*?)\]', raw_text)[0]+']')
 
+        add_margin = "margin-left: 11%;"
+        pic_scale = 50
         if("is recommended" in raw_text):
+            pic_scale = 100/pic_per_raw-1
+            add_margin = ""
             html_text += f'"{highlight_items(raw_text.split("is recommended")[0])}" is recommended:'
+        elif("details:" in raw_text):
+            pro_desc = eval('['+re.findall(r'\[(.*?)\]', raw_text)[1]+']')
+            raw_text = raw_text.split("details:")[0]+"details:"
+            html_text += f'{highlight_items(raw_text)}'
         else:
             html_text += f'{highlight_items(raw_text)}'
         html_text += f"</div></div>"
 
-        # pic_per_raw = 3
-        # raw_text = msg["content"].split("**##")[0]
-        # pro_desc = eval('['+re.findall(r'\[(.*?)\]', raw_text)[0]+']')
 
         pics = msg["content"].split("**##")[1].split("##**")[:-1]
 
@@ -332,7 +337,7 @@ def rec_format(msg: Dict):
         )
         accu_pic = []
         for i in range(len(pics)):
-            html_text += f'<img src="{pics[i]}" style="width: 31%; height: 31%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;">'
+            html_text += f'<img src="{pics[i]}" style="width: {pic_scale}%;{add_margin} height: {pic_scale}%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;">'
             accu_pic.append(i)
             
             if((i+1)%pic_per_raw==0):
@@ -341,8 +346,8 @@ def rec_format(msg: Dict):
                     f'<div style="display: flex; justify-content: space-between; margin-bottom: 10px;">'
                 )
                 for ac in accu_pic:
-                    html_text += f'<div style="background-color: #D9E8F5;text-align: center; color: black;display: flex; padding: 10px; border-radius: 10px; width: 30%;"><p>"{pro_desc[ac]}"</p></div>'
-                html_text += f'</div><br><div style="display: flex; justify-content: space-between; margin-bottom: 10px;">'
+                    html_text += f'<div style="background-color: #D9E8F5;text-align: center; color: black;display: flex; padding: 10px; border-radius: 10px; width: {pic_scale}%;"><p>"{pro_desc[ac]}"</p></div>'
+                html_text += f'</div><br><div style="display: flex; justify-content: space-between; margin-bottom: 10px; margin-right: 10px;">'
                 accu_pic = []
             
         if(len(accu_pic)!=0):
@@ -351,7 +356,7 @@ def rec_format(msg: Dict):
                 f'<div style="display: flex; justify-content: space-between; margin-bottom: 10px;">'
             )
             for ac in accu_pic:
-                html_text += f'<div style="background-color: #D9E8F5;text-align: center; color: black;display: flex; padding: 10px; border-radius: 10px; width: 30%;"><p>"{pro_desc[ac]}"</p></div>'
+                html_text += f'<div style="background-color: #D9E8F5;{add_margin}text-align: center; color: black;display: flex; padding: 10px; border-radius: 10px; width: {pic_scale}%; margin-right: 10px;"><p>"{pro_desc[ac]}"</p></div>'
             html_text += f"</div>"
             accu_pic = []
             
