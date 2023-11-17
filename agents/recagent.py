@@ -46,6 +46,9 @@ class RecAgent(GenerativeAgent):
     heared_history: List[str] = []
     """The agent's history of heared products"""
 
+    post_history: List[str] = []
+    """The agent's history of viewed posts"""
+
     BUFFERSIZE = 10
     """The size of the agent's history buffer"""
 
@@ -152,9 +155,10 @@ class RecAgent(GenerativeAgent):
         """
         Reset the agent attributes, including memory, bough_history and heared_history.
         """
-        # Remove watched_history and heared_history
+        # Remove watched_history and heared_history and post_history
         self.watched_history = []
         self.heared_history = []
+        self.post_history = []
 
     def interact_reaction(
         self, observation: str, now: Optional[datetime] = None
@@ -741,3 +745,9 @@ class RecAgent(GenerativeAgent):
         self.heared_history.extend(items)
         if len(self.heared_history) > self.BUFFERSIZE:
             self.heared_history = self.heared_history[-self.BUFFERSIZE :]
+
+    def update_post_history(self, details, now=None):
+        """Update history by the post viewed. If the number of items in the history achieves the BUFFERSIZE, delete the oldest item."""
+        self.post_history.extend(details)
+        if len(self.post_history) > self.BUFFERSIZE:
+            self.post_history = self.post_history[-self.BUFFERSIZE :]

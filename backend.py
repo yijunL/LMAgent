@@ -210,6 +210,10 @@ def get_watched_history(user_id: int):
 def get_heared_history(user_id: int):
     return recagent.agents[user_id].heared_history
 
+@app.get("/post-history/{user_id}",response_model=list[str])
+def get_post_history(user_id: int):
+    return recagent.agents[user_id].post_history
+
 @app.get("/relationships",response_model=list[Link])
 def get_relations():
     return links

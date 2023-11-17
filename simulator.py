@@ -912,12 +912,17 @@ class Simulator:
                         content=agent.name + " posts: " + observation + "**##" + post_pic_base64,   # add pic 
                     )
                 )
+                # add post history
+                one_post = self.now + agent.name + " posts: " + observation + "**##" + post_pic_base64
+                agent.update_post_history(one_post)
                 for i in self.agents.keys():
                     if self.agents[i].name in contacts:
                         self.agents[i].memory.add_memory(
                             agent.name + " posts: " + observation, now=self.now  # other agents can't see the pic
                         )
                         self.agents[i].update_heared_history(item_names)
+                        # add contacts' post history
+                        self.agents[i].update_post_history(one_post)
                         message.append(
                             Message(
                                 agent_id=self.agents[i].id,
@@ -1022,7 +1027,7 @@ class Simulator:
                     self.agents[i].memory.add_memory(
                         agent.name + " recommended in the live webcast: " + observation, now=self.now
                     )
-                    self.agents[i].update_heared_history(item_names)
+                    self.agents[i].update_(item_names)
                     message.append(
                         Message(
                             agent_id=self.agents[i].id,
