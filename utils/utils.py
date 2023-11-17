@@ -163,7 +163,7 @@ def layout_img(background, img, place: Tuple[int, int]):
             background[place[0] + i, place[1] + j] = img[i, j, :3]
 
 
-def get_avatar1(idx):
+def get_avatar1(idx, height=100):
     """
     Retrieve the avatar for the specified index and encode it as a byte stream suitable for display in a text box.
     Args:
@@ -172,7 +172,7 @@ def get_avatar1(idx):
     img = cv2.imread(f"./asset/img/v_1/{idx}.png")
     base64_str = cv2.imencode(".png", img)[1].tostring()
     avatar = "data:image/png;base64," + base64.b64encode(base64_str).decode("utf-8")
-    msg = f'<img src="{avatar}" style="width: 100%; height: 100%; margin-right: 50px;">'
+    msg = f'<img src="{avatar}" style="width: 100%; height: {height}%; margin-right: 50px;">'
     return msg
 
 
@@ -405,19 +405,19 @@ def social_format(msg: Dict):
     return html_text
 
 
-def round_format(round: int, agent_name: str):
+def round_format(round: int, agent_name: str, agent_id: int, agent_feat: dict):
     """
     Convert the round information to HTML format.
     Args:
         round (int): The round number.
         agent_name (str): The agent name.
     """
-    round_info = ""
-    round_info += f'<div style="display: flex; font-family: 微软雅黑, sans-serif; font-size: 20px; color: #000000; font-weight: bold;">'
-    round_info += f"&nbsp;&nbsp; Round: {round}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Actor: {agent_name}  &nbsp;&nbsp;"
-    round_info += f"</div>"
-    return round_info
-
+    # round_info = ""
+    # round_info += f'<div style="display: flex; font-family: 微软雅黑, sans-serif; font-size: 15px; color: #000000; font-weight: bold;">'
+    # round_info += f"{round}  &nbsp;&nbsp;  Actor: {agent_name}"
+    # round_info += f"</div>"
+    # return round_info
+    return f"{round}  &nbsp;&nbsp;  Actor: {agent_name}"
 
 def ensure_dir(dir_path):
     """

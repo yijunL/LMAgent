@@ -8,6 +8,7 @@ from utils.message import Message
 from utils.utils import (
     layout_img,
     get_avatar1,
+    get_avatar2,
     html_format,
     chat_format,
     rec_format,
@@ -16,6 +17,10 @@ from utils.utils import (
     highlight_items,
 )
 
+def height_list_map(ls):
+    return [int(i*(923.0/1104.0)) for i in ls]
+def weight_list_map(ls):
+    return [int(i*(1448.0/1756.0)) for i in ls]
 
 class Demo:
     """
@@ -36,10 +41,10 @@ class Demo:
         self.play = False
         self.sleep_time = 3
         self.css_path = "./asset/css/styles.css"
-        self.init_round_info = '<div style="display: flex; font-family: 微软雅黑, sans-serif; font-size: 20px; color: #000000; font-weight: bold;">&nbsp;&nbsp; Waiting to start !  &nbsp;&nbsp;</div>'
+        self.init_round_info = '<div style="display: flex; font-family: 微软雅黑, sans-serif; font-size: 15px; color: #000000; font-weight: bold;">&nbsp;&nbsp; Waiting to start !</div>'
 
     def init_background(self):
-        background = cv2.imread("./asset/img/v_1/background1.png")
+        background = cv2.imread("./asset/img/v_1/background3.png")
         back_h, back_w, _ = background.shape
 
         small_height_list = [
@@ -86,6 +91,9 @@ class Demo:
             1050,
             1300,
         ]
+
+        small_height_list = height_list_map(small_height_list)
+        small_weight_list = weight_list_map(small_weight_list)
 
         small_coordinate = list(zip(small_height_list, small_weight_list))
         for id in range(20):
@@ -222,6 +230,10 @@ class Demo:
             1140,
             1390,
         ]
+        big_height_list = height_list_map(big_height_list)
+        big_weight_list = weight_list_map(big_weight_list)
+        icon_height_list = height_list_map(icon_height_list)
+        icon_weight_list = weight_list_map(icon_weight_list)
 
         big_coordinate = list(zip(big_height_list, big_weight_list))
         icon_coordinate = list(zip(icon_height_list, icon_weight_list))
@@ -248,6 +260,20 @@ class Demo:
                 layout_img(background, img, icon_coordinate[data[idx]["agent_id"]])
 
         return cv2.cvtColor(background, cv2.COLOR_BGR2RGB)
+    
+    def get_head_html(self, pic_desc=""):
+
+        html_text = f'<div style="display: flex; font-family: 微软雅黑, sans-serif; font-size: 15px; color: #000000; font-weight: bold;">{pic_desc}</div>'
+
+        # html_text = ""
+        # html_text += (
+        #     f'<div style="display: flex; align-items: center; border-radius: 10px; border: 1px solid black; margin-bottom: 10px;">'
+        # )
+        # # html_text += f'<img src="{avatar}" alt="Transparent Image" style="background-color: transparent; width: 5%; height: 5%; margin-right: 20px; margin-left: 10px; margin-bottom: 5px; border-radius: 5px;">'
+        # html_text += f'<p>{pic_desc}</p>'
+        # html_text += f'<div style="color: black; padding: 10px; max-width: 80%;"></div></div>'
+        
+        return html_text
 
     def generate_text_once(self, data: List[Dict], round: int):
         log = self.cur_log
@@ -267,7 +293,7 @@ class Demo:
                 social_log = social_format(msg)
             elif msg["action"] == "WEBCAST":
                 social_log = social_format(msg)
-            round_log = round_format(round, self.agent_dict[msg["agent_id"]])
+            round_log = self.get_head_html(round_format(round, self.agent_dict[msg["agent_id"]], msg["agent_id"], agent_feat_dict))
         return log, chat_log, rec_log, social_log, round_log
 
     def generate_output(self):
@@ -326,75 +352,54 @@ class Demo:
                 time.sleep(self.sleep_time)
 
     def launch_demo(self):
-        with gr.Blocks(theme="soft", title="CusAgent Demo", css=self.css_path) as demo:
-            with gr.Row(variant="panel"):
-                with gr.Column(scale=1, elem_classes=["column-container"]):
+        with gr.Blocks(theme="soft", title="ConsAgent Demo", css=self.css_path) as demo:
+            with gr.Row(elem_classes=["row-container"]):
+                with gr.Column(scale=1, min_width=0, elem_classes=["column-container-left"]):
+                    with gr.Row(elem_classes=["white-background", "rounded-corners"]):
+                        with gr.Row(elem_classes=["border", "right-up-margin"]):
+                            round_output = gr.HTML(
+                                value=self.init_round_info
+                            )
+                        # with gr.Row():
+                        #     log_pic = gr.HTML(value=self.get_head_html("&nbsp;&nbsp;User Profile"))
+                        with gr.Row():
+                            user_output = gr.HTML(
+                                value="",
+                                show_label=False,
+                                elem_classes=[
+                                    "userbox_size",
+                                    "textbox",
+                                    "textbox-font",
+                                    "light-background",
+                                    "rounded-corners",
+                                ],
+                            )
+                    with gr.Row(elem_classes=["white-background", "rounded-corners"]):
+                        with gr.Tab("Chatting"):
+                            chat_output = gr.HTML(
+                                value="",
+                                show_label=False,
+                                elem_classes=[
+                                    "textbox_size",
+                                    "scrollable-textbox",
+                                    "textbox-font",
+                                    "rounded-corners",
+                                ],
+                            )
+                        with gr.Tab("Moments"):
+                            soc_output = gr.HTML(
+                                value="",
+                                show_label=False,
+                                elem_classes=[
+                                    "textbox_size",
+                                    "scrollable-textbox",
+                                    "textbox-font",
+                                    "rounded-corners",
+                                ],
+                            )
 
-                    rec_pic = gr.HTML(value=get_avatar1("rec1"))
-                    rec_output = gr.HTML(
-                        value="",
-                        show_label=False,
-                        elem_classes=[
-                            "shopbox_size",
-                            "scrollable-textbox",
-                            "textbox-font",
-                            "border",
-                        ],
-                    )
 
-                    with gr.Row():
-                        log_pic = gr.HTML(value=get_avatar1("log1"))
-                    with gr.Row():
-                        log_output = gr.HTML(
-                            value="",
-                            show_label=False,
-                            elem_classes=[
-                                "logbox_size",
-                                "scrollable-textbox",
-                                "textbox-font",
-                                "border",
-                            ],
-                        )
-                    with gr.Row(variant="panel", elem_classes=["button-container"]):
-                        play_btn = gr.Button(
-                            "Play",
-                            variant="primary",
-                            elem_id="play_btn",
-                            elem_classes=["btn_font", "btn_size"],
-                        )
-                        reset_btn = gr.Button(
-                            "Reset",
-                            variant="primary",
-                            elem_id="reset_btn",
-                            elem_classes=["btn_font", "btn_size"],
-                        )
-
-                with gr.Column(scale=1, elem_classes=["border", "column-container"]):
-                    round_output = gr.HTML(
-                        value=self.init_round_info, elem_classes=["round"]
-                    )
-
-                    chat_pic = gr.HTML(value=get_avatar1("cha1"))
-                    chat_output = gr.HTML(
-                        value="",
-                        show_label=False,
-                        elem_classes=[
-                            "textbox_size",
-                            "scrollable-textbox",
-                            "textbox-font",
-                        ],
-                    )
-
-                    soc_pic = gr.HTML(value=get_avatar1("soc1"))
-                    soc_output = gr.HTML(
-                        value="",
-                        show_label=False,
-                        elem_classes=[
-                            "textbox_size",
-                            "scrollable-textbox",
-                            "textbox-font",
-                        ],
-                    )
+                with gr.Column(scale=3, min_width=0, elem_classes=["column-container"]):
 
                     background = self.init_background()
                     image_output = gr.Image(
@@ -402,39 +407,71 @@ class Demo:
                         label="Demo",
                         show_label=False,
                     )
-                    # relation_output = gr.Image(
-                    #     value="./asset/img/v_1/relations2.png",
-                    #     label="Relations",
-                    #     show_label=False,
-                    # )
+                    with gr.Row(variant="panel", elem_classes=["button-container"]):
+                        with gr.Column(scale=1, min_width=0, elem_classes=["column-container"]):
+                            play_btn = gr.Button(
+                                "Play",
+                                variant="primary",
+                                elem_id="play_btn",
+                                elem_classes=["btn_font", "btn_size"],
+                            )
+                        with gr.Column(scale=1, min_width=0, elem_classes=["column-container"]):
+                            reset_btn = gr.Button(
+                                "Reset",
+                                variant="primary",
+                                elem_id="reset_btn",
+                                elem_classes=["btn_font", "btn_size"],
+                            )
 
-                    # with gr.Row(variant="panel", elem_classes=["button-container"]):
-                    #     play_btn = gr.Button(
-                    #         "Play",
-                    #         variant="primary",
-                    #         elem_id="play_btn",
-                    #         elem_classes=["btn_font", "btn_size"],
-                    #     )
-                    #     reset_btn = gr.Button(
-                    #         "Reset",
-                    #         variant="primary",
-                    #         elem_id="reset_btn",
-                    #         elem_classes=["btn_font", "btn_size"],
-                    #     )
 
-            # with gr.Row():
-            #     log_pic = gr.HTML(value=get_avatar1("log1"), elem_classes=["log"])
-            # with gr.Row():
-            #     log_output = gr.HTML(
-            #         value="",
-            #         show_label=False,
-            #         elem_classes=[
-            #             "logbox_size",
-            #             "scrollable-textbox",
-            #             "textbox-font",
-            #             "border",
-            #         ],
-            #     )
+                with gr.Column(scale=1, min_width=0, elem_classes=["column-container-right"]):
+
+                    with gr.Row(elem_classes=["white-background", "rounded-corners"]):
+                        # with gr.Row(elem_classes=["right-up-margin"]):
+                        #     rec_pic = gr.HTML(value=self.get_head_html("Shopping System"))
+                        with gr.Tab("Shopping"):
+                        # with gr.Row(elem_classes=["margin"]):
+                            rec_output = gr.HTML(
+                                value="",
+                                show_label=False,
+                                elem_classes=[
+                                    "shopbox_size",
+                                    "scrollable-textbox",
+                                    "light-background",
+                                    "textbox-font",
+                                    "rounded-corners",
+                                ],
+                            )
+                        with gr.Tab("Webcast"):
+                            rec_output = gr.HTML(
+                                value="",
+                                show_label=False,
+                                elem_classes=[
+                                    "shopbox_size",
+                                    "scrollable-textbox",
+                                    "light-background",
+                                    "textbox-font",
+                                    "rounded-corners",
+                                ],
+                            )
+
+                    with gr.Row(elem_classes=["white-background", "rounded-corners"]):
+                        with gr.Row(elem_classes=["right-up-margin"]):
+                            log_pic = gr.HTML(value=self.get_head_html("Logs"))
+                        with gr.Row(elem_classes=["margin"]):
+                            log_output = gr.HTML(
+                                value="",
+                                show_label=False,
+                                elem_classes=[
+                                    "logbox_size",
+                                    "scrollable-textbox",
+                                    "textbox-font",
+                                    "light-background",
+                                    "rounded-corners",
+                                    # "border",
+                                ],
+                            )
+
 
             play_btn.click(
                 fn=self.execute_play,
@@ -469,4 +506,15 @@ class Demo:
             agent.id: agent.name for id, agent in self.simulator.agents.items()
         }
 
+        self.agent_feat_dict = {
+            agent.id: {"age": agent.age,
+                       "gender": agent.gender,
+                       "traits": agent.gender,
+                       "status": agent.status,
+                       "interest": agent.interest,
+                       "relationships": agent.relationships,
+                       "feature": agent.feature,} for id, agent in self.simulator.agents.items()
+        }
+
+        demo.style={"background-color": "lightblue"}
         demo.queue(concurrency_count=1, max_size=1).launch(height="100%", width="100%")
