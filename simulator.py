@@ -221,6 +221,23 @@ class Simulator:
         agent = self.agents[agent_id]
         name = agent.name
         message = []
+
+        # get agent post history
+        post_history_list = agent.get_post_history()
+        message.append(
+            Message(
+                agent_id=agent_id,
+                action="POST",
+                content=f"{name} has viewed or posted the following posts: {post_history_list}",
+            )
+        )
+        self.round_msg.append(
+            Message(
+                agent_id=agent_id,
+                action="POST",
+                content=f"{name} has viewed or posted the following posts: {post_history_list}",
+            )
+        )
         choice, observation = agent.take_action(self.now)
         with lock:
             heapq.heappush(self.working_agents, agent)
@@ -913,7 +930,7 @@ class Simulator:
                     )
                 )
                 # add post history
-                one_post = self.now + agent.name + " posts: " + observation + "**##" + post_pic_base64
+                one_post = str(self.now) + agent.name + " posts: " + observation + "**##" + post_pic_base64
                 agent.update_post_history(one_post)
                 for i in self.agents.keys():
                     if self.agents[i].name in contacts:
@@ -926,7 +943,7 @@ class Simulator:
                         message.append(
                             Message(
                                 agent_id=self.agents[i].id,
-                                action="POST",
+                                action="GETPOST",
                                 content=self.agents[i].name
                                 + " observes that "
                                 + agent.name
@@ -937,7 +954,7 @@ class Simulator:
                         self.round_msg.append(
                             Message(
                                 agent_id=self.agents[i].id,
-                                action="POST",
+                                action="GETPOST",
                                 content=self.agents[i].name
                                 + " observes that "
                                 + agent.name

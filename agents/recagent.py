@@ -751,3 +751,6 @@ class RecAgent(GenerativeAgent):
         self.post_history.extend(details)
         if len(self.post_history) > self.BUFFERSIZE:
             self.post_history = self.post_history[-self.BUFFERSIZE :]
+
+    def get_post_history(self):
+        return self.post_history
