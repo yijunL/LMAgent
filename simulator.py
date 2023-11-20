@@ -227,15 +227,15 @@ class Simulator:
         message.append(
             Message(
                 agent_id=agent_id,
-                action="POST",
-                content=f"{name} has viewed or posted the following posts: {post_history_list}",
+                action="POST_HISTORY",
+                content=str(post_history_list),
             )
         )
         self.round_msg.append(
             Message(
                 agent_id=agent_id,
-                action="POST",
-                content=f"{name} has viewed or posted the following posts: {post_history_list}",
+                action="POST_HISTORY",
+                content=str(post_history_list),
             )
         )
         choice, observation = agent.take_action(self.now)
@@ -919,18 +919,18 @@ class Simulator:
                     Message(
                         agent_id=agent_id,
                         action="POST",
-                        content=agent.name + " posts: " + observation + "**##" + post_pic_base64,   # add pic
+                        content="["+str(self.now.strftime("%Y-%m-%d %H:%M")) +"]"+agent.name + " posts: " + observation + "**##" + post_pic_base64,   # add pic
                     )
                 )
                 self.round_msg.append(
                     Message(
                         agent_id=agent_id,
                         action="POST",
-                        content=agent.name + " posts: " + observation + "**##" + post_pic_base64,   # add pic 
+                        content="["+str(self.now.strftime("%Y-%m-%d %H:%M")) +"]"+agent.name + " posts: " + observation + "**##" + post_pic_base64,   # add pic 
                     )
                 )
                 # add post history
-                one_post = str(self.now) + agent.name + " posts: " + observation + "**##" + post_pic_base64
+                one_post = str(agent_id)+"**^^["+str(self.now.strftime("%Y-%m-%d %H:%M")) +"]"+ agent.name + " posts: " + observation + "**##" + post_pic_base64+"**&&"
                 agent.update_post_history(one_post)
                 for i in self.agents.keys():
                     if self.agents[i].name in contacts:

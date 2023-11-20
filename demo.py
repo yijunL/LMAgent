@@ -13,7 +13,9 @@ from utils.utils import (
     chat_format,
     rec_format,
     social_format,
+    social_history_format,
     round_format,
+    user_format,
     highlight_items,
 )
 
@@ -37,7 +39,9 @@ class Demo:
         self.cur_chat = ""
         self.cur_rec = ""
         self.cur_post = ""
+        self.cur_webcast = ""
         self.cur_round = ""
+        self.cur_user = ""
         self.play = False
         self.sleep_time = 3
         self.css_path = "./asset/css/styles.css"
@@ -261,9 +265,9 @@ class Demo:
 
         return cv2.cvtColor(background, cv2.COLOR_BGR2RGB)
     
-    def get_head_html(self, pic_desc=""):
+    def get_head_html(self, pic_desc="", color="#000000"):
 
-        html_text = f'<div style="display: flex; font-family: 微软雅黑, sans-serif; font-size: 15px; color: #000000; font-weight: bold;">{pic_desc}</div>'
+        html_text = f'<div style="display: flex; font-family: 微软雅黑, sans-serif; font-size: 15px; color: {color}; font-weight: bold;">{pic_desc}</div>'
 
         # html_text = ""
         # html_text += (
@@ -279,22 +283,28 @@ class Demo:
         log = self.cur_log
         chat_log = ""
         rec_log = ""
-        social_log = ""
+        social_log = self.cur_post
         round_log = ""
+        webcast_log = self.cur_webcast
         for msg in data:
-            log += highlight_items(msg["content"].split("**##")[0])
-            # log += '\n\n'
-            log += "<br><br>"
-            if msg["action"] == "CHAT":
-                chat_log = chat_format(msg)
-            elif msg["action"] == "SHOPPING":
-                rec_log = rec_format(msg)
-            elif msg["action"] == "POST":
-                social_log = social_format(msg)
-            elif msg["action"] == "WEBCAST":
-                social_log = social_format(msg)
-            round_log = self.get_head_html(round_format(round, self.agent_dict[msg["agent_id"]], msg["agent_id"], agent_feat_dict))
-        return log, chat_log, rec_log, social_log, round_log
+            if(msg["action"] == "POST_HISTORY" and msg["content"]!=""):
+                for single_post in msg["content"].split("**&&")[:-1]:
+                    social_log += social_history_format(single_post)
+            else:
+                log += highlight_items(msg["content"].split("**##")[0])
+                # log += '\n\n'
+                log += "<br><br>"
+                if msg["action"] == "CHAT":
+                    chat_log = chat_format(msg)
+                elif msg["action"] == "SHOPPING":
+                    rec_log = rec_format(msg)
+                elif msg["action"] == "POST":
+                    social_log += social_format(msg)
+                elif msg["action"] == "WEBCAST":
+                    webcast_log += social_format(msg)
+            round_log = self.get_head_html(round_format(round, self.agent_dict[msg["agent_id"]], msg["agent_id"], self.agent_feat_dict),)
+            user_log = user_format(self.agent_dict[msg["agent_id"]], msg["agent_id"], self.agent_feat_dict)
+        return log, chat_log, rec_log, social_log, webcast_log, round_log, user_log
 
     def generate_output(self):
         """
@@ -304,14 +314,16 @@ class Demo:
         self.round = self.round + 1
         for i in range(self.agent_num):
             next_message = self.simulator.one_step(i)
+            self.cur_post = ""
+            self.cur_webcast = ""
             data = self.format_message(next_message)
             for d in data:
                 time.sleep(self.sleep_time)
                 img = self.generate_img_once([d])
-                log, chat_log, rec_log, social_log, round_log = self.generate_text_once(
+                log, chat_log, rec_log, social_log, webcast_log, round_log, user_log = self.generate_text_once(
                     [d], self.round
                 )
-                yield [img, log, chat_log, rec_log, social_log, round_log]
+                yield [img, log, chat_log, rec_log, social_log, webcast_log, round_log, user_log]
 
     def execute_reset(self):
         self.play = False
@@ -321,7 +333,9 @@ class Demo:
             self.cur_chat,
             self.cur_rec,
             self.cur_post,
+            self.cur_webcast,
             self.cur_round,
+            self.cur_user,
         ) = self.reset()
         return (
             self.cur_image,
@@ -329,7 +343,9 @@ class Demo:
             self.cur_chat,
             self.cur_rec,
             self.cur_post,
+            self.cur_webcast,
             self.cur_round,
+            self.cur_user,
         )
 
     def execute_play(self):
@@ -343,10 +359,12 @@ class Demo:
                     self.cur_chat,
                     self.cur_rec,
                     self.cur_post,
+                    self.cur_webcast,
                     self.cur_round,
+                    self.cur_user,
                 ) = output
                 if self.play:
-                    yield self.cur_image, self.cur_log, self.cur_chat, self.cur_rec, self.cur_post, self.cur_round
+                    yield self.cur_image, self.cur_log, self.cur_chat, self.cur_rec, self.cur_post, self.cur_webcast, self.cur_round,self.cur_user,
                 else:
                     return self.reset()
                 time.sleep(self.sleep_time)
@@ -356,12 +374,19 @@ class Demo:
             with gr.Row(elem_classes=["row-container"]):
                 with gr.Column(scale=1, min_width=0, elem_classes=["column-container-left"]):
                     with gr.Row(elem_classes=["white-background", "rounded-corners"]):
-                        with gr.Row(elem_classes=["border", "right-up-margin"]):
+                        with gr.Row(elem_classes=["right-up-margin","deep-background","rounded-corners"]):
                             round_output = gr.HTML(
-                                value=self.init_round_info
+                                value=self.init_round_info,
+                                elem_classes=[
+                                    "roundbox_size",
+                                    "textbox",
+                                    "textbox-font",
+                                    "rounded-corners",
+                                    "deep-background",
+                                ],
                             )
-                        # with gr.Row():
-                        #     log_pic = gr.HTML(value=self.get_head_html("&nbsp;&nbsp;User Profile"))
+                        # with gr.Row(elem_classes=["right-up-margin"]):
+                        #     round_output = gr.HTML(value=self.get_head_html("&nbsp; Waiting to start !"))
                         with gr.Row():
                             user_output = gr.HTML(
                                 value="",
@@ -443,7 +468,7 @@ class Demo:
                                 ],
                             )
                         with gr.Tab("Webcast"):
-                            rec_output = gr.HTML(
+                            web_output = gr.HTML(
                                 value="",
                                 show_label=False,
                                 elem_classes=[
@@ -482,7 +507,9 @@ class Demo:
                     chat_output,
                     rec_output,
                     soc_output,
+                    web_output,
                     round_output,
+                    user_output,
                 ],
                 show_progress=False,
             )
@@ -495,7 +522,9 @@ class Demo:
                     chat_output,
                     rec_output,
                     soc_output,
+                    web_output,
                     round_output,
+                    user_output,
                 ],
                 show_progress=False,
             )

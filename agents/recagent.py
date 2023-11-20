@@ -46,7 +46,7 @@ class RecAgent(GenerativeAgent):
     heared_history: List[str] = []
     """The agent's history of heared products"""
 
-    post_history: List[str] = []
+    post_history = ""
     """The agent's history of viewed posts"""
 
     BUFFERSIZE = 10
@@ -158,7 +158,7 @@ class RecAgent(GenerativeAgent):
         # Remove watched_history and heared_history and post_history
         self.watched_history = []
         self.heared_history = []
-        self.post_history = []
+        self.post_history = ""
 
     def interact_reaction(
         self, observation: str, now: Optional[datetime] = None
@@ -420,9 +420,9 @@ class RecAgent(GenerativeAgent):
             + "\nPlease note! Make sure that the actions taken by {agent_name} comply with the {agent_name}'s description, such as age, traits, status, interest, feature, etc."
             + "\nPlease note! If and only if {agent_name}'s status is 'Network Anchor', {agent_name} can perform online live broadcast. "
             + "Network anchor can only take the action of Performing a Live Webcast."
-            + "\nIf {agent_name} wants to enter the Shopping System, write:\n [SHOPPING]:: {agent_name} enters the Shopping System"
+            # + "\nIf {agent_name} wants to enter the Shopping System, write:\n [SHOPPING]:: {agent_name} enters the Shopping System"
             + "\nIf {agent_name} wants to enter the Social Media, write:\n [SOCIAL]:: {agent_name} enters the Social Media"
-            + "\nIf {agent_name} wants to perform a online live webcast, weite:\n [WEBCAST]::{agent_name} performs a Live Webcast"
+            # + "\nIf {agent_name} wants to perform a online live webcast, weite:\n [WEBCAST]::{agent_name} performs a Live Webcast"
             # + "\nIf {agent_name} wants to do nothing, write:\n [NOTHING]:: {agent_name} does nothing"
         )
         # + "(1) Enter the Shopping System. If so, {self.name} will be recommended some products, from which {self.name} can buy some products, or search for products by himself.\n"
@@ -573,7 +573,7 @@ class RecAgent(GenerativeAgent):
         """
         call_to_action_template = (
             "{agent_name} must take one of the two actions below:\n"
-            +"(1) Chat with one acquaintance.\n"
+            # +"(1) Chat with one acquaintance.\n"
             # +" about products recently bough on shopping system: {watched_history}, or products heared about on social media: {heared_history}.\n"
             +"(2) Publish posting to all acquaintances.\n"
             # +" about products recently bough on shopping system: {watched_history}, or heared about on social media: {heared_history}, or something else you want to know."
@@ -748,9 +748,9 @@ class RecAgent(GenerativeAgent):
 
     def update_post_history(self, details, now=None):
         """Update history by the post viewed. If the number of items in the history achieves the BUFFERSIZE, delete the oldest item."""
-        self.post_history.extend(details)
-        if len(self.post_history) > self.BUFFERSIZE:
-            self.post_history = self.post_history[-self.BUFFERSIZE :]
+        self.post_history += details
+        if len(self.post_history.split("**&&")) > self.BUFFERSIZE:
+            self.post_history = "**&&",join(self.post_history.split("**&&")[-self.BUFFERSIZE :])
 
     def get_post_history(self):
         return self.post_history

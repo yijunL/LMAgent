@@ -263,12 +263,12 @@ def chat_format(msg: Dict):
     Args:
         msg (Dict): The message.
     """
-    html_text = "<br>"
+    html_text = ""
     avatar = get_avatar2(msg["agent_id"])
     html_text += (
-        f'<div style="display: flex; align-items: center; margin-bottom: 10px;">'
+        f'<div style="display: flex; align-items: center; margin-bottom: 5px;">'
     )
-    html_text += f'<img src="{avatar}" style="width: 10%; height: 10%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;">'
+    html_text += f'<img src="{avatar}" style="width: 20%; height: 20%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;">'
     html_text += f'<div style="background-color: #FAE1D1; color: black; padding: 10px; border-radius: 10px; max-width: 80%;">'
 
     if("**##" in msg["content"]):   # visualization when being recommended or buying or checking.
@@ -277,8 +277,8 @@ def chat_format(msg: Dict):
         pics = "data:image/png;base64," + pics
 
         html_text += f'{highlight_items(raw_text)}'
-        html_text += f'</div></div><br><div style="display: flex; justify-content: space-between; margin-bottom: 10px;">'
-        html_text += f'<img src="{pics}" style="margin-left: 11%; width: 50%; height: 50%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;"></div>'
+        html_text += f'</div></div><div style="display: flex; justify-content: space-between; margin-bottom: 5px;">'
+        html_text += f'<img src="{pics}" style="margin-left: 21%; width: 50%; height: 50%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;"></div>'
 
         # temp_html = open("tmp.html","w")
         # temp_html.write(html_text)
@@ -298,13 +298,13 @@ def rec_format(msg: Dict):
     Args:
         msg (Dict): The message.
     """
-    html_text = "<br>"
+    html_text = ""
     avatar = get_avatar2(msg["agent_id"])
     html_text += (
-        f'<div style="display: flex; align-items: center; margin-bottom: 10px;">'
+        f'<div style="display: flex; align-items: center; margin-bottom: 5px;">'
     )
-    html_text += f'<img src="{avatar}" style="width: 10%; height: 10%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;">'
-    html_text += f'<div style="background-color: #D9E8F5; color: black; padding: 10px; border-radius: 10px; max-width: 80%;">'
+    html_text += f'<img src="{avatar}" style="width: 20%; height: 20%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;">'
+    html_text += f'<div style="background-color: #DFEED5; color: black; padding: 10px; border-radius: 10px; max-width: 80%;font-family: 微软雅黑, sans-serif; font-size: 10px; ">'
 
     if("**##" in msg["content"]):   # visualization when being recommended or buying or checking.
 
@@ -312,7 +312,7 @@ def rec_format(msg: Dict):
         raw_text = msg["content"].split("**##")[0]
         pro_desc = eval('['+re.findall(r'\[(.*?)\]', raw_text)[0]+']')
 
-        add_margin = "margin-left: 11%;"
+        add_margin = "margin-left: 21%;"
         pic_scale = 50
         if("is recommended" in raw_text):
             pic_scale = 100/pic_per_raw-1
@@ -331,9 +331,9 @@ def rec_format(msg: Dict):
 
         pics = ["data:image/png;base64," + pi for pi in pics]
 
-        html_text += "<br>"
+        html_text += ""
         html_text += (
-            f'<div style="display: flex; justify-content: space-between; margin-bottom: 10px;">'
+            f'<div style="display: flex; justify-content: space-between; margin-bottom: 5px;">'
         )
         accu_pic = []
         for i in range(len(pics)):
@@ -343,17 +343,17 @@ def rec_format(msg: Dict):
             if((i+1)%pic_per_raw==0):
                 html_text += f"</div>"
                 html_text += (
-                    f'<div style="display: flex; justify-content: space-between; margin-bottom: 10px;">'
+                    f'<div style="display: flex; justify-content: space-between; margin-bottom: 5px;">'
                 )
                 for ac in accu_pic:
-                    html_text += f'<div style="background-color: #D9E8F5;text-align: center; color: black;display: flex; padding: 10px; border-radius: 10px; width: {pic_scale}%;"><p>"{pro_desc[ac]}"</p></div>'
-                html_text += f'</div><br><div style="display: flex; justify-content: space-between; margin-bottom: 10px; margin-right: 10px;">'
+                    html_text += f'<div style="background-color: #D9E8F5;text-align: center; color: black;display: flex; padding: 10px;font-family: 微软雅黑, sans-serif; font-size: 10px; border-radius: 10px; width: {pic_scale}%;"><p>"{pro_desc[ac]}"</p></div>'
+                html_text += f'</div><br><div style="display: flex; justify-content: space-between; margin-bottom: 5px; margin-right: 10px;">'
                 accu_pic = []
             
         if(len(accu_pic)!=0):
             html_text += f"</div>"
             html_text += (
-                f'<div style="display: flex; justify-content: space-between; margin-bottom: 10px;">'
+                f'<div style="display: flex; justify-content: space-between; margin-bottom: 5px;">'
             )
             for ac in accu_pic:
                 html_text += f'<div style="background-color: #D9E8F5;{add_margin}text-align: center; color: black;display: flex; padding: 10px; border-radius: 10px; width: {pic_scale}%; margin-right: 10px;"><p>"{pro_desc[ac]}"</p></div>'
@@ -380,10 +380,10 @@ def social_format(msg: Dict):
     html_text = "<br>"
     avatar = get_avatar2(msg["agent_id"])
     html_text += (
-        f'<div style="display: flex; align-items: center; margin-bottom: 10px;">'
+        f'<div style="display: flex; align-items: center; margin-bottom: 1px;">'
     )
-    html_text += f'<img src="{avatar}" style="width: 10%; height: 10%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;">'
-    html_text += f'<div style="background-color: #DFEED5; color: black; padding: 10px; border-radius: 10px; max-width: 80%;">'
+    html_text += f'<img src="{avatar}" style="width: 20%; height: 20%; border: solid white; background-color: white; border-radius: 25px; margin-right: 3px;">'
+    html_text += f'<div style="background-color: #DFEED5; color: black; padding: 10px; border-radius: 10px; max-width: 75%;font-family: 微软雅黑, sans-serif; font-size: 10px; ">'
     
     if("**##" in msg["content"]):   # visualization when being recommended or buying or checking.
         raw_text = msg["content"].split("**##")[0]
@@ -391,8 +391,46 @@ def social_format(msg: Dict):
         pics = "data:image/png;base64," + pics
 
         html_text += f'{highlight_items(raw_text)}'
-        html_text += f'</div></div><br><div style="display: flex; justify-content: space-between; margin-bottom: 10px;">'
-        html_text += f'<img src="{pics}" style="margin-left: 11%; width: 50%; height: 50%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;"></div>'
+        html_text += f'</div></div><div style="display: flex; justify-content: space-between; margin-bottom: 5px;">'
+        html_text += f'<img src="{pics}" style="margin-left: 21%; width: 50%; height: 50%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;"></div>'
+
+        # temp_html = open("tmp.html","w")
+        # temp_html.write(html_text)
+        # temp_html.close()
+
+    else:
+        html_text += f'{highlight_items(msg["content"])}'
+        html_text += f"</div></div>"
+
+    return html_text
+
+
+def social_history_format(msg: str):
+    """
+    Convert the message to HTML format.
+    Args:
+        msg (Dict): The message.
+    """
+
+    user = int(msg.split("**^^")[0])
+    content = msg.split("**^^")[1]
+
+
+    html_text = ""
+    avatar = get_avatar2(user)
+    html_text += (
+        f'<div style="display: flex; align-items: center; margin-bottom: 5px;">'
+    )
+    html_text += f'<img src="{avatar}" style="width: 20%; height: 20%; border: solid white; background-color: white; border-radius: 25px; margin-right: 3px;">'
+    html_text += f'<div style="background-color: #DFEED5; color: black; padding: 10px; border-radius: 10px; max-width: 75%;font-family: 微软雅黑, sans-serif; font-size: 10px; ">'
+    if("**##" in content):   # visualization when being recommended or buying or checking.
+        raw_text = content.split("**##")[0]
+        pics = content.split("**##")[1]
+        pics = "data:image/png;base64," + pics
+
+        html_text += f'{highlight_items(raw_text)}'
+        html_text += f'</div></div><div style="display: flex; justify-content: space-between; margin-bottom: 5px;">'
+        html_text += f'<img src="{pics}" style="margin-left: 21%; width: 50%; height: 50%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;"></div>'
 
         # temp_html = open("tmp.html","w")
         # temp_html.write(html_text)
@@ -418,6 +456,41 @@ def round_format(round: int, agent_name: str, agent_id: int, agent_feat: dict):
     # round_info += f"</div>"
     # return round_info
     return f"{round}  &nbsp;&nbsp;  Actor: {agent_name}"
+
+def user_format(agent_name: str, agent_id: int, agent_feat: dict):
+    """
+    Convert the round information to HTML format.
+    Args:
+        round (int): The round number.
+        agent_name (str): The agent name.
+    """
+    sex = '♂' if agent_feat[agent_id]["traits"] == 'male' else '♀'
+
+    html_text = ""
+    avatar = get_avatar2(agent_id)
+    html_text += (
+        f'<div style="display: flex; align-items: center; margin-bottom: 3px;">'
+    )
+    html_text += f'<img src="{avatar}" style="width: 20%; height: 20%; border: solid white; background-color: white; border-radius: 25px; margin-right: 5px;">'
+    html_text += f'<div style="color: black; padding: 10px; border-radius: 10px; max-width: 75%;">'
+    html_text += f'<div style="text-align: left; font-family: 微软雅黑, sans-serif; font-size: 15px; font-weight: bold;">{agent_name}&nbsp;{sex}</div>'
+    # html_text += "<br>"
+    html_text += f'<div style="text-align: left; font-family: 微软雅黑, sans-serif; font-size: 10px; ">{agent_feat[agent_id]["status"]}&nbsp;&nbsp;{agent_feat[agent_id]["age"]} years old</div></div></div>'
+
+    # html_text += "<br>"
+    html_text += f'<div style="display: flex; font-family: 微软雅黑, sans-serif; font-size: 10px;"><b>Interest:</b>&nbsp;<p>{agent_feat[agent_id]["interest"]}</p></div>'
+    html_text += f'<div style="display: flex; font-family: 微软雅黑, sans-serif; font-size: 10px;"><b>Feature:</b>&nbsp;<p>{agent_feat[agent_id]["feature"]}</p></div>'
+    # html_text += f'<div style="display: flex; font-family: 微软雅黑, sans-serif; font-size: 10px;"><b>Relationships:</b>&nbsp;<p>{agent_feat[agent_id]["relationships"]}</p></div>'
+
+    # round_info = ""
+    # round_info += f'<div style="display: flex; font-family: 微软雅黑, sans-serif; font-size: 15px; color: #000000; font-weight: bold;">'
+    # round_info += f"{round}  &nbsp;&nbsp;  Actor: {agent_name}"
+    # round_info += f"</div>"
+    # return round_info
+    temp_html = open("tmp.html","w")
+    temp_html.write(html_text)
+    temp_html.close()
+    return html_text
 
 def ensure_dir(dir_path):
     """
@@ -503,7 +576,7 @@ def get_feature_description(feature):
     }
     features = feature.split(";")
     descriptions_list = [descriptions[feature] for feature in features if feature in descriptions]
-    return ".".join(descriptions_list)
+    return " ".join(descriptions_list)
 
 def count_files_in_directory(target_directory:str):
     """Count the number of files in the target directory"""

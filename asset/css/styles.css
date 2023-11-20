@@ -18,9 +18,14 @@
     height: 200px;
 }
 
+.roundbox_size {
+    width: 100%;
+    height: 25px;
+}
+
 .userbox_size {
     width: 100%;
-    height: 180px;
+    height: 220px;
 }
 
 .socbox_size {
@@ -117,6 +122,10 @@
 
 .light-background {
     background-color: rgb(240, 243, 250);
+}
+
+.deep-background {
+    background-color: white;
 }
 
 .white-background {
