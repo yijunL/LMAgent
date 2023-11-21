@@ -11,7 +11,7 @@ from yacs.config import CfgNode
 import os
 from langchain.chat_models import ChatOpenAI
 
-USER_NAME = []
+COLOR_TAG = 0
 
 
 # logger
@@ -190,6 +190,7 @@ def highlight_items(new_content: str):
 
     for name in [
         "David",
+        "Miller",
         "Smith",
         "Eve",
         "Tommie",
@@ -257,19 +258,24 @@ def html_format(orig_content: str):
 
 
 # border: 0;
-def chat_format(msg: Dict):
+def chat_format(msg: Dict, COLOR_TAG=0):
     """
     Convert the message to HTML format.
     Args:
         msg (Dict): The message.
     """
+    if(COLOR_TAG==0):
+        color = "#FAE1D1"
+    else:
+        color = "#A0E0FF"
+
     html_text = ""
     avatar = get_avatar2(msg["agent_id"])
     html_text += (
         f'<div style="display: flex; align-items: center; margin-bottom: 5px;">'
     )
-    html_text += f'<img src="{avatar}" style="width: 20%; height: 20%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;">'
-    html_text += f'<div style="background-color: #FAE1D1; color: black; padding: 10px; border-radius: 10px; max-width: 80%;">'
+    html_text += f'<img src="{avatar}" style="width: 20%; height: 20%; border: solid white; background-color: white; border-radius: 25px; margin-right: 3px;">'
+    html_text += f'<div style="background-color: {color}; color: black; padding: 10px; border-radius: 10px; max-width: 75%;font-family: 微软雅黑, sans-serif; font-size: 10px; ">'
 
     if("**##" in msg["content"]):   # visualization when being recommended or buying or checking.
         raw_text = msg["content"].split("**##")[0]
@@ -303,8 +309,8 @@ def rec_format(msg: Dict):
     html_text += (
         f'<div style="display: flex; align-items: center; margin-bottom: 5px;">'
     )
-    html_text += f'<img src="{avatar}" style="width: 20%; height: 20%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;">'
-    html_text += f'<div style="background-color: #DFEED5; color: black; padding: 10px; border-radius: 10px; max-width: 80%;font-family: 微软雅黑, sans-serif; font-size: 10px; ">'
+    html_text += f'<img src="{avatar}" style="width: 20%; height: 20%; border: solid white; background-color: white; border-radius: 25px; margin-right: 3px;">'
+    html_text += f'<div style="background-color: #DFEED5; color: black; padding: 10px; border-radius: 10px; max-width: 75%;font-family: 微软雅黑, sans-serif; font-size: 10px; ">'
 
     if("**##" in msg["content"]):   # visualization when being recommended or buying or checking.
 
@@ -315,7 +321,7 @@ def rec_format(msg: Dict):
         add_margin = "margin-left: 21%;"
         pic_scale = 50
         if("is recommended" in raw_text):
-            pic_scale = 100/pic_per_raw-1
+            pic_scale = 100/pic_per_raw-2
             add_margin = ""
             html_text += f'"{highlight_items(raw_text.split("is recommended")[0])}" is recommended:'
         elif("details:" in raw_text):
@@ -337,7 +343,7 @@ def rec_format(msg: Dict):
         )
         accu_pic = []
         for i in range(len(pics)):
-            html_text += f'<img src="{pics[i]}" style="width: {pic_scale}%;{add_margin} height: {pic_scale}%; border: solid white; background-color: white; border-radius: 25px; margin-right: 10px;">'
+            html_text += f'<img src="{pics[i]}" style="width: {pic_scale}%;{add_margin} height: {pic_scale}%; border: solid white; background-color: white; border-radius: 25px; margin-right: 5px;">'
             accu_pic.append(i)
             
             if((i+1)%pic_per_raw==0):
@@ -346,8 +352,8 @@ def rec_format(msg: Dict):
                     f'<div style="display: flex; justify-content: space-between; margin-bottom: 5px;">'
                 )
                 for ac in accu_pic:
-                    html_text += f'<div style="background-color: #D9E8F5;text-align: center; color: black;display: flex; padding: 10px;font-family: 微软雅黑, sans-serif; font-size: 10px; border-radius: 10px; width: {pic_scale}%;"><p>"{pro_desc[ac]}"</p></div>'
-                html_text += f'</div><br><div style="display: flex; justify-content: space-between; margin-bottom: 5px; margin-right: 10px;">'
+                    html_text += f'<div style="background-color: #D9E8F5;text-align: center; color: black;display: flex; padding: 2px;font-family: 微软雅黑, sans-serif; font-size: 10px; border-radius: 10px; width: {pic_scale}%;">"{pro_desc[ac]}"</div>'
+                html_text += f'</div><br><div style="display: flex; justify-content: space-between; margin-bottom: 5px; margin-right: 5px;">'
                 accu_pic = []
             
         if(len(accu_pic)!=0):
@@ -356,7 +362,7 @@ def rec_format(msg: Dict):
                 f'<div style="display: flex; justify-content: space-between; margin-bottom: 5px;">'
             )
             for ac in accu_pic:
-                html_text += f'<div style="background-color: #D9E8F5;{add_margin}text-align: center; color: black;display: flex; padding: 10px; border-radius: 10px; width: {pic_scale}%; margin-right: 10px;"><p>"{pro_desc[ac]}"</p></div>'
+                html_text += f'<div style="background-color: #D9E8F5;{add_margin}text-align: center; color: black;display: flex; padding: 2px; border-radius: 10px; width: {pic_scale}%; margin-right: 10px;"><p>"{pro_desc[ac]}"</p></div>'
             html_text += f"</div>"
             accu_pic = []
             

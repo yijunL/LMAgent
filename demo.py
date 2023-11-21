@@ -43,6 +43,7 @@ class Demo:
         self.cur_round = ""
         self.cur_user = ""
         self.play = False
+        self.COLOR_TAG = 0
         self.sleep_time = 3
         self.css_path = "./asset/css/styles.css"
         self.init_round_info = '<div style="display: flex; font-family: 微软雅黑, sans-serif; font-size: 15px; color: #000000; font-weight: bold;">&nbsp;&nbsp; Waiting to start !</div>'
@@ -281,11 +282,12 @@ class Demo:
 
     def generate_text_once(self, data: List[Dict], round: int):
         log = self.cur_log
-        chat_log = ""
+        chat_log = self.cur_chat
         rec_log = ""
         social_log = self.cur_post
         round_log = ""
         webcast_log = self.cur_webcast
+        
         for msg in data:
             if(msg["action"] == "POST_HISTORY" and msg["content"]!=""):
                 for single_post in msg["content"].split("**&&")[:-1]:
@@ -295,7 +297,8 @@ class Demo:
                 # log += '\n\n'
                 log += "<br><br>"
                 if msg["action"] == "CHAT":
-                    chat_log = chat_format(msg)
+                    chat_log += chat_format(msg,self.COLOR_TAG)
+                    self.COLOR_TAG = (self.COLOR_TAG+1)%2
                 elif msg["action"] == "SHOPPING":
                     rec_log = rec_format(msg)
                 elif msg["action"] == "POST":
@@ -316,6 +319,7 @@ class Demo:
             next_message = self.simulator.one_step(i)
             self.cur_post = ""
             self.cur_webcast = ""
+            self.cur_chat = ""
             data = self.format_message(next_message)
             for d in data:
                 time.sleep(self.sleep_time)

@@ -767,14 +767,14 @@ class Simulator:
                         message.append(
                             Message(
                                 agent_id=agent_id,
-                                action="CHAT",
+                                action="LOG",
                                 content=f"{name} is chatting with {agent_name2}",
                             )
                         )
                         self.round_msg.append(
                             Message(
                                 agent_id=agent_id,
-                                action="CHAT",
+                                action="LOG",
                                 content=f"{name} is chatting with {agent_name2}.",
                             )
                         )
@@ -798,14 +798,14 @@ class Simulator:
                     message.append(
                         Message(
                             agent_id=agent_id,
-                            action="CHAT",
+                            action="LOG",
                             content=f"{name} is chatting with {agent_name2}.",
                         )
                     )
                     self.round_msg.append(
                         Message(
                             agent_id=agent_id,
-                            action="CHAT",
+                            action="LOG",
                             content=f"{name} is chatting with {agent_name2}.",
                         )
                     )
