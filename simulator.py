@@ -1044,7 +1044,7 @@ class Simulator:
                     self.agents[i].memory.add_memory(
                         agent.name + " recommended in the live webcast: " + observation, now=self.now
                     )
-                    self.agents[i].update_(item_names)
+                    self.agents[i].update_heared_history(item_names)
                     message.append(
                         Message(
                             agent_id=self.agents[i].id,

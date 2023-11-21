@@ -352,7 +352,7 @@ def rec_format(msg: Dict):
                     f'<div style="display: flex; justify-content: space-between; margin-bottom: 5px;">'
                 )
                 for ac in accu_pic:
-                    html_text += f'<div style="background-color: #D9E8F5;text-align: center; color: black;display: flex; padding: 2px;font-family: 微软雅黑, sans-serif; font-size: 10px; border-radius: 10px; width: {pic_scale}%;">"{pro_desc[ac]}"</div>'
+                    html_text += f'<div style="background-color: #D9E8F5;text-align: center; color: black;display: flex; padding: 2px;font-family: 微软雅黑, sans-serif; font-size: 10px; border-radius: 10px; width: {pic_scale}%;">{pro_desc[ac]}</div>'
                 html_text += f'</div><br><div style="display: flex; justify-content: space-between; margin-bottom: 5px; margin-right: 5px;">'
                 accu_pic = []
             
@@ -362,7 +362,7 @@ def rec_format(msg: Dict):
                 f'<div style="display: flex; justify-content: space-between; margin-bottom: 5px;">'
             )
             for ac in accu_pic:
-                html_text += f'<div style="background-color: #D9E8F5;{add_margin}text-align: center; color: black;display: flex; padding: 2px; border-radius: 10px; width: {pic_scale}%; margin-right: 10px;"><p>"{pro_desc[ac]}"</p></div>'
+                html_text += f'<div style="background-color: #D9E8F5;{add_margin}text-align: center; color: black;display: flex; padding: 2px; border-radius: 10px; width: {pic_scale}%; margin-right: 5px;">{pro_desc[ac]}</div>'
             html_text += f"</div>"
             accu_pic = []
             
