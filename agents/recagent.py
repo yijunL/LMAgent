@@ -413,14 +413,15 @@ class RecAgent(GenerativeAgent):
         call_to_action_template = (
             "{agent_name} must take only ONE of the actions below:\n"
             + "(1) Enter the Shopping System. If so, {agent_name} will be recommended some products, from which {agent_name} can buy some products or search for products by himself.\n"
-            + "(2) Enter the Social Media. {agent_name} can chat with friends or publish a post to all friends of {agent_name}. "
-            + "If {agent_name} recently bough some products they might want to enter the Social Media, otherwise they might enter the Shopping System.\n"
+            + "If {agent_name} buy or heard nothing, they might want to enter the Shopping System.\n"
+            + "(2) Enter the Social Media. {agent_name} can chat with friends or publish a post to all friends of {agent_name}. \n"
+            # + "If {agent_name} recently bough some products they might want to enter the Social Media, otherwise they might enter the Shopping System.\n"
             + "(3) Perform a Live Webcast. If so, {agent_name} will recommend many products to his fans on the webcast.\n"
             + "What action would {agent_name} like to take? Respond in one line."
             + "\nPlease note! Make sure that the actions taken by {agent_name} comply with the {agent_name}'s description, such as age, traits, status, interest, feature, etc."
             + "\nPlease note! If and only if {agent_name}'s status is 'Network Anchor', {agent_name} can perform online live broadcast. "
             + "Network anchor can only take the action of Performing a Live Webcast."
-            # + "\nIf {agent_name} wants to enter the Shopping System, write:\n [SHOPPING]:: {agent_name} enters the Shopping System"
+            + "\nIf {agent_name} wants to enter the Shopping System, write:\n [SHOPPING]:: {agent_name} enters the Shopping System"
             + "\nIf {agent_name} wants to enter the Social Media, write:\n [SOCIAL]:: {agent_name} enters the Social Media"
             + "\nIf {agent_name} wants to perform a online live webcast, weite:\n [WEBCAST]::{agent_name} performs a Live Webcast"
             # + "\nIf {agent_name} wants to do nothing, write:\n [NOTHING]:: {agent_name} does nothing"
@@ -500,7 +501,7 @@ class RecAgent(GenerativeAgent):
     def generate_feeling(self, observation: str, now) -> str:
         """Feel about each item bought."""
         call_to_action_template = (
-            "{agent_name}, how did you feel about the product you just bough? Describe your feelings in one line."
+            "If you are {agent_name}, how did you feel about the product you just bough? Describe your feelings in one line."
             +"NOTE: Please answer in the first-person perspective."
             + "\n\n"
         )
@@ -573,13 +574,13 @@ class RecAgent(GenerativeAgent):
         """
         call_to_action_template = (
             "{agent_name} must take one of the two actions below:\n"
-            # +"(1) Chat with one acquaintance.\n"
-            # +" about products recently bough on shopping system: {watched_history}, or products heared about on social media: {heared_history}.\n"
-            +"(2) Publish posting to all acquaintances.\n"
-            # +" about products recently bough on shopping system: {watched_history}, or heared about on social media: {heared_history}, or something else you want to know."
+            +"(1) Chat with one acquaintance "
+            +" about products recently bough on shopping system: {watched_history}, or products heared about on social media: {heared_history}.\n"
+            +"(2) Publish posting to all acquaintances "
+            +" about products recently bough on shopping system: {watched_history}, or heared about on social media: {heared_history}, or something else {agent_name} want to know."
             + "\nWhat action would {agent_name} like to take?  Respond in one line."
-            # + "\nIf {agent_name} want to chat with one acquaintance, write:\n[CHAT]:: acquaintance's name"
-            + "\nIf {agent_name} want to publish posting to all acquaintances, write:\n[POST]:: what to post\n"
+            + "\nIf {agent_name} want to chat with one acquaintance, write:\n[CHAT]:: acquaintance's name"
+            + "\nIf {agent_name} want to publish posting to all acquaintances, write:\n[POST]:: {agent_name} wants to post\n"
             + "\n\n"
         )
         full_result = self._generate_reaction(observation, call_to_action_template, now)
@@ -750,7 +751,7 @@ class RecAgent(GenerativeAgent):
         """Update history by the post viewed. If the number of items in the history achieves the BUFFERSIZE, delete the oldest item."""
         self.post_history += details
         if len(self.post_history.split("**&&")) > self.BUFFERSIZE:
-            self.post_history = "**&&",join(self.post_history.split("**&&")[-self.BUFFERSIZE :])
+            self.post_history = "**&&".join(self.post_history.split("**&&")[-self.BUFFERSIZE :])
 
     def get_post_history(self):
         return self.post_history
