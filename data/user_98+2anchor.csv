@@ -1,0 +1,101 @@
+id,name,gender,age,traits,status,interest,feature
+0,David Smith,male,25,"compassionate, caring, ambitious, optimistic",photographer,"shopping , electronics , Camping stoves ",Explorer;Watcher
+1,David Miller,female,39,"fun-loving, creative, practical, energetic, patient",writer,"outdoor , Seat covers ,Kitchen Appliances",Watcher;Critic;Chatter
+2,James Brown,male,70,"independent, creative, patient, empathetic",engineer,"shopping , Keyboards , Non-fiction ",Watcher;
+3,Sarah Miller,female,33,"independent, compassionate",farmer, Kids ,Critic;Explorer;Watcher
+4,Jiaqi Li,male,33,"good at recommendations, popular, enthusiastic, humorous, and good at live streaming",network anchor,"fashion, Beauty, skin care,  electronics, household, maternal and child products",Poster;Chatter
+5,John Taylor,male,68,optimistic,doctor," Guitars , fashion , Outdoor , Activewear",Watcher;
+6,Sarah Williams,female,51,meticulous,musician,"online shopping , beauty , Sofas , Oral Care",Watcher;Explorer;Chatter
+7,James Jones,male,59,"practical, fun-loving, creative, ambitious, caring",farmer,Communication,Watcher;Poster;Critic;
+8,Jane Brown,female,30,"patient, adventurous, fun-loving, optimistic",doctor," Media, Makeup , Decorative pillows ",Watcher;Explorer;Poster
+9,David Jones,male,23,"analytical, energetic, introspective, independent",scientist," Watches , Tennis rackets , Paint brushes ",Watcher;Critic;
+10,James Brown,female,20,"ambitious, analytical, optimistic, energetic, meticulous",designer," fitness tracker ,Photography, Floral ",Critic;Chatter
+11,James Garcia,male,20,"practical, energetic, introspective, patient",engineer," Building Blocks,Communication, Mobile Devices",Watcher;Explorer;Poster
+12,Robert Johnson,female,61,"analytical, introspective, independent",farmer," Games , Skin care ",Watcher;Chatter
+13,Linda Williams,male,42,"meticulous, fun-loving, analytical",lawyer," camera , Cameras ",Watcher;Explorer
+14,Linda Jones,female,25,"introspective, empathetic",retired," Fitness trackers , Watches,Kitchen Appliances, Wearable Technology, eyewear",Watcher;Poster
+15,Linda Davis,male,25,"independent, empathetic, analytical, caring, meticulous",artist, Mobile Phone ,Watcher;Explorer
+16,Sarah Davis,female,21,"ambitious, practical",entrepreneur," Weather , Athletic Footwear, Cameras ",Watcher;Explorer
+17,Mary Williams,male,39,"patient, independent, energetic, ambitious, practical",farmer,"Fragrance, Education, Hoodies, Sports equipment , Home appliances ",Watcher;Explorer;Critic;Poster
+18,John Jones,female,30,"fun-loving, creative, caring",musician," technology , Fitness ",Watcher;Critic;Poster
+19,Michael Davis,male,26,"empathetic, compassionate, creative",designer," Sports , Activewear, Mobile Phones , Denim , camera ",Watcher;Poster
+20,Michael Brown,female,42,"compassionate, empathetic, energetic, practical, creative",doctor," Kids , Seat covers , Rings ",Watcher;Chatter;Poster
+21,James Johnson,male,69,analytical,photographer," Canvas , Shirts,Photography, Smartphone , Entertainment",Watcher;Explorer
+22,Michael Johnson,female,25,"independent, ambitious, outgoing, compassionate",designer," Health , Sports Shoes ",Explorer;Chatter;Poster
+23,Linda Brown,male,50,"independent, outgoing",designer," Food , Women's fashion ",Critic
+24,James Miller,female,59,"fun-loving, empathetic, practical",entrepreneur," Running Shoes , Baby , Luxury fashion",Explorer;Poster
+25,Michael Miller,male,64,"analytical, practical, creative, optimistic, compassionate",designer," Wearable Tech , Baby Products , Groceries , Television ",Poster
+26,Emily Miller,female,20,"creative, independent",writer," Bags, Sports, Luggage",Explorer;Chatter;Poster
+27,John Miller,male,27,"outgoing, practical, compassionate, optimistic",farmer," Refrigerators , Cutlery ",Watcher
+28,John Brown,female,23,"outgoing, optimistic, empathetic, introspective, compassionate",musician," Sports Shoes, Kids , formalwear",Watcher;Explorer;Poster
+29,Jane Garcia,male,58,"outgoing, compassionate, analytical, patient",engineer," Sneakers , Vitamins , Cosmetics",Watcher;Explorer
+30,John Davis,female,63,"creative, optimistic, adventurous, meticulous",nurse," Activewear, Toys , TVs , Groceries ",Watcher;Explorer;Critic
+31,Michael Davis,male,57,"optimistic, creative, patient, introspective",musician," Audio devices, eyewear, Communication,Communication, Luxury ",Explorer;Chatter;Poster
+32,Mary Martinez,female,52,"empathetic, adventurous, analytical",designer," Athletic ,Sports, Underwear , computing, Handbag ",Explorer;Chatter
+33,Michael Williams,male,45,independent,doctor," Supplements , Skincare, Eyewear",Watcher;Explorer
+34,Michael Brown,female,41,"meticulous, optimistic, outgoing, caring, patient",designer, Rings ,Watcher;Chatter
+35,John Smith,male,52,energetic,nurse," Non-fiction , Outdoor , Fragrance , Mobile Phones ",Poster
+36,John Martinez,female,54,"optimistic, adventurous, introspective, patient",lawyer, Cat litter ,Watcher;Critic
+37,Emily Davis,male,58,optimistic,retired," Baby Products , Dresses, Home Decor ",Explorer;Chatter;Poster
+38,John Taylor,female,30,"practical, introspective, ambitious",student," Floral , Makeup , Tennis rackets , Pots and pans ",Explorer
+39,Robert Martinez,male,35,"fun-loving, meticulous, practical, outgoing, compassionate",engineer," Education , Books , Skincare",Explorer;Critic;Chatter;Poster
+40,Judy Travis,female,69,"good at recommendations, popular, enthusiastic, humorous, and good at live streaming",network anchor,"makeup, beauty, family life, and travel",Critic;Poster
+41,Michael Jones,male,54,"caring, outgoing",farmer," Car fresheners , Shirts ",Explorer
+42,Linda Miller,female,31,"ambitious, independent, creative",entrepreneur," Handbags, Computing",Explorer;Poster
+43,Mary Miller,male,58,"outgoing, optimistic, fun-loving",writer," Home, Bracelets ",Watcher;Chatter
+44,Sarah Taylor,female,56,"outgoing, fun-loving, creative",designer," Home Entertainment , Pens , Bottoms, Blending , Headphones",Watcher
+45,Jane Martinez,male,47,"ambitious, empathetic",actor," Belts , Men's fashion, Computing ",Explorer;Critic;Poster
+46,Emily Brown,female,28,ambitious,writer," Fiction , Treats , Denim Jeans, Basketball hoops ",Watcher
+47,Linda Brown,male,22,"independent, fun-loving",actor, Shoulder Bags,Watcher;Chatter
+48,James Williams,female,37,"empathetic, introspective, independent",writer," Recreation , Wearable Tech , TVs ,Fragrance",Poster
+49,Mary Taylor,male,44,"meticulous, optimistic, compassionate, practical",artist," Bottoms , Watches , Audio Devices , cosmetics",Watcher;Critic
+50,Jane Martinez,female,53,introspective,nurse," Home Decor , Laptops ",Poster
+51,David Garcia,male,43,"analytical, optimistic",farmer," Kitchen appliances , Bags ",Watcher;Poster
+52,Mary Garcia,female,55,"fun-loving, ambitious, analytical, independent",doctor," Oral Care,Eyewear",Watcher;Explorer
+53,Mary Garcia,male,22,"practical, outgoing, introspective, empathetic",designer," Education, Board games ",Watcher;Poster
+54,Jane Davis,female,25,"creative, ambitious, optimistic, introspective",teacher," Kitchen , Groceries , Belts ",Watcher;Explorer
+55,Jane Martinez,male,28,"caring, empathetic, compassionate, creative, analytical",doctor," Mobile phones, Sketchbooks , Gaming consoles, Keyboards ",Watcher;Critic
+56,Jane Johnson,female,39,"outgoing, independent, practical",nurse, Skincare ,Watcher;Explorer;Critic;Chatter
+57,Sarah Taylor,male,39,"meticulous, practical",actor," Jeans , electronics , technology , Kitchen appliances, Audio ",Watcher;Chatter;Poster
+58,Michael Williams,female,32,"meticulous, caring, analytical, practical, empathetic",entrepreneur," Photography , Snacks, Guitars , Games, Fitness",Watcher;Explorer;Chatter
+59,John Martinez,male,26,analytical,actor," Cosmetics, Dog food , Makeup, Mobile phones , makeup ",Watcher
+60,Robert Johnson,female,68,"optimistic, patient, practical",lawyer," Party favors , Hygiene , Makeup tools ",Critic;Chatter;Poster
+61,Jane Jones,male,59,"meticulous, fun-loving, ambitious, outgoing",engineer," Men's fashion , Laptops, computing",Watcher;Critic
+62,Emily Miller,female,62,"compassionate, practical, analytical, patient",musician," Cameras, Luggage, Sofas , Washers , Jewelry ",Explorer;Poster
+63,James Johnson,male,70,caring,farmer, Hygiene ,Watcher;Poster
+64,Emily Brown,female,48,"caring, patient, introspective, analytical",musician," Handbags, Building Blocks, Dog food ,Fragrance, Action figures ",Explorer;Critic;Poster
+65,Linda Williams,male,56,"outgoing, optimistic, empathetic, meticulous",actor," Audio, Gaming Console , Travel ",Watcher;Chatter;Poster
+66,David Brown,female,47,"meticulous, empathetic, practical, creative",artist," Jewelry, Outerwear ",Explorer
+67,James Davis,male,56,"creative, compassionate",entrepreneur, Headphones,Critic;Poster
+68,James Brown,female,57,"outgoing, caring",scientist," Kitchen appliances, Party favors , makeup ",Critic;Poster
+69,David Martinez,male,35,"patient, independent",entrepreneur," Children's clothing , Luxury Watches, Athletic Shoes , Health and fitness",Explorer;Critic;Chatter;Poster
+70,John Johnson,female,33,"empathetic, patient, introspective, fun-loving",retired," Building Sets, Tools, Rings , Kitchen Appliances , cosmetics",Watcher;Explorer;Critic;Chatter
+71,Jane Smith,male,51,"caring, outgoing, independent",scientist," Paint brushes , Laptops , Baby Products , clothing , Luggage",Watcher;Chatter;Poster
+72,Michael Martinez,female,31,"energetic, outgoing",photographer," accessory , Confectionery , Home Decor , Bags , clothing ",Watcher;Explorer
+73,Michael Smith,male,39,meticulous,nurse," accessories , Technology, Building Blocks , Grocery , Apparel ",Critic;Chatter
+74,David Miller,female,62,"practical, adventurous, creative",entrepreneur," Computers ,Accessories, Casual ",Critic;Chatter;Poster
+75,Linda Miller,male,29,optimistic,artist," Kitchen , Hobby , Apparel ",Chatter
+76,Mary Brown,female,58,outgoing,scientist," Baby , Home Decor , Paint brushes ",Explorer;Poster
+77,David Williams,male,61,patient,artist," Pens , Recreation, Consoles",Watcher;Explorer;Poster
+78,John Garcia,female,36,"analytical, practical, empathetic, compassionate, meticulous",entrepreneur, Skincare ,Watcher
+79,Michael Miller,male,26,"energetic, optimistic",teacher," Kitchen Appliances , Fitness, Watches,Audio",Watcher;Explorer;Chatter;Poster
+80,David Williams,female,38,"fun-loving, creative",teacher," Mobile phones, Notebooks , Running Footwear",Watcher;Chatter
+81,Sarah Miller,male,30,"energetic, optimistic",student," Dresses,Luggage",Critic;Poster
+82,Linda Jones,female,67,"adventurous, fun-loving, empathetic",nurse, Children,Watcher;Explorer
+83,Mary Jones,male,41,"introspective, adventurous, energetic",retired, Running Shoes,Explorer;Chatter;Poster
+84,James Davis,female,56,compassionate,nurse," entertainment, electronics ",Watcher;Chatter
+85,Jane Brown,male,49,"outgoing, practical",designer," Jewelry , Running Shoes , electronics , Bracelets ",Chatter
+86,Mary Martinez,female,25,"fun-loving, energetic, optimistic, creative, practical",writer, Music,Critic
+87,Mary Williams,male,30,"adventurous, creative, optimistic",writer," Clothing , Small appliances , Seat covers , Fitness Trackers ",Critic;Chatter
+88,John Brown,female,60,creative,actor," Blending , Appliances, Men's fashion , Home ",Explorer
+89,Michael Williams,male,59,"energetic, empathetic",engineer," Communication , Entertainment, Fashion , Smartphone",Critic
+90,Linda Jones,female,21,"empathetic, outgoing, adventurous",student," Shoulder Bags, Technology , Eyewear",Poster
+91,Mary Garcia,male,64,"patient, caring, optimistic",doctor,"Accessories, Footwear , Wearable Tech , Fitness Trackers",Critic
+92,Mary Taylor,female,22,"compassionate, patient, outgoing",entrepreneur," Belts , Footwear ,Accessories, Wearable Tech ",Watcher;Explorer;Chatter
+93,John Johnson,male,65,"practical, compassionate",writer," Mobile Devices, Fragrance ,Luggage",Watcher;Explorer
+94,Michael Davis,female,20,"ambitious, caring",actor," Non-fiction , Sunglasses , Women's fashion , Clothing , Sports equipment ",Watcher
+95,John Jones,male,61,"optimistic, practical, patient, compassionate",writer," Wearable Technology , Toys",Watcher
+96,Emily Jones,female,31,"creative, analytical",farmer, Denim Jeans,Explorer;Critic
+97,John Smith,male,22,"fun-loving, compassionate, optimistic, caring, adventurous",engineer, Building Blocks,Watcher;Poster
+98,David Davis,female,48,"meticulous, outgoing, introspective, analytical",artist, Kitchen appliances,Explorer;Critic
+99,John Brown,male,52,"independent, optimistic, energetic",student, Cosmetics ,Watcher

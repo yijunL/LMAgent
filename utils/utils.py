@@ -320,11 +320,14 @@ def rec_format(msg: Dict):
 
         add_margin = "margin-left: 21%;"
         pic_scale = 50
+        text_scale = pic_scale
         if("is recommended" in raw_text):
             pic_scale = 100/pic_per_raw-2
+            text_scale = pic_scale
             add_margin = ""
             html_text += f'"{highlight_items(raw_text.split("is recommended")[0])}" is recommended:'
         elif("details:" in raw_text):
+            text_scale = 80
             pro_desc = eval('['+re.findall(r'\[(.*?)\]', raw_text)[1]+']')
             raw_text = raw_text.split("details:")[0]+"details:"
             html_text += f'{highlight_items(raw_text)}'
@@ -352,7 +355,7 @@ def rec_format(msg: Dict):
                     f'<div style="display: flex; justify-content: space-between; margin-bottom: 5px;">'
                 )
                 for ac in accu_pic:
-                    html_text += f'<div style="background-color: #D9E8F5;text-align: center; color: black;display: flex; padding: 2px;font-family: 微软雅黑, sans-serif; font-size: 10px; border-radius: 10px; width: {pic_scale}%;">{pro_desc[ac]}</div>'
+                    html_text += f'<div style="background-color: #D9E8F5;text-align: center; color: black;display: flex; padding: 2px;font-family: 微软雅黑, sans-serif; font-size: 10px; border-radius: 10px; width: {text_scale}%;">{pro_desc[ac]}</div>'
                 html_text += f'</div><br><div style="display: flex; justify-content: space-between; margin-bottom: 5px; margin-right: 5px;">'
                 accu_pic = []
             
