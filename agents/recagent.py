@@ -256,7 +256,7 @@ class RecAgent(GenerativeAgent):
             "{agent_summary_description}"
             + "\nIt is {current_time}."
             + "\n{agent_name} recently heared {heared_history} on social media."
-            + "\n{agent_name} recently bough {watched_history} on shopping system."
+            + "\n{agent_name} recently bought {watched_history} on shopping system."
             + "\nOther than that {agent_name} doesn't know any products."
             + "\nMost recent observations: {most_recent_memories}"
             + "\nObservation: {observation}"
