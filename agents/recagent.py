@@ -41,7 +41,7 @@ class RecAgent(GenerativeAgent):
     """The agent's relationship with other agents"""
 
     watched_history: List[str] = []
-    """The agent's history of bough products"""
+    """The agent's history of bought products"""
 
     heared_history: List[str] = []
     """The agent's history of heared products"""
@@ -153,7 +153,7 @@ class RecAgent(GenerativeAgent):
 
     def reset_agent(self):
         """
-        Reset the agent attributes, including memory, bough_history and heared_history.
+        Reset the agent attributes, including memory, bought_history and heared_history.
         """
         # Remove watched_history and heared_history and post_history
         self.watched_history = []
@@ -304,10 +304,10 @@ class RecAgent(GenerativeAgent):
             + "\n {agent_summary_description2}"
             + "\nIt is {current_time}."
             + "\n{agent_name} recently heared {heared_history} on social media."
-            + "\n{agent_name} recently bough {watched_history} on shopping system."
+            + "\n{agent_name} recently bought {watched_history} on shopping system."
             + "\nOther than that {agent_name} doesn't know any products."
             + "\n{agent_name2} recently heared {heared_history2} on social media."
-            + "\n{agent_name2} recently bough {watched_history2} on shopping system."
+            + "\n{agent_name2} recently bought {watched_history2} on shopping system."
             + "\nOther than that {agent_name2} doesn't know any products."
             + "\nMost recent observations of {agent_name}: {most_recent_memories}"
             + "\nMost recent observations of {agent_name2}: {most_recent_memories2}"
@@ -415,7 +415,7 @@ class RecAgent(GenerativeAgent):
             + "(1) Enter the Shopping System. If so, {agent_name} will be recommended some products, from which {agent_name} can buy some products or search for products by himself.\n"
             # + "If {agent_name} buy or heard nothing, they might want to enter the Shopping System.\n"
             + "(2) Enter the Social Media. {agent_name} can chat with friends or publish a post to all friends of {agent_name}. \n"
-            # + "If {agent_name} recently bough some products they might want to enter the Social Media, otherwise they might enter the Shopping System.\n"
+            # + "If {agent_name} recently bought some products they might want to enter the Social Media, otherwise they might enter the Shopping System.\n"
             + "(3) Perform a Live Webcast. If so, {agent_name} will recommend many products to his fans on the webcast.\n"
             + "What action would {agent_name} like to take? Respond in one line."
             + "\nPlease note! Make sure that the actions taken by {agent_name} comply with the {agent_name}'s description, such as age, traits, status, interest, feature, etc."
@@ -429,7 +429,7 @@ class RecAgent(GenerativeAgent):
         # + "(1) Enter the Shopping System. If so, {self.name} will be recommended some products, from which {self.name} can buy some products, or search for products by himself.\n"
         # observation = f"{self.name} must take only ONE of the actions below: \
         # (1) Enter the Shopping System. If so, {self.name} will be recommended some products, from which {self.name} can buy some products.\n \
-        # (2) Enter the Social Media. {self.name} can chat with friends or publish a post to all friends of {self.name}. If {self.name} recently bough some products they might want to enter the Social Media, otherwise they might enter the Shopping System.\n \
+        # (2) Enter the Social Media. {self.name} can chat with friends or publish a post to all friends of {self.name}. If {self.name} recently bought some products they might want to enter the Social Media, otherwise they might enter the Shopping System.\n \
         # (3) Do Nothing."
         observation = f"None"
         full_result = self._generate_reaction(observation, call_to_action_template, now)
@@ -501,7 +501,7 @@ class RecAgent(GenerativeAgent):
     def generate_feeling(self, observation: str, now) -> str:
         """Feel about each item bought."""
         call_to_action_template = (
-            "If you are {agent_name}, how did you feel about the product you just bough? Describe your feelings in one line."
+            "If you are {agent_name}, how did you feel about the product you just bought? Describe your feelings in one line."
             +"NOTE: Please answer in the first-person perspective."
             + "\n\n"
         )
@@ -575,9 +575,9 @@ class RecAgent(GenerativeAgent):
         call_to_action_template = (
             "{agent_name} must take one of the two actions below:\n"
             +"(1) Chat with one acquaintance "
-            +" about products recently bough on shopping system: {watched_history}, or products heared about on social media: {heared_history}.\n"
+            +" about products recently bought on shopping system: {watched_history}, or products heared about on social media: {heared_history}.\n"
             +"(2) Publish posting to all acquaintances "
-            +" about products recently bough on shopping system: {watched_history}, or heared about on social media: {heared_history}, or something else {agent_name} want to know."
+            +" about products recently bought on shopping system: {watched_history}, or heared about on social media: {heared_history}, or something else {agent_name} want to know."
             + "\nWhat action would {agent_name} like to take?  Respond in one line."
             + "\nIf {agent_name} want to chat with one acquaintance, write:\n[CHAT]:: acquaintance's name"
             + "\nIf {agent_name} want to publish posting to all acquaintances, write:\n[POST]:: {agent_name} wants to post\n"
@@ -666,7 +666,7 @@ class RecAgent(GenerativeAgent):
         """React to a given observation."""
         call_to_action_template = (
             "What will be said between {agent_name} and {agent_name2}? {agent_name} initiates the conversation first. Please simulate their conversation."
-            "{agent_name} and {agent_name2} should not say anything about products they have not bough or heard about. If they have not bough or heard something, they might want to talk about what to buy."
+            "{agent_name} and {agent_name2} should not say anything about products they have not bought or heard about. If they have not bought or heard something, they might want to talk about what to buy."
             "Write the dialogue in the following format:"
             "[{agent_name}]:"
             "[{agent_name2}]:"
@@ -695,7 +695,7 @@ class RecAgent(GenerativeAgent):
         """Publish posting to all acquaintances."""
         call_to_action_template = (
             "Posts should be related to the goods he has recently heard or bought, or about something else they wants to know. "
-            "{agent_name} should not say anything about products that have not bough or heard about."
+            "{agent_name} should not say anything about products that have not bought or heard about."
             + "\nIf you were {agent_name}, what will you post? Respond in one line."
             + "\n\n"
         )
