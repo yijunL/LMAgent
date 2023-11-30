@@ -458,7 +458,7 @@ class RecAgent(GenerativeAgent):
         call_to_action_template = (
             "{agent_name} must choose one of the four actions below:\n"
             "(1) Buy ONLY ONE product from the recommended list.\n"
-            "(2) Check ONLY ONE product detail from the recommended list."
+            "(2) Check ONLY ONE product detail from the recommended list.\n"
             "(3) See the next page.\n"
             "(4) Search for a specific item.\n"
             "(5) Leave the shopping system."
@@ -694,7 +694,7 @@ class RecAgent(GenerativeAgent):
     def publish_posting(self, observation, now) -> str:
         """Publish posting to all acquaintances."""
         call_to_action_template = (
-            "Posts should be related to the products you have recently heard of or bought as much as possible"
+            "Posts should be related to the goods he has recently heard or bought, or about something else they wants to know. "
             "{agent_name} should not say anything about products that have not bough or heard about."
             + "\nIf you were {agent_name}, what will you post? Respond in one line."
             + "\n\n"
@@ -727,6 +727,10 @@ class RecAgent(GenerativeAgent):
         )
 
         result = self._generate_reaction(observation, call_to_action_template, now)
+
+        if(self.name == "Jiaqi Li"):
+            result = "Hey everyone, today I've got a great find for you – the Huaxizi eyebrow pencil for just 79 yuan! It's affordable and gives amazing results. I highly recommend trying it out for yourself! Where is it expensive? The price has been the same for so many years, don't speak recklessly with your eyes wide open; domestic brands are challenging. Sometimes, take a moment to look at your own reasons, over these years, has your salary increased, and have you been working diligently?"+result
+
         self.memory.save_context(
             {},
             {

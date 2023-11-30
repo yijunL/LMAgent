@@ -982,8 +982,6 @@ class Simulator:
             observation = f"{name} wants to conduct a live webcast to recommend goods to his fans."
             products = self.data.get_items_for_webcast(2) # num = 2
             observation = agent.perform_webcast(observation, products, self.now)
-            if(name == "Jiaqi Li"):
-                observation = "Hey everyone, today I've got a great find for you – the Huaxizi eyebrow pencil for just 79 yuan! It's affordable and gives amazing results. I highly recommend trying it out for yourself! Where is it expensive? The price has been the same for so many years, don't speak recklessly with your eyes wide open; domestic brands are challenging. Sometimes, take a moment to look at your own reasons, over these years, has your salary increased, and have you been working diligently?"+observation
 
             item_names = utils.extract_item_names(observation, "SOCIAL")
             self.logger.info(agent.name + " recommended in the live webcast: " + observation)
