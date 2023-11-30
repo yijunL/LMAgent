@@ -694,7 +694,7 @@ class RecAgent(GenerativeAgent):
     def publish_posting(self, observation, now) -> str:
         """Publish posting to all acquaintances."""
         call_to_action_template = (
-            "Posts should be related to recent bough products on shopping systems."
+            "Posts should be related to the products you have recently heard of or bought as much as possible"
             "{agent_name} should not say anything about products that have not bough or heard about."
             + "\nIf you were {agent_name}, what will you post? Respond in one line."
             + "\n\n"

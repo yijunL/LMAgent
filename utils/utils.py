@@ -557,6 +557,15 @@ def get_llm(config, logger, api_key):
             model="gpt-3.5-turbo",
             max_retries=config["max_retries"]
         )
+    elif config["llm"] == "gpt-3.5-1106":
+        LLM = ChatOpenAI(
+            max_tokens=config["max_token"],
+            temperature=config["temperature"],
+            openai_api_key=api_key,
+            openai_api_base="https://api.132999.xyz/v1",
+            model="gpt-3.5-turbo-1106",
+            max_retries=config["max_retries"]
+        )
     elif config["llm"] == "custom":
         LLM = CustomLLM(max_token=2048, logger=logger)
         # LLM = CustomLLM()
