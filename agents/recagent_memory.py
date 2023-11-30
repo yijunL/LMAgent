@@ -543,7 +543,7 @@ class LongTermMemory(BaseMemory):
         similarity = dot_product / (norm1 * norm2)
         return similarity
 
-    def _get_topics_of_reflection(self, last_k: int = 50) -> List[str]:
+    def _get_topics_of_reflection(self, last_k: int = 30) -> List[str]:
         """Return the 1 most salient high-level questions about recent observations."""
         prompt = PromptTemplate.from_template(
             "{observations}\n\n"

@@ -919,18 +919,18 @@ class Simulator:
                     Message(
                         agent_id=agent_id,
                         action="POST",
-                        content="["+str(self.now.strftime("%Y-%m-%d %H:%M")) +"]"+agent.name + " posts: " + observation + "**##" + post_pic_base64,   # add pic
+                        content="["+str(self.now.strftime("%Y-%m-%d %H:%M")) +"] "+agent.name + " posts: " + observation + "**##" + post_pic_base64,   # add pic
                     )
                 )
                 self.round_msg.append(
                     Message(
                         agent_id=agent_id,
                         action="POST",
-                        content="["+str(self.now.strftime("%Y-%m-%d %H:%M")) +"]"+agent.name + " posts: " + observation + "**##" + post_pic_base64,   # add pic 
+                        content="["+str(self.now.strftime("%Y-%m-%d %H:%M")) +"] "+agent.name + " posts: " + observation + "**##" + post_pic_base64,   # add pic 
                     )
                 )
                 # add post history
-                one_post = str(agent_id)+"**^^["+str(self.now.strftime("%Y-%m-%d %H:%M")) +"]"+ agent.name + " posts: " + observation + "**##" + post_pic_base64+"**&&"
+                one_post = str(agent_id)+"**^^["+str(self.now.strftime("%Y-%m-%d %H:%M")) +"] "+ agent.name + " posts: " + observation + "**##" + post_pic_base64+"**&&"
                 agent.update_post_history(one_post)
                 for i in self.agents.keys():
                     if self.agents[i].name in contacts:
@@ -982,6 +982,7 @@ class Simulator:
             observation = f"{name} wants to conduct a live webcast to recommend goods to his fans."
             products = self.data.get_items_for_webcast(2) # num = 2
             observation = agent.perform_webcast(observation, products, self.now)
+
             item_names = utils.extract_item_names(observation, "SOCIAL")
             self.logger.info(agent.name + " recommended in the live webcast: " + observation)
             if agent.event.action_type == "idle":
@@ -993,7 +994,7 @@ class Simulator:
                     action_type="webcasting",
                 )
 
-            observation_list = re.split(r'[。？.?]', observation)
+            observation_list = re.split(r'[。.!！]', observation)
             sentence_idx = 0
             num_sentence = 2  # the number of sentences in one message
             while sentence_idx < len(observation_list)-num_sentence:
@@ -1006,14 +1007,14 @@ class Simulator:
                     Message(
                         agent_id=agent_id,
                         action="WEBCAST",
-                        content= agent.name + " recommended in the live webcast: " + sent,
+                        content= '['+agent.name + "'s livestream room] " + sent,
                     )
                 )
                 self.round_msg.append(
                     Message(
                         agent_id=agent_id,
                         action="WEBCAST",
-                        content= agent.name + " recommended in the live webcast: " + sent,
+                        content= '['+agent.name + "'s livestream room] " + sent,
                     )
                 )
                 sentence_idx += num_sentence
@@ -1028,14 +1029,14 @@ class Simulator:
                 Message(
                     agent_id=agent_id,
                     action="WEBCAST",
-                    content= agent.name + " recommended in the live webcast: " + sent_f,
+                    content= '['+agent.name + "'s livestream room] " + sent_f,
                 )
             )
             self.round_msg.append(
                 Message(
                     agent_id=agent_id,
                     action="WEBCAST",
-                    content= agent.name + " recommended in the live webcast: " + sent_f,
+                    content= '['+agent.name + "'s livestream room] " + sent_f,
                 )
             )
 
