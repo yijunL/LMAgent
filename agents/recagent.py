@@ -554,7 +554,7 @@ class RecAgent(GenerativeAgent):
         """
         call_to_action_template = (
             "The detail of "+item_name+" is: "+detail+".\n"
-            "{agent_name} must choose one of the four actions below:\n"
+            "{agent_name} must choose one of the two actions below:\n"
             "(1) Buy "+item_name+".\n"
             "(2) Do nothing and return.\n"
             + "\nIf {agent_name} like this product, {agent_name} might want to buy it."

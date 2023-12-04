@@ -1501,7 +1501,7 @@ def main():
         recagent.round_cnt = recagent.round_cnt + 1
         recagent.logger.info(f"Round {recagent.round_cnt}")
         recagent.active_agents.clear()
-        #system_status(recagent, logger)
+        # system_status(recagent, logger)
         message = recagent.round()
         messages.append(message)
         with open(config["output_file"], "w") as file:

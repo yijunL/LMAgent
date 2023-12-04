@@ -74,56 +74,58 @@ class RoleAgent(RecAgent):
             chatting_ulr=recagent_instance.chatting_url)
         return new_instance
 
-    async def get_response(self,message:str)->str:
-        """
-        Get the response from the user.
-        :param message: the message from the user.
-        :return:
-        """
-        # if self.run_location=="location":
-        #     response=self.get_response(message)
-        # else:
+    # async def get_response(self,message:str)->str:
+    #     """
+    #     Get the response from the user.
+    #     :param message: the message from the user.
+    #     :return:
+    #     """
+    #     # if self.run_location=="location":
+    #     #     response=self.get_response(message)
+    #     # else:
         
-        await connect.websocket_manager.send_personal_message("role-play",message)
-        while True:
-            if len(connect.message_queue) > 0:
-                response = connect.message_queue.pop()
-                return response
+    #     await connect.websocket_manager.send_personal_message("role-play",message)
+    #     while True:
+    #         if len(connect.message_queue) > 0:
+    #             response = connect.message_queue.pop()
+    #             return response
+    def get_response(self, str):
+        return str
 
 
     def take_action(self,now) -> Tuple[str, str]:
         """
         Require the user choose one action below by inputting:
-        (1) Enter the Recommender.
+        (1) Enter the Shopping System.
         (2) Enter the Social Media.
         (3) Do Nothing.
         :return
-        choice(str): the token that represents the choice made by the user, one of in '[RECOMMENDER]', '[SOCIAL]'
+        choice(str): the token that represents the choice made by the user, one of in '[SHOPPING]', '[SOCIAL]'
                      and '[NOTHING]'.
         result(str): integrate the choice and the reason into one sentence.
         """
-        order = asyncio.run( self.get_response(
+        order = input(self.get_response(
             f"It's {now}.\n"
             "Please choose one action below: \n"
-            "(1) Enter the Recommender, please input 1. \n"
+            "(1) Enter the Shopping System, please input 1. \n"
             "(2) Enter the Social Media, please input 2. \n"
             "(3) Do Nothing, please input 3. \n"
         ))
         # If the input is not conforming to the prescribed form, we let the user input again.
         while order not in ["1", "2", "3"]:
-            order = asyncio.run(self.get_response(
+            order = input(self.get_response(
                 "Your input is wrong, please choose one action below: \n"
-                "(1) Enter the Recommender, please input 1. \n"
+                "(1) Enter the Shopping System, please input 1. \n"
                 "(2) Enter the Social Media, please input 2. \n"
                 "(3) Do Nothing, please input 3. \n"
             ))
-        action = asyncio.run(self.get_response("You can input some text to explain your choice. \n"))
+        action = input(self.get_response("You can input some text to explain your choice. \n"))
 
         # Change the input number to the choice token.
-        choice = {"1": "[RECOMMENDER]", "2": "[SOCIAL]", "3": "[NOTHING]"}[order]
+        choice = {"1": "[SHOPPING]", "2": "[SOCIAL]", "3": "[NOTHING]"}[order]
         # Obtain the phase according to user's input.
         phase = {
-            "1": "enter the Recommender System",
+            "1": "enter the Shopping System",
             "2": "enter the Social Media",
             "3": "do nothing",
         }[order]
@@ -141,52 +143,60 @@ class RoleAgent(RecAgent):
     def take_recommender_action(self, observation,now) -> Tuple[str, str]:
         """
         Require the user choose one action below by inputting:
-        (1) Buy movies among the recommended items.
-        (2) Next page.
-        (3) Search items.
-        (4) Leave the recommender system.
+        (1) Buy products among the recommended items.
+        (2) Check the product details among the recommended items. 
+        (3) Next page.
+        (4) Search items.
+        (5) Leave the shopping system.
         :return
         choice(str): the token that represents the choice made by the user, one of in '[BUY]', '[NEXT]',
                      '[SEARCH]', and '[NOTHING]'.
         action(str): integrate the choice and the reason into one sentence.
         """
-        order = asyncio.run(self.get_response(
+        order = input(self.get_response(
             observation+
             "\nPlease choose one action below: \n"
-            "(1) Buy movies among the recommended items, please input 1. \n"
-            "(2) Next page, please input 2. \n"
-            "(3) Search items, please input 3. \n"
-            "(4) Leave the recommender system, input 4. \n"
+            "(1) Buy products among the recommended items, please input 1. \n"
+            "(2) Check a product detail from the recommended list, please input 2.\n"
+            "(3) Next page, please input 3. \n"
+            "(4) Search items, please input 4. \n"
+            "(5) Leave the shopping system, input 5. \n"
         ))
         # If the input is not conforming to the prescribed form, we let the user input again.
-        while order not in ["1", "2", "3", "4"]:
-            order = asyncio.run(self.get_response(
+        while order not in ["1", "2", "3", "4", "5"]:
+            order = input(self.get_response(
                 "Your input is wrong, please choose one action below: \n"
-                "(1) Buy movies among the recommended items, please input 1. \n"
-                "(2) Next page, please input 2. \n"
-                "(3) Search items, please input 3. \n"
-                "(4) Leave the recommender system, input 4. \n"
+                "(1) Buy products among the recommended items, please input 1. \n"
+                "(2) Check a product detail from the recommended list, please input 2.\n"
+                "(3) Next page, please input 3. \n"
+                "(4) Search items, please input 4. \n"
+                "(5) Leave the shopping system, input 5. \n"
             ))
 
         # Change the input number to the choice token.
-        choice = {"1": "[BUY]", "2": "[NEXT]", "3": "[SEARCH]", "4": "[LEAVE]"}[order]
+        choice = {"1": "[BUY]", "2":"[DETAIL]", "3": "[NEXT]", "4": "[SEARCH]", "5": "[LEAVE]"}[order]
 
         if order == "1":
-            films = asyncio.run(self.get_response(
-                "Please input movie names in the list returned by the recommender system, only movie names, separated by semicolons. \n"
+            films = input(self.get_response(
+                "Please input movie names in the list returned by the shopping system, only movie names, separated by semicolons. \n"
             ))
             # Construct the list of films with '<*>' format.
             film_list = ["<%s>" % film for film in films.split(",")]
             action = str(film_list)
-        elif order == "2":
-            action = self.name + "looks the next page"
-        elif order == "3":
-            items = asyncio.run(self.get_response("Please search single, specific item name want to search. \n"))
+        elif order =="2":
+            items = input(self.get_response("Please enter single, specific item name want to check. \n"))
             # Construct the list of films with '<*>' format.
             item_list = ["<%s>" % item for item in items.split(",")]
             action = str(item_list)
+        elif order == "3":
+            action = self.name + "looks the next page"
         elif order == "4":
-            action = self.name + "leaves the recommender system"
+            items = input(self.get_response("Please search single, specific item name want to search. \n"))
+            # Construct the list of films with '<*>' format.
+            item_list = ["<%s>" % item for item in items.split(",")]
+            action = str(item_list)
+        elif order == "5":
+            action = self.name + "leaves the shopping system"
         else:
             raise "Never occur."
 
@@ -205,7 +215,7 @@ class RoleAgent(RecAgent):
         Feel about each item bought.
         """
 
-        feeling = asyncio.run(self.get_response(
+        feeling = input(self.get_response(
             "Please input your feelings, which should be split by semicolon: \n"
         ))
 
@@ -221,18 +231,41 @@ class RoleAgent(RecAgent):
         )
         return feelings
 
+    def check_item_detail_action(self, observation, now, item_name,detail) -> str:
+        """Take one of the four actions below.
+        (1) Buy this item.
+        (2) Do nothing and return.
+        """
+        order = input(self.get_response(
+            "The detail of "+item_name+" is: "+detail+".\n"
+            "Please choose one action below:\n"
+            "(1) Buy "+item_name+", please input 1.\n"
+            "(2) Do nothing and return, please input 2.\n"
+        ))
+
+        while order not in ["1", "2"]:
+            order = input(self.get_response(
+                "Please choose one action below:\n"
+                "(1) Buy "+item_name+", please input 1.\n"
+                "(2) Do nothing and return, please input 2.\n"
+            ))
+
+        choice = {"1": "[BUY]", "2": "[NOTHING]"}[order]
+
+        return choice
+
     def search_item(self, observation,now) -> str:
         """
         Search item by the item name.
         """
 
-        search = asyncio.run(self.get_response("Please input your search: \n"))
+        search = input(self.get_response("Please input your search: \n"))
 
         result = search
         self.memory.save_context(
             {},
             {
-                self.memory.add_memory_key: f"{self.name} wants to search and watch {result} in recommender system.",
+                self.memory.add_memory_key: f"{self.name} wants to search {result} in shopping system.",
             },
         )
         return result
@@ -247,7 +280,7 @@ class RoleAgent(RecAgent):
         action(str): integrate the choice and the reason into one sentence.
         """
 
-        order = asyncio.run(self.get_response(
+        order = input(self.get_response(
             observation+
             "\nPlease choose one action below: \n"
             "(1) Chat with one acquaintance, input 1. \n"
@@ -255,7 +288,7 @@ class RoleAgent(RecAgent):
         ))
         # If the input is not conforming to the prescribed form, we let the user input again.
         while order not in ["1", "2"]:
-            order = asyncio.run(self.get_response(
+            order = input(self.get_response(
                 "Please choose one action below: \n"
                 "(1) Chat with one acquaintance, input 1. \n"
                 "(2) Publish posting to all acquaintances, input 2. \n"
@@ -265,7 +298,7 @@ class RoleAgent(RecAgent):
         choice = {"1": "[CHAT]", "2": "[POST]"}[order]
 
         if order == "1":
-            action = asyncio.run(self.get_response("Please input one acquaintance to chat: \n"))
+            action = input(self.get_response("Please input one acquaintance to chat: \n"))
         elif order == "2":
             # Do not input here.
             # action = self.get_response("Please input the text that you want to post: \n")
@@ -296,7 +329,7 @@ class RoleAgent(RecAgent):
         role_dia(str): the action description, including the name and the dialogue text.
         """
 
-        role_text = asyncio.run(self.get_response(
+        role_text = input(self.get_response(
             'Please input your chatting text (Input "goodbye" if you want to quit): \n'
         ))
         role_dia = "%s said %s" % (self.name, role_text)
@@ -315,7 +348,7 @@ class RoleAgent(RecAgent):
         Publish posting to all acquaintances.
         """
 
-        result = asyncio.run(self.get_response(
+        result = input(self.get_response(
             "Please input the text that you want to post to your acquaintances: \n"
         ))
 
@@ -339,7 +372,7 @@ class RoleAgent(RecAgent):
         """
 
         contin = True
-        role_text = asyncio.run(self.get_response(
+        role_text = input(self.get_response(
             'Please input your chatting text (Input "goodbye" if you want to quit): \n'
         ))
         role_dia = "%s said %s" % (self.name, role_text)
