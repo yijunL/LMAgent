@@ -402,7 +402,7 @@ class Simulator:
                             content=f"{name} looks next page.",
                         )
                     )
-                    if (page + 1) * self.recsys.page_size < len(rec_items):
+                    if (page + 1) * self.recsys.page_size < len(rec_items) and page<3:   # NEXT operation no more than 4
                         page = page + 1
                     else:
                         self.logger.info("No more items.")
