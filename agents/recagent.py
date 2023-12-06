@@ -260,7 +260,7 @@ class RecAgent(GenerativeAgent):
             + "\nOther than that {agent_name} doesn't know any products."
             + "\nMost recent observations: {most_recent_memories}"
             + "\nObservation: {observation}"
-            + "\nAll occurrences of product names should be enclosed with <>"
+            + "\nAll occurrences of product names should be enclosed with <>, such as <product name>"
             + "\n\n"
             + suffix
         )
@@ -312,7 +312,7 @@ class RecAgent(GenerativeAgent):
             + "\nMost recent observations of {agent_name}: {most_recent_memories}"
             + "\nMost recent observations of {agent_name2}: {most_recent_memories2}"
             + "\nObservation: {observation}"
-            + "\nAll occurrences of product names should be enclosed with <>"
+            + "\nAll occurrences of product names should be enclosed with <>, such as <product name>"
             + "\n\n"
             + suffix
         )
@@ -466,7 +466,7 @@ class RecAgent(GenerativeAgent):
             + "\nTo buy a product from the recommended list, write:\n[BUY]:: <product name>;;description."
             + "\nTo check a product detail from the recommended list, write:\n[DETAIL]:: <product name>;;description."
             + "\nTo see the next page, write:\n[NEXT]:: {agent_name} views the next page."
-            + "\nTo search for a specific item, write:\n[SEARCH]:: {agent_name} want to search something."
+            + "\nTo search for a specific item, write:\n[SEARCH]:: {agent_name} want to search <product name>."
             + "\nTo leave the shopping system, write:\n[LEAVE]:: {agent_name} leaves the shopping system."
         )
         full_result = self._generate_reaction(observation, call_to_action_template, now)
@@ -702,8 +702,9 @@ class RecAgent(GenerativeAgent):
 
         result = self._generate_reaction(observation, call_to_action_template, now)
         # generate pic
-        post_prompt = "The accompanying image of the post. The image matches the text below:\n" + result
-        post_pic = get_base64(post_prompt)
+        # post_prompt = "The accompanying image of the post. The image matches the text below:\n" + result
+        # post_pic = get_base64(post_prompt)
+        post_pic = ""
 
         self.memory.save_context(
             {},
@@ -722,14 +723,14 @@ class RecAgent(GenerativeAgent):
             + "\n{agent_name} needs to introduce several products in detail, such as their names, main purpose, benefits, prices, etc. "
             + "{agent_name}’s recommended tone should match the style of the webcast."
             + "\nIf you were {agent_name}, what would you say on a live webcast?"
-            + "\nAll occurrences of movie names should be enclosed with <>"
+            + "\nAll occurrences of product names should be enclosed with <>, such as <product name>"
             + "\n\n"
         )
 
         result = self._generate_reaction(observation, call_to_action_template, now)
 
         if(self.name == "Jiaqi Li"):
-            result = "Hey everyone, today I've got a great find for you – the Huaxizi eyebrow pencil for just 79 yuan! It's affordable and gives amazing results. I highly recommend trying it out for yourself! Where is it expensive? The price has been the same for so many years, don't speak recklessly with your eyes wide open; domestic brands are challenging. Sometimes, take a moment to look at your own reasons, over these years, has your salary increased, and have you been working diligently?"+result
+            result = "Hey everyone, today I've got a great find for you – the Huaxizi eyebrow pencil for just 79 yuan! It's affordable and gives amazing results. I highly recommend trying it out for yourself! Where is it expensive? The price has been the same for so many years, don't speak recklessly with your eyes wide open; domestic brands are challenging. Sometimes, take a moment to look at your own reasons, over these years, has your salary increased, and have you been working diligently? "+result
 
         self.memory.save_context(
             {},

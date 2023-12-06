@@ -359,7 +359,8 @@ class RoleAgent(RecAgent):
                 self.memory.add_memory_key: f"{self.name} is publishing posting to all acquaintances. {self.name} posted {result}",
             },
         )
-        return result
+        pic = ""
+        return result, pic
 
     def generate_dialogue_response(
         self, observation: str, now: Optional[datetime] = None
