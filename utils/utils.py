@@ -536,7 +536,7 @@ def get_llm(config, logger, api_key):
             temperature=config["temperature"],
             openai_api_key=api_key,
             openai_api_base="https://api.132999.xyz/v1",
-            model="gpt-4",
+            model="gpt-4-1106-preview",
             max_retries=config["max_retries"]
         )
     elif config["llm"] == "gpt-3.5-16k":

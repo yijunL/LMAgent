@@ -779,7 +779,7 @@ class RecAgentMemory(BaseMemory):
 
     """
     llm: BaseLanguageModel = None
-    verbose: bool = False
+    verbose: bool = True
     now: datetime = None
 
     sensoryMemory: SensoryMemory = None

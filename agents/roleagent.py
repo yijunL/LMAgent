@@ -178,20 +178,21 @@ class RoleAgent(RecAgent):
 
         if order == "1":
             films = input(self.get_response(
-                "Please input movie names in the list returned by the shopping system, only movie names, separated by semicolons. \n"
+                "Please input product names in the list returned by the shopping system, only product names, separated by semicolons. \n"
+                +"Product names should be enclosed with <>. \n"
             ))
             # Construct the list of films with '<*>' format.
             film_list = ["<%s>" % film for film in films.split(",")]
             action = str(film_list)
         elif order =="2":
-            items = input(self.get_response("Please enter single, specific item name want to check. \n"))
+            items = input(self.get_response("Please enter single, specific item name want to check. \nProduct names should be enclosed with <>. \n"))
             # Construct the list of films with '<*>' format.
             item_list = ["<%s>" % item for item in items.split(",")]
             action = str(item_list)
         elif order == "3":
             action = self.name + "looks the next page"
         elif order == "4":
-            items = input(self.get_response("Please search single, specific item name want to search. \n"))
+            items = input(self.get_response("Please search single, specific item name want to search. \nProduct names should be enclosed with <>. \n"))
             # Construct the list of films with '<*>' format.
             item_list = ["<%s>" % item for item in items.split(",")]
             action = str(item_list)

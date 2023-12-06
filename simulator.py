@@ -736,7 +736,7 @@ class Simulator:
                     agent_name2 = action.strip(" \t\n'\"")
                     agent_id2 = self.data.get_user_ids([agent_name2])[0]
                     agent2 = self.agents[agent_id2]
-                    # If agent2 is shopping moives, he cannot be interupted.
+                    # If agent2 is shopping, he cannot be interupted.
                     if agent2.event.action_type == "shopping":
                         agent.memory.add_memory(
                             f"{agent.name} wants to chat with {agent_name2}, but {agent_name2} is shopping. So {agent.name} does nothing.",
@@ -828,6 +828,13 @@ class Simulator:
                             conversation += role_dia + result
                             self.logger.info(role_dia)
                             self.logger.info(result)
+                        message.append(
+                            Message(
+                                agent_id=agent_id,
+                                action="CHAT",
+                                content=conversation,
+                            )
+                        )
                     else:
                         observation = f"{name} is going to chat with {agent2.name}."
                         # If an agent wants to chat with the role.
@@ -868,7 +875,6 @@ class Simulator:
                             # Otherwise, two agents(LLM) will generate dialogues.
                             conversation = agent.generate_dialogue(agent2, observation)
                         self.logger.info(conversation)
-
                     msgs = []
                     matches = re.findall(r"\[([^]]+)\]:\s*(.*)", conversation)
                     for match in matches:
@@ -1105,7 +1111,7 @@ class Simulator:
         # The user's role takes one step first.
         if self.config["play_role"]:
             role_msg = self.one_step(self.data.role_id)
-            messages.extend(role_msg)
+            messages.append(role_msg)
 
         if self.config["execution_mode"] == "parallel":
             with concurrent.futures.ThreadPoolExecutor() as executor:
@@ -1226,7 +1232,7 @@ class Simulator:
         agent_memory = MemoryClass(
             llm=LLM,
             memory_retriever=self.create_new_memory_retriever(),
-            verbose=False,
+            verbose=True,
             reflection_threshold=10,
             now=self.now,
         )

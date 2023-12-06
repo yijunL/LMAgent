@@ -19,10 +19,10 @@ from utils.utils import (
     highlight_items,
 )
 
-def height_list_map(ls):
-    return [int(i*(923.0/1104.0)) for i in ls]
-def weight_list_map(ls):
-    return [int(i*(1448.0/1756.0)) for i in ls]
+def height_list_map(ls, heigh=923.0, weight=1448.0):
+    return [int(i*(heigh/1104.0)) for i in ls]
+def weight_list_map(ls, heigh=923.0, weight=1448.0):
+    return [int(i*(weight/1756.0)) for i in ls]
 
 class Demo:
     """
@@ -47,10 +47,14 @@ class Demo:
         self.sleep_time = 3
         self.css_path = "./asset/css/styles.css"
         self.init_round_info = '<div style="display: flex; font-family: 微软雅黑, sans-serif; font-size: 15px; color: #000000; font-weight: bold;">&nbsp;&nbsp; Waiting to start !</div>'
+        self.background_h = -1
+        self.background_w = -1
 
     def init_background(self):
         background = cv2.imread("./asset/img/v_1/background3.png")
-        back_h, back_w, _ = background.shape
+        background = cv2.resize(background, dsize=None, fx=0.75, fy=1.0)  # 0.063  0.1
+        self.background_h, self.background_w, _ = background.shape
+        
 
         small_height_list = [
             350,
@@ -97,8 +101,8 @@ class Demo:
             1300,
         ]
 
-        small_height_list = height_list_map(small_height_list)
-        small_weight_list = weight_list_map(small_weight_list)
+        small_height_list = height_list_map(small_height_list, self.background_h, self.background_w)
+        small_weight_list = weight_list_map(small_weight_list, self.background_h, self.background_w)
 
         small_coordinate = list(zip(small_height_list, small_weight_list))
         for id in range(20):
@@ -235,10 +239,10 @@ class Demo:
             1140,
             1390,
         ]
-        big_height_list = height_list_map(big_height_list)
-        big_weight_list = weight_list_map(big_weight_list)
-        icon_height_list = height_list_map(icon_height_list)
-        icon_weight_list = weight_list_map(icon_weight_list)
+        big_height_list = height_list_map(big_height_list, self.background_h, self.background_w)
+        big_weight_list = weight_list_map(big_weight_list, self.background_h, self.background_w)
+        icon_height_list = height_list_map(icon_height_list, self.background_h, self.background_w)
+        icon_weight_list = weight_list_map(icon_weight_list, self.background_h, self.background_w)
 
         big_coordinate = list(zip(big_height_list, big_weight_list))
         icon_coordinate = list(zip(icon_height_list, icon_weight_list))
@@ -376,7 +380,7 @@ class Demo:
     def launch_demo(self):
         with gr.Blocks(theme="soft", title="ConsAgent Demo", css=self.css_path) as demo:
             with gr.Row(elem_classes=["row-container"]):
-                with gr.Column(scale=1, min_width=0, elem_classes=["column-container-left"]):
+                with gr.Column(scale=3, min_width=0, elem_classes=["column-container-left"]):
                     with gr.Row(elem_classes=["white-background", "rounded-corners"]):
                         with gr.Row(elem_classes=["right-up-margin","deep-background","rounded-corners"]):
                             round_output = gr.HTML(
@@ -428,7 +432,7 @@ class Demo:
                             )
 
 
-                with gr.Column(scale=3, min_width=0, elem_classes=["column-container"]):
+                with gr.Column(scale=6, min_width=0, elem_classes=["column-container"]):
 
                     background = self.init_background()
                     image_output = gr.Image(
@@ -453,7 +457,7 @@ class Demo:
                             )
 
 
-                with gr.Column(scale=1, min_width=0, elem_classes=["column-container-right"]):
+                with gr.Column(scale=4, min_width=0, elem_classes=["column-container-right"]):
 
                     with gr.Row(elem_classes=["white-background", "rounded-corners"]):
                         # with gr.Row(elem_classes=["right-up-margin"]):
