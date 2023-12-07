@@ -1152,7 +1152,7 @@ class Simulator:
             llm=LLM,
             memory_retriever=self.create_new_memory_retriever(),
             now=self.now,
-            verbose=True,
+            verbose=False,
             reflection_threshold=10,
         )
         agent = RecAgent(
