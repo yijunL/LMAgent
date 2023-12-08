@@ -64,7 +64,7 @@ class Data:
             reader = csv.reader(file)
             next(reader)  # Skip the header line
             for row in reader:
-                item_id, title, genre, description, detail = row
+                item_id, title, genre, description, detail = row[:5]
                 self.items[int(item_id)] = {
                     "name": title.strip(),
                     "genre": genre,

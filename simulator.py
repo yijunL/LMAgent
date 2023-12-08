@@ -1232,7 +1232,7 @@ class Simulator:
         agent_memory = MemoryClass(
             llm=LLM,
             memory_retriever=self.create_new_memory_retriever(),
-            verbose=True,
+            verbose=False,
             reflection_threshold=10,
             now=self.now,
         )

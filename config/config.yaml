@@ -1,7 +1,7 @@
 # path for item data
-item_path: data/item.csv
+item_path: data/item_v2.csv
 # path for item pic 
-item_pic_path: data/base64.csv
+item_pic_path: data/base64_v2.csv
 # path for user data
 user_path: data/user_25+1anchor.csv
 # path for relationship data

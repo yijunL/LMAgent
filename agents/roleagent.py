@@ -192,10 +192,11 @@ class RoleAgent(RecAgent):
         elif order == "3":
             action = self.name + "looks the next page"
         elif order == "4":
-            items = input(self.get_response("Please search single, specific item name want to search. \nProduct names should be enclosed with <>. \n"))
-            # Construct the list of films with '<*>' format.
-            item_list = ["<%s>" % item for item in items.split(",")]
-            action = str(item_list)
+            # items = input(self.get_response("Please search single, specific item name want to search. \nProduct names should be enclosed with <>. \n"))
+            # # Construct the list of films with '<*>' format.
+            # item_list = ["<%s>" % item for item in items.split(",")]
+            # action = str(item_list)
+            action = self.name + "is searching..."
         elif order == "5":
             action = self.name + "leaves the shopping system"
         else:
@@ -260,7 +261,7 @@ class RoleAgent(RecAgent):
         Search item by the item name.
         """
 
-        search = input(self.get_response("Please input your search: \n"))
+        search = input(self.get_response("Please input your search: \nProduct names should be enclosed with <>. \n"))
 
         result = search
         self.memory.save_context(
