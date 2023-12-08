@@ -260,8 +260,12 @@ class RoleAgent(RecAgent):
         """
         Search item by the item name.
         """
-
-        search = input(self.get_response("Please input your search: \nProduct names should be enclosed with <>. \n"))
+        while True:
+            search = input(self.get_response("Please input your search: \nProduct names should be enclosed with <>. \n"))
+            if('<' not in search or '>' not in search):
+                search = input(self.get_response("Please input your search: \nPLEASE NOTE! Product names should be enclosed with <>. \n"))
+            else:
+                break
 
         result = search
         self.memory.save_context(
