@@ -338,12 +338,12 @@ class RoleAgent(RecAgent):
         role_text = input(self.get_response(
             'Please input your chatting text (Input "goodbye" if you want to quit): \n'
         ))
-        role_dia = "%s said %s" % (self.name, role_text)
+        role_dia = "%s said \"%s\"" % (self.name, role_text)
 
         # Obtain the response by agent(LLM).
         contin, result = agent2.generate_dialogue_response(observation + role_dia)
         result += ""
-        if role_text == "goodbye":
+        if "GOODBYE:" in role_text.upper():
             contin = False
 
         return contin, result, role_dia

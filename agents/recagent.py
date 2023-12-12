@@ -222,7 +222,7 @@ class RecAgent(GenerativeAgent):
             "Given the following observation about {agent_name}: '{observation}', please summarize the relevant details from his profile. His profile information is as follows:\n"
             + "Name: {agent_name}\n"
             + "Age: {agent_age}\n"
-            + "Gender:{agent_gender}\n"
+            + "Gender:{agent_gender} "
             + "Traits: {agent_traits}\n"
             + "Status: {agent_status}\n"
             + "Product Interest: {agent_interest}\n"
@@ -635,7 +635,7 @@ class RecAgent(GenerativeAgent):
             observation, call_to_action_template, now=now
         )
         result = full_result.strip().split("\n")[0]
-        if "GOODBYE:" in result:
+        if "GOODBYE:" in result.upper():
             farewell = self._clean_response(result.split("GOODBYE:")[-1])
             self.memory.save_context(
                 {},
@@ -648,14 +648,14 @@ class RecAgent(GenerativeAgent):
             return False, f"{self.name} said {farewell}"
         if "SAY:" in result:
             response_text = self._clean_response(result.split("SAY:")[-1])
-            self.memory.save_context(
-                {},
-                {
-                    self.memory.add_memory_key: f"{self.name} observed "
-                    f"{observation} and said {response_text}",
-                    self.memory.now_key: now,
-                },
-            )
+            # self.memory.save_context(
+            #     {},
+            #     {
+            #         self.memory.add_memory_key: f"{self.name} observed "
+            #         f"{observation} and said {response_text}",
+            #         self.memory.now_key: now,
+            #     },
+            # )
             return True, f"{self.name} said {response_text}"
         else:
             return False, result

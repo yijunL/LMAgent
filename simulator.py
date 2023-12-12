@@ -425,6 +425,8 @@ class Simulator:
                 elif "SEARCH" in choice:
                     observation = f"{name} is searching in shopping system."
                     item_name = agent.search_item(observation, self.now)
+                    if('<' not in item_name and '>'not in item_name):
+                        item_name = '<'+item_name+'>'
                     self.logger.info(f"{name} searches {item_name}.")
                     message.append(
                         Message(
@@ -811,35 +813,35 @@ class Simulator:
                     )
                     # If the system has a role, and it is her term now.
                     if self.config["play_role"] and self.data.role_id == agent_id:
-                        conversation = ""
                         observation = f"{name} is going to chat with {agent2.name}."
                         # Obtain the response from the role.
                         contin, result, role_dia = agent.generate_role_dialogue(
                             agent2, observation
                         )
-                        conversation += role_dia + result
+                        observation += role_dia + result
                         self.logger.info(role_dia)
                         self.logger.info(result)
+                        
                         # If both of them do not stop, an extra round will be held.
                         while contin:
                             contin, result, role_dia = agent.generate_role_dialogue(
-                                agent2, observation, conversation
+                                agent2, observation
                             )
-                            conversation += role_dia + result
+                            observation += role_dia + result
                             self.logger.info(role_dia)
                             self.logger.info(result)
+
                         message.append(
                             Message(
                                 agent_id=agent_id,
                                 action="CHAT",
-                                content=conversation,
+                                content=observation,
                             )
                         )
                     else:
                         observation = f"{name} is going to chat with {agent2.name}."
                         # If an agent wants to chat with the role.
                         if self.config["play_role"] and agent_id2 == self.data.role_id:
-                            conversation = ""
                             observation = f"{name} is going to chat with {agent2.name}."
                             # Obtain the response from the agent(LLM).
                             contin, result = agent.generate_dialogue_response(
@@ -853,12 +855,9 @@ class Simulator:
                             )
                             self.logger.info(role_dia)
                             contin = contin and role_contin
-                            conversation += agent_dia + role_dia
+                            observation += agent_dia + role_dia
                             # If both of them do not stop, an extra round will be held.
                             while contin:
-                                observation = (
-                                    f"{name} is going to chat with {agent2.name}."
-                                )
                                 contin, result = agent.generate_dialogue_response(
                                     observation
                                 )
@@ -870,13 +869,13 @@ class Simulator:
                                 ) = agent2.generate_dialogue_response(observation)
                                 self.logger.info(role_dia)
                                 contin = contin and role_contin
-                                conversation += agent_dia + role_dia
+                                observation += agent_dia + role_dia
                         else:
                             # Otherwise, two agents(LLM) will generate dialogues.
-                            conversation = agent.generate_dialogue(agent2, observation)
-                        self.logger.info(conversation)
+                            observation = agent.generate_dialogue(agent2, observation)
+                        self.logger.info(observation)
                     msgs = []
-                    matches = re.findall(r"\[([^]]+)\]:\s*(.*)", conversation)
+                    matches = re.findall(r"\[([^]]+)\]:\s*(.*)", observation)
                     for match in matches:
                         speaker = match[0]
                         content = match[1]
