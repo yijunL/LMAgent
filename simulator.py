@@ -512,7 +512,7 @@ class Simulator:
                                 content=f"There are no related products in the system.",
                             )
                         )
-                    if(have_search>=2):
+                    if(have_search>=1):
                         leave = True
                         continue
                     else:
