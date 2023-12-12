@@ -258,6 +258,7 @@ class Simulator:
                 )
             )
             leave = False
+            have_search = False
             rec_items, rec_items_pics = self.recsys.get_full_sort_items(agent_id)
             page = 0
             cnt = 0
@@ -511,6 +512,11 @@ class Simulator:
                                 content=f"There are no related products in the system.",
                             )
                         )
+                    if(have_search):
+                        leave = True
+                        continue
+                    else:
+                        have_search = True
                         
                 elif "DETAIL" in choice:
                     item_names = utils.extract_item_names(action)
