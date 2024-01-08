@@ -417,6 +417,7 @@ class RecAgent(GenerativeAgent):
             + "(2) Enter the Social Media. {agent_name} can chat with friends or publish a post to all friends of {agent_name}. \n"
             # + "If {agent_name} recently bought some products they might want to enter the Social Media, otherwise they might enter the Shopping System.\n"
             + "(3) Perform a Live Webcast. If so, {agent_name} will recommend many products to his fans on the webcast.\n"
+            + "(4) Do Nothing.\n"
             + "What action would {agent_name} like to take? Respond in one line."
             + "\nPlease note! Make sure that the actions taken by {agent_name} comply with the {agent_name}'s description, such as age, traits, status, interest, feature, etc."
             + "\nPlease note! If and only if {agent_name}'s status is 'Network Anchor', {agent_name} can perform online live broadcast. "
@@ -424,7 +425,7 @@ class RecAgent(GenerativeAgent):
             + "\nIf {agent_name} wants to enter the Shopping System, write:\n [SHOPPING]:: {agent_name} enters the Shopping System"
             + "\nIf {agent_name} wants to enter the Social Media, write:\n [SOCIAL]:: {agent_name} enters the Social Media"
             + "\nIf {agent_name} wants to perform a online live webcast, weite:\n [WEBCAST]::{agent_name} performs a Live Webcast"
-            # + "\nIf {agent_name} wants to do nothing, write:\n [NOTHING]:: {agent_name} does nothing"
+            + "\nIf {agent_name} wants to do nothing, write:\n [NOTHING]:: {agent_name} does nothing"
         )
         # + "(1) Enter the Shopping System. If so, {self.name} will be recommended some products, from which {self.name} can buy some products, or search for products by himself.\n"
         # observation = f"{self.name} must take only ONE of the actions below: \
