@@ -255,7 +255,7 @@ class RecAgent(GenerativeAgent):
         prompt = PromptTemplate.from_template(
             "{agent_summary_description}"
             + "\nIt is {current_time}."
-            + "\n{agent_name} recently heared {heared_history} on social media."
+            + "\n{agent_name} recently heard {heared_history} on social media."
             + "\n{agent_name} recently bought {watched_history} on shopping system."
             + "\nOther than that {agent_name} doesn't know any products."
             + "\nMost recent observations: {most_recent_memories}"
@@ -303,10 +303,10 @@ class RecAgent(GenerativeAgent):
             "{agent_summary_description}"
             + "\n {agent_summary_description2}"
             + "\nIt is {current_time}."
-            + "\n{agent_name} recently heared {heared_history} on social media."
+            + "\n{agent_name} recently heard {heared_history} on social media."
             + "\n{agent_name} recently bought {watched_history} on shopping system."
             + "\nOther than that {agent_name} doesn't know any products."
-            + "\n{agent_name2} recently heared {heared_history2} on social media."
+            + "\n{agent_name2} recently heard {heared_history2} on social media."
             + "\n{agent_name2} recently bought {watched_history2} on shopping system."
             + "\nOther than that {agent_name2} doesn't know any products."
             + "\nMost recent observations of {agent_name}: {most_recent_memories}"
@@ -722,8 +722,8 @@ class RecAgent(GenerativeAgent):
             + "\nHere are some products {agent_name} can recommend to his fans:" + products
             + "\nIn addition to the above products available, {agent_name} can also make targeted recommendations on what people on social media want, as well as selecting items he's interested in."
             + "\n{agent_name} needs to introduce several products in detail, such as their names, main purpose, benefits, prices, etc. "
-            + "{agent_name}’s recommended tone should match the style of the webcast."
-            + "\nIf you were {agent_name}, what would you say on a live webcast?"
+            + "{agent_name}’s recommended tone should match the style of the live streaming."
+            + "\nIf you were {agent_name}, what would you say on a live streaming?"
             + "\nAll occurrences of product names should be enclosed with <>, such as <product name>"
             + "\n\n"
         )

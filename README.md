@@ -1,3 +1,3 @@
-# LMAgent: Large-scale and Multimodal Interactive Simulation of Human Behavior
+# LMAgent: A Large-scale Multimodal Agents Society for Multi-user Simulation
 
 More details will be released soon.

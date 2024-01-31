@@ -1,0 +1,1001 @@
+id,name,gender,age,traits,status,interest,feature
+0,Theodore Armstrong,male,39,"independent,creative,practical,patient,compassionate",artist," Easels ,Landscape painting ",Watcher
+1,Jasmine Cook,male,44,"independent,compassionate,practical,energetic",nurse," First-aid kits ,Exercise equipment ",Watcher;Critic
+2,Nora Bennett,male,58,"fun-loving,compassionate,caring,patient,ambitious",doctor," Fitness equipment ,Stethoscopes ,Thermometers ,Wheelchairs ",Watcher;Chatter;Poster
+3,Eleanor Dean,female,39,"fun-loving,creative,practical,ambitious,patient",student," Backpacks ,Digital textbooks ",Explorer
+4,Jasmine Berry,male,40,"fun-loving,creative,practical,energetic",nurse," Stethoscopes ,Blood pressure monitors ",Explorer;Critic
+5,Jack Friedman,female,49,"independent,compassionate,caring,ambitious,energetic",writer," Ballpoint pens ,Notebooks ",Watcher
+6,Oliver Flores,male,69,"compassionate,caring,ambitious,optimistic",teacher," Chalk ,Classroom decor ",Explorer;Poster
+7,Nora Eaton,female,48,"fun-loving,compassionate,caring,ambitious,patient",doctor," Otoscopes ,Blood pressure monitors ",Explorer;Poster
+8,Chloe Watson,female,34,"good at recommendations, popular, enthusiastic, humorous, and good at live streaming",network anchor,"beauty, fashion, food, travel, and lifestyle",Critic;Poster
+9,David Fraser,female,35,"independent,compassionate,creative,practical,patient",writer," Typewriters ,Premium pens ,Stationery sets ",Watcher;Critic;Poster
+10,Aaron Edwards,male,54,"compassionate,caring,ambitious,optimistic",teacher," Whiteboards ,Textbooks ",Watcher
+11,Elijah Farmer,male,47,"fun-loving,independent,caring,patient,optimistic",student," Laptops ,Backpacks ",Critic
+12,Blake Bennett,male,60,"independent,creative,practical,energetic,patient",writer," Fountain pens ,Classic books ",Watcher;Explorer;Poster
+13,Ella Blanks,female,30,"compassionate,caring,ambitious,energetic",designer," Fabric ,Paintbrushes ",Watcher;Chatter
+14,Gavin Foster,male,30,"fun-loving,compassionate,caring,ambitious,energetic",scientist," Microscopes ,Lab coats ",Watcher;Chatter
+15,Tyler Dunn,male,63,"fun-loving,creative,practical,patient,compassionate",lawyer," Briefcases ,Legal pads ",Explorer;Critic
+16,Ruby Gonzalez,male,53,"independent,compassionate,caring",retired," Fishing gear ,Golf clubs ,Binoculars ",Watcher;Explorer;Critic;Chatter;Poster
+17,Vincent Charles,female,33,"compassionate,caring,ambitious,energetic",nurse," Nursing shoes ,Medical scrubs ",Watcher;Explorer
+18,Felix Farmer,male,54,"compassionate,caring,ambitious,optimistic",designer," Sewing machines ,Drawing tablets ",Chatter
+19,Henry Duncan,female,30,"fun-loving,creative,practical,energetic",scientist," Lab equipment ,Microscopes ",Watcher;Critic
+20,Evan Friedman,male,21,"fun-loving,independent,energetic,ambitious",entrepreneur," Hiking ,Yoga ",Critic;Poster
+21,Zoe Fisher,female,49,"compassionate,patient,independent",engineer," Running Shoes ,Workout DVDs ",Poster
+22,Harper Bowen,male,56,"compassionate,caring,creative,patient,ambitious",retired," Lawn Games ",Watcher;Critic;Chatter
+23,Madison Fraser,male,50,"fun-loving,practical,compassionate,energetic,independent",student," Stickers ,Paintbrushes ",Chatter;Poster
+24,Evan Albert,male,30,"patient,compassionate,ambitious",teacher," Watches ,Cookware Sets ",Critic;Poster
+25,Julia Dixon,male,58,"caring,patient,independent",nurse," Gardening Tools ",Watcher
+26,Alexander Ewing,female,40,"compassionate,practical,ambitious,energetic,patient",farmer," Cookware ,Knitting Kits ",Watcher;Explorer;Critic;Chatter
+27,George Morgan,male,34,"ambitious,independent",scientist," Bike Helmets ,Smartphones ",Watcher;Chatter;Poster
+28,Blake Durham,male,63,"patient,compassionate,ambitious",photographer," Televisions,Headphones",Watcher;Critic;Chatter
+29,Addison Clark,female,39,"fun-loving,practical,creative,independent",farmer," Painting Supplies ,Fishing Gear ",Explorer;Critic;Chatter
+30,Mia Allen,female,32,"compassionate,patient,independent",entrepreneur," Running clothes ,Protein powder ",Poster
+31,Patrick Foster,female,29,"fun-loving,ambitious,creative,practical",farmer," Leggings,Fishing Gear ",Explorer;Critic
+32,Isaac Eaton,female,50,"compassionate,caring,ambitious",scientist," Outdoor dining sets ",Explorer;Poster
+33,Owen Clarke,male,52,"caring,compassionate,ambitious",artist," Picture frames ",Poster
+34,Isaac Armstrong,female,47,"compassionate,caring,ambitious",lawyer," Jewelry ,Coffee makers ",Poster
+35,Owen Fraser,female,55,"compassionate,energetic,patient,creative,ambitious",designer," Luggage sets ",Explorer;Critic;Chatter
+36,Katherine Eaton,female,29,"caring,compassionate,energetic,practical",scientist," Cookware ,Outdoor furniture",Chatter;Poster
+37,Jacob Cook,female,30,"fun-loving,practical,caring,ambitious",nurse," Headphones ,Coffee makers ",Watcher;Critic;Chatter
+38,Bennett Walker,female,44,"caring,compassionate,practical,ambitious",scientist," Tablets ,Jewelry ",Watcher;Chatter;Poster
+39,Fiona Blanks,male,62,"energetic,creative,patient,compassionate,ambitious",retired," Golf clubs ,Outdoor furniture",Explorer;Poster
+40,Daniel Diaz,female,22,"fun-loving,energetic,patient,practical",retired," gardening ,Fishing rods ",Watcher;Critic;Chatter
+41,Elizabeth Cody,female,64,"compassionate,ambitious,optimistic",scientist," Bird watching ,Pottery ",Watcher;Explorer;Chatter
+42,Jonah Campbell,male,69,"creative,patient,empathetic,independent",musician," Vinyl records ,Bicycles ",Poster
+43,Fiona Parker,male,45,"compassionate,caring,ambitious,optimistic",teacher," Communication ,Outdoor ,Seat covers ,Kitchen Appliances ",Critic
+44,Isla Boyd,female,60,"energetic,compassionate,practical,caring",musician," Pianos ,Nature guides ",Explorer
+45,Willow Mitchell,male,64,"compassionate,caring,ambitious,optimistic",teacher," Kids ",Critic;Poster
+46,Noah Ewing,female,34,"fun-loving,energetic,patient,practical",designer," Smartphones ,Cosmetics ",Watcher
+47,Lily Burks,female,34,"compassionate,caring,ambitious,optimistic",doctor," Golf clubs ,Coffee grinders ",Chatter
+48,Jasmine Coffey,male,49,"independent,confident,passionate,ambitious",teacher," Power tools ,Basketball hoops ",Watcher;Explorer;Chatter
+49,Liam Davidson,female,43,"caring,ambitious,optimistic,independent",lawyer," Beach toys ,Yoga accessories ",Watcher;Poster
+50,Felix Bell,male,50,"independent,energetic,loyal,ambitious",retired," Binoculars ,Pocket watches ",Explorer;Poster
+51,Jade Dalton,female,29,"fun-loving,energetic,patient,practical",entrepreneur," Board games ,Skateboards ",Poster
+52,Caleb Allen,female,61,"ambitious,compassionate,caring,optimistic",nurse," Hotel toiletries ,Musical instruments ",Explorer;Critic;Poster
+53,Isabella Cooper,female,48,"independent,energetic,loyal,creative",retired," Knitting needles ,Snow globes ",Explorer;Critic;Poster
+54,Charlotte Turner,male,46,"fun-loving,energetic,patient,practical",musician," Vinyl records ,Bicycles ",Watcher;Chatter;Poster
+55,Thomas Johnson,female,49,"compassionate,ambitious,optimistic",entrepreneur," Eye masks ,Electric razors ",Chatter;Poster
+56,Mia Watson,female,59,"fun-loving,energetic,patient,practical",entrepreneur," Crossword puzzles ,Scrapbooking ",Chatter
+57,Peter Ewing,male,53,"ambitious,confident,independent,passionate",engineer," Keyboards ,Non-fiction ",Poster
+58,Eleanor Watson,female,50,"caring,ambitious,optimistic,independent",nurse," Exercise equipment ,Video games ",Critic;Chatter;Poster
+59,Zachary Durham,male,35,"compassionate,ambitious,optimistic",entrepreneur," Camping gear ,Virtual reality headsets ",Watcher;Explorer;Chatter
+60,Caleb Cody,male,60,"compassionate,fun-loving,adventurous,practical,patient",lawyer," Photography ,Woodworking ",Watcher;Explorer;Critic
+61,Ella Lewis,male,53,"fun-loving,caring,practical,adventurous,ambitious",student," Musical instruments ,Video games ",Watcher;Explorer;Poster
+62,Amelia Burks,male,58,"fun-loving,adventurous,compassionate,practical,energetic",lawyer," Antiques ,Video games ",Watcher;Explorer;Critic
+63,Luke Evans,male,25,"practical,ambitious,independent,optimistic",scientist," Electronics ,Sports gear ",Watcher;Poster
+64,Jade Campbell,male,58,"practical,creative,compassionate,caring",engineer," Fishing equipment ",Watcher;Critic
+65,Eleanor Blanks,female,36,"caring,ambitious,independent,optimistic,energetic",student," Gardening tools ,Board games ",Chatter;Poster
+66,Kaitlyn Blevins,male,45,"adventurous,compassionate,fun-loving,energetic,creative",musician," Musical instruments ,Camping gear ",Watcher;Critic;Poster
+67,Brooklyn Ferguson,female,59,"compassionate,caring,adventurous,practical,independent",teacher," Books ,Cooking supplies ",Watcher;Explorer;Poster
+68,Evan Turner,female,44,"creative,compassionate,ambitious,independent,energetic",photographer," Yoga supplies ,Fitness gear ",Critic;Chatter;Poster
+69,Patrick Blevins,male,31,"independent,ambitious",student," Skincare products ",Poster
+70,Emma Collins,male,38,"creative,caring,compassionate",farmer," Pet supplies ",Critic;Poster
+71,Kaitlyn Eaton,male,56,"compassionate,caring,adventurous,energetic",nurse," Golf clubs ",Explorer;Chatter;Poster
+72,Zoe Eaton,male,62,"adventurous,caring,compassionate",farmer," Fishing equipment ",Explorer;Poster
+73,Brooklyn Gray,female,38,"compassionate,caring,ambitious",doctor," Beauty products ",Watcher;Chatter
+74,Owen Donahue,female,43,"compassionate,caring,adventurous,ambitious",farmer," Kitchen appliances ",Watcher
+75,Isla Bernard,female,31,"adventurous,compassionate,ambitious,energetic",nurse," Camping gear ",Chatter
+76,Robert Morgan,female,45,"ambitious,independent,energetic",doctor," Hiking gear ",Chatter;Poster
+77,Henry Baldwin,male,43,"practical,adventurous,fun-loving,energetic,ambitious",lawyer," Fitness gear ",Watcher;Explorer
+78,Hunter Underwood,female,49,"adventurous,fun-loving,compassionate,caring",writer," Art supplies ",Explorer;Critic
+79,Madison Clay,male,65,"compassionate,adventurous,caring,practical",musician," Musical instruments ,Sports equipment ",Watcher;Chatter
+80,Felix Grant,male,61,"compassionate,empathetic,practical,fun-loving",farmer," Golf clubs ,Gardening ",Watcher;Explorer
+81,Nora Farmer,male,43,"fun-loving,compassionate,optimistic,ambitious",scientist," Binoculars ,Video games ",Watcher;Critic;Poster
+82,William English,female,38,"energetic,ambitious,practical,creative,patient",scientist," Hiking boots ,Telescope ",Watcher;Critic
+83,Caleb Mitchell,female,62,"caring,ambitious,compassionate",nurse," Sewing machine ,Fishing rod ,Knitting supplies ",Watcher;Explorer;Poster
+84,Kaitlyn Collins,male,55,"energetic,ambitious,compassionate,fun-loving",entrepreneur," Herb garden ,Baking supplies ",Explorer;Chatter
+85,Isabella Dean,male,22,"practical,energetic,independent,creative,patient",lawyer," Headphones ,Non-fiction books ",Watcher
+86,Willow English,male,48,"practical,independent,patient,empathetic,caring",teacher," Yoga mat ,Calligraphy supplies ",Watcher;Poster
+87,Simon Cooper,female,43,"fun-loving,compassionate,caring,ambitious,optimistic",retired," Board games ,Kids ",Chatter;Poster
+88,Hudson Bauer,male,41,"fun-loving,independent,creative,patient,empathetic",retired," Collectibles ,Cooking ",Watcher
+89,Andrew Collins,male,51,"energetic,patient,compassionate,caring",artist," Film photography ,Pottery ",Chatter
+90,George Charles,male,26,"ambitious,independent,fun-loving,compassionate",lawyer," Running shoes ,Motivational books ",Watcher;Poster
+91,Chloe Charles,male,34,"compassionate,ambitious,caring,creative",nurse," Fitness equipment ,Landscaping tools ",Watcher;Critic
+92,Rachel Forbes,female,22,"energetic,practical,independent,ambitious,fun-loving",photographer," Photo printer ,Drone ",Watcher
+93,Oliver Anderson,female,63,"caring,creative,ambitious,compassionate",teacher," Musical instruments ,Knitting supplies ",Poster
+94,Charlotte Berg,female,43,"energetic,fun-loving,optimistic,caring,ambitious",photographer," Camping gear ,Adventure travel books ",Watcher;Explorer;Critic
+95,Natalie Fraser,male,52,"ambitious,compassionate,caring,practical,energetic",engineer," Gadgets ,Robotics ",Chatter
+96,Emma Duncan,male,54,"compassionate,ambitious,creative,caring,patient",retired," Home brewing ,Baking supplies ",Explorer;Critic
+97,Jasmine Carroll,male,24,"independent,creative,ambitious,compassionate",artist," Oil painting ,DIY crafts ",Watcher;Explorer
+98,Xavier Boyd,female,58,"compassionate,caring,ambitious,energetic,fun-loving",writer," Calligraphy ,Bookbinding ",Watcher;Chatter;Poster
+99,Jasmine Dunn,female,62,"caring,compassionate,ambitious",student," Writing utensils ,Scrapbooking supplies ",Watcher;Chatter
+100,Hazel Berg,female,50,"caring,practical,patient,empathetic",student," Board games ,Gardening ",Watcher;Critic
+101,Olivia Brooks,male,48,"fun-loving,adventurous,practical,energetic,patient",lawyer," Coffee grinders ",Chatter
+102,Jack Underwood,male,34,"creative,ambitious,optimistic",farmer," Art supplies ,Camping stoves ,Kitchen Appliances ,Camping",Watcher;Explorer;Chatter;Poster
+103,Nora Morgan,male,51,"compassionate,caring,ambitious,optimistic",scientist," Grills ,Bathroom faucets",Watcher;Critic
+104,Fiona Grant,male,57,"independent,creative,patient,empathetic",designer," Kids ",Watcher
+105,Addison Darling,female,67,"fun-loving,adventurous,patient,empathetic",student," Board games ,Kitchen Appliances ",Explorer;Critic
+106,Mason Roberts,female,51,"independent,creative,ambitious,energetic,patient",writer," Kitchen Appliances ,Hobbies",Watcher;Explorer;Critic
+107,Taylor Cox,female,50,"caring,compassionate,ambitious,patient,empathetic",doctor," Barrels ,Removing stains",Watcher
+108,Henry Bennett,male,46,"compassionate,caring,ambitious,optimistic",nurse," Communication ,Outdoor ,Seat covers ,Kids",Critic;Chatter
+109,Lauren Durham,male,58,"independent,adventurous,ambitious,optimistic",writer," Gardening",Watcher;Poster
+110,Finn Underwood,female,58,"caring,compassionate,ambitious,patient,empathetic",retired," Kids ",Watcher
+111,Kyle Walker,female,42,"fun-loving,creative,ambitious,optimistic",designer," Kids ,Automotive",Watcher;Poster
+112,Finnegan Burks,male,51,"fun-loving,adventurous,practical,energetic,patient",doctor," Kitchen Appliances ,Removing stains,Dog houses",Watcher;Poster
+113,Isla Brock,female,62,"creative,practical,energetic,patient,empathetic",artist," Tennis rackets ",Watcher;Poster
+114,William Brooks,male,34,"caring,compassionate,ambitious,patient,empathetic",teacher," Tennis rackets ,Kids ,Communication",Critic
+115,Isaac Armstrong,female,55,"fun-loving,adventurous,practical,energetic,patient",scientist," Arts and crafts ,Kids ",Critic
+116,Madison Dawson,male,40,"caring,compassionate,ambitious,patient,empathetic",student," Kids ,Sports",Watcher
+117,Jonah Barber,female,27,"caring,compassionate,ambitious,optimistic",retired," Tools ,Outdoor,listening information",Explorer
+118,Harper Barker,female,54,"fun-loving,practical,energetic,patient,empathetic",actor," Kitchen Appliances ,Performing arts ",Watcher;Poster
+119,Madison Brady,female,40,"creative,practical,patient,empathetic",designer," Fashion Toys ,Kids ",Poster
+120,Xavier Buck,female,59,"compassionate,caring,ambitious,optimistic",photographer," Yoga ,Digital cameras ",Explorer
+121,Mason Farmer,male,41,"independent,compassionate,ambitious,patient",lawyer," Tailoring ,Drawing ",Poster
+122,Liam Darling,female,42,"ambitious,creative,practical,energetic,patient",farmer," Flower pressing ,Birdwatching ,Antiques ",Critic;Chatter
+123,Elizabeth Farmer,female,25,"fun-loving,creative,practical,energetic,patient",writer," Hiking ,Movie making ",Watcher;Explorer;Critic
+124,Theodore Alexander,female,41,"caring,creative,empathetic,practical,energetic",retired," Crocheting ,Genealogy ,Trivia ",Critic;Poster
+125,Delilah Bass,female,51,"compassionate,caring,ambitious,patient",farmer," Quilting ,Adult coloring books ",Poster
+126,Mason Gonzalez,male,46,"independent,ambitious,adventurous",artist," Gardening ,Baking ",Explorer
+127,Sarah Brown,male,63,"compassionate,ambitious,adventurous,empathetic,practical",designer," Jewelry making ,Leathercraft ",Critic
+128,Jack Adams,male,44,"fun-loving,independent,compassionate,creative",lawyer," Betting on horses ,Metalworking ,Cosplaying ",Critic
+129,Ian Brady,male,54,"good at recommendations, popular, enthusiastic, humorous, and good at live streaming",network anchor,"news, culture, current events, and lifestyle",Watcher;Chatter;Poster
+130,Oliver Collins,male,65,"compassionate,caring,ambitious,patient",nurse," Magic Tricks ,Archery ",Watcher;Poster
+131,Mason Fraser,male,41,"compassionate,caring,ambitious,patient",lawyer," Home Theater ,Candles ",Watcher;Critic
+132,George Powell,male,43,"ambitious,adventurous,compassionate,caring",artist," Ceramics ,Puzzle books ",Watcher;Critic
+133,Caleb Davidson,male,45,"compassionate,caring,ambitious,patient",scientist," Leathercraft ,Board/tabletop games ",Watcher
+134,Ella Conner,male,68,"independent,compassionate,caring,ambitious",engineer," Creative writing ,Magic ",Watcher
+135,Eleanor Eaton,male,44,"compassionate,caring,ambitious,practical,energetic",nurse," Kayaking ,Voice acting ",Critic
+136,Gavin Darling,male,57,"fun-loving,compassionate,caring,practical",student," Hula hooping ,Stand-up comedy ",Watcher;Poster
+137,Elizabeth Cochran,female,43,"compassionate,caring,ambitious,energetic",writer," Stamping ,Scrapbooking ",Watcher;Explorer
+138,Emma Carlson,male,25,"ambitious,adventurous,caring",scientist," Coloring ,Book restoration ",Watcher;Critic;Chatter;Poster
+139,Wesley Davidson,female,26,"fun-loving,independent,practical,energetic,patient",writer," Parkour ,Painting ",Watcher;Explorer;Chatter;Poster
+140,Addison Darling,female,21,"compassionate,caring,energetic,cheerful,patient",nurse," Pottery ,Horseback riding ",Poster
+141,Isaac Gibson,male,48,"compassionate,energetic,fun-loving,patient,ambitious",musician," RC cars ,Candle making ,Paint by Numbers ",Watcher;Explorer;Chatter
+142,Kevin Ferguson,female,56,"ambitious,compassionate,caring,practical,fun-loving",photographer," Crochet ,Yeast bread ",Explorer;Poster
+143,Raymond Fitzpatrick,male,54,"independent,fun-loving,compassionate,caring",artist," Cookbooks ,Board games ,Paintball ",Explorer;Critic;Chatter
+144,Caleb Gray,male,39,"creative,energetic,fun-loving,independent,patient",nurse," Kite flying ,Antiquing ",Watcher;Explorer
+145,Michael Byrd,female,24,"independent,creative,energetic,fun-loving,cheerful",engineer," Surfing ,Macrame ",Watcher;Poster
+146,Nora Adams,male,37,"compassionate,caring,patient,ambitious",artist," 3D printing ,Collecting artwork ",Watcher;Chatter
+147,Nora Bauer,female,68,"fun-loving,empathetic,cheerful,caring",musician," Photography ,Astronomy ,Fencing ",Watcher
+148,Kevin Ferguson,male,67,"independent,ambitious",lawyer," Canoeing ",Watcher;Critic
+149,Lucas Deleon,female,41,"compassionate,caring,patient,practical,energetic",doctor," Wood carving ,LEGO building ",Critic;Poster
+150,Raymond Watson,male,39,"creative,fun-loving,practical,ambitious",actor," Skydiving ",Critic
+151,Liam Cooper,female,33,"fun-loving,caring,patient,ambitious,independent",student," Playing musical instruments ,Calligraphy ",Poster
+152,Vincent Brooks,male,35,"patient,practical,cheerful,ambitious",designer," Cross-stitch ",Chatter
+153,Theodore Bernard,female,48,"fun-loving,independent,practical,ambitious,energetic",teacher," Paint-by-Number Kits ",Watcher;Explorer;Poster
+154,Patrick Kennedy,male,56,"ambitious,caring,compassionate,independent,optimistic",lawyer," Metalworking ,Metal detection ",Explorer
+155,Hudson Gonzalez,female,54,"independent,restless,compassionate,energetic,fun-loving",engineer," Pottery ",Explorer
+156,Julia Cook,male,53,"compassionate,energetic,cheerful,practical,caring",teacher," Songwriting ,Ballroom Dancing ,Macrame ",Watcher
+157,Georgia Grant,female,45,"caring,compassionate,empathetic,restless,patient",nurse," Geocaching ,Locksport ",Watcher;Critic;Chatter;Poster
+158,Bennett Berry,female,65,"independent,imaginative,creative,ambitious,fun-loving",farmer," Metal detecting ",Watcher
+159,Alexander Deleon,male,53,"fun-loving,restless,ambitious",doctor," Magic ",Chatter
+160,Ruby Farmer,female,30,"patient,practical,energetic,empathetic",doctor," Mountain biking ,Musical instrument-making ",Critic
+161,Isaac Edwards,male,43,"fun-loving,independent,compassionate,ambitious,creative",engineer," Model Rockets ,Comic book collecting ",Watcher;Critic
+162,Katherine Fisher,female,61,"caring,creative,compassionate,practical",student," Swimming ,Sketching ",Explorer;Chatter;Poster
+163,Lily Armstrong,male,30,"compassionate,caring,ambitious,optimistic",doctor," App development ,Aquariums ,Dart flights ",Watcher
+164,Gabriel Fisher,female,51,"caring,creative,patient",actor," Board/tabletop games ,Racing Pigeon ",Chatter
+165,Faith Dixon,male,31,"fun-loving,creative,practical,energetic,patient",photographer," Airbrushing ,Crocheting ",Chatter;Poster
+166,Blake Blanks,male,70,"independent,creative,patient,empathetic",nurse," Record collecting ,Painting ",Critic;Poster
+167,Robert Anderson,female,45,"compassionate,caring,ambitious,independent,creative",designer," Air sports ,Amateur astronomy ",Watcher;Poster
+168,Lauren Cooper,female,36,"fun-loving,caring,ambitious,optimistic",teacher," Building Dollhouses ,Illustration ",Watcher;Poster
+169,Grayson Carroll,male,43,"compassionate,caring,ambitious,independent",photographer," Beekeeping ,Color guard ,Cigar smoking ",Watcher;Explorer
+170,Finn Clark,male,46,"fun-loving,creative,practical,energetic",photographer," Doll collecting ,Meteorology ",Watcher;Explorer
+171,George Allen,male,43,"fun-loving,independent,creative,practical,compassionate",engineer," Amateur radio ,Singing ",Watcher
+172,Georgia Campbell,male,39,"creative,practical",student," Gardening ,Dance ",Chatter;Poster
+173,Andrew Cook,female,53,"independent,compassionate,caring,creative",doctor," Coloring ,Racing radio-controlled cars ",Explorer;Critic
+174,Hunter Carey,female,44,"compassionate,caring,ambitious,independent,creative",teacher," Card game ,Performing arts ",Watcher
+175,Sophia Allen,female,44,"fun-loving,caring,ambitious,optimistic,patient",designer," Floral Arranging ,Magic ",Watcher;Critic
+176,Gavin Bowen,female,35,"compassionate,ambitious,independent,creative",lawyer," Beach Volleyball ,Birdwatching ",Watcher
+177,Vincent Berg,male,55,"fun-loving,creative,practical,energetic,patient",engineer," Board game ,Color guard ",Watcher;Explorer;Poster
+178,Addison Garcia,male,39,"creative,practical,energetic,patient,empathetic",artist," Architecture ,Astronomy ",Watcher;Explorer;Poster
+179,Mason Farmer,female,54,"compassionate,caring,ambitious,independent",farmer," Die-cast toy ",Chatter
+180,Amelia Fowler,male,54,"ambitious,compassionate,energetic,fun-loving",doctor," Gardening ,Sleep masks ",Watcher
+181,Thomas Brown,male,51,"adaptable,patient,ambitious",student," Exercise bikes ,Dutch ovens ",Watcher;Poster
+182,Raymond Ewing,male,47,"compassionate,caring,ambitious,optimistic",teacher," Gardening ",Watcher;Critic;Poster
+183,Lucy Kennedy,female,43,"creative,patient,empathetic,optimistic",farmer," Binoculars ",Watcher
+184,Gavin Gonzalez,female,41,"outgoing,energetic,ambitious,empathetic,practical",student," Board games ,Deep fryers ",Watcher;Explorer;Critic;Chatter;Poster
+185,Noah Armstrong,female,24,"fun-loving,creative,practical,energetic",farmer," Compost bins ,Outdoor furniture ",Critic;Chatter
+186,Jade Davidson,female,49,"independent,compassionate,energetic,patient,adventurous",entrepreneur," Knitting ,Home security systems ,Beer brewing ",Watcher;Critic;Chatter;Poster
+187,Andrew Cox,female,36,"adaptable,patient,ambitious,optimistic",student," Power drills ,Cooking thermometers ",Explorer;Critic
+188,Nora Adams,male,33,"compassionate,caring,ambitious,optimistic",actor," Ice cream makers ,Video game consoles ",Watcher;Explorer
+189,Daniel Ferguson,female,61,"compassionate,caring,ambitious,optimistic",musician," Headphones ,Gardening gloves ",Watcher;Chatter
+190,Ruby Carey,female,62,"independent,creative,patient,empathetic,adventurous",photographer," Picture frames ,Sewing machines ",Critic;Chatter
+191,Noah Bell,female,53,"compassionate,caring,ambitious,optimistic",doctor," Hiking shoes ,Aromatherapy diffusers ",Watcher;Poster
+192,Emily Carroll,male,21,"fun-loving,creative,optimistic",writer," Bluetooth speakers ",Watcher;Critic;Poster
+193,Victoria Donaldson,female,40,"independent,adventurous,caring,empathetic,patient",doctor," Essential oil diffusers ,Beach umbrellas ",Watcher;Explorer;Poster
+194,Robert Walker,female,33,"compassionate,ambitious,optimistic",photographer," Yoga mats ,Coffee makers ",Watcher;Critic;Poster
+195,Georgia Barber,male,39,"adaptable,patient,adventurous,practical",retired," Massage guns ,Carry-on luggage ",Watcher;Explorer;Critic;Poster
+196,Aaron Berry,male,29,"independent,energetic,patient,ambitious,optimistic",photographer," Computer monitors ",Watcher;Explorer;Poster
+197,Matthew Watson,female,42,"fun-loving,creative,adventurous,practical",teacher," Resistance bands ,Blender bottles ",Watcher;Critic;Poster
+198,Vincent Clay,female,57,"adaptable,patient,adventurous,practical",artist," Vinyl records ,BBQ tools ",Watcher;Explorer;Critic;Chatter;Poster
+199,Daisy Carroll,female,53,"creative,patient,empathetic,adventurous,ambitious",teacher," Yoga blocks ,Massagers ",Watcher;Explorer
+200,Kevin Bernard,male,42,"fun-loving,patient,ambitious,practical",actor," Painting ,Camping stoves ",Watcher
+201,Kevin Ewing,female,44,"independent,ambitious,practical,empathetic",engineer," Photography ,Hiking boots ",Watcher;Poster
+202,Mason Cox,male,36,"compassionate,fun-loving,patient,ambitious,optimistic",designer," Cell phone accessories ,Tennis rackets ",Watcher;Explorer;Critic
+203,Gabriel Parker,female,47,"fun-loving,independent,practical,energetic",photographer," Virtual reality headset ,Outdoor recreation ",Critic;Poster
+204,Isaac Cox,female,67,"compassionate,caring,patient",doctor," Watches ,Sunglasses ",Watcher;Critic
+205,Piper Cooper,male,52,"practical",teacher," Stationery ,Headphones ",Chatter
+206,Isaac Evans,female,43,"fun-loving,caring,ambitious,practical",photographer," Grilling accessories ,Hiking boots ",Chatter
+207,Finnegan Coleman,female,42,"independent,compassionate,caring",scientist," Gardening gloves ,Camping stoves ",Critic
+208,Sarah Carlson,female,62,"compassionate,caring",student," Home improvement supplies ,Home decoration ",Critic;Poster
+209,Vincent Burks,female,32,"fun-loving,practical,energetic,patient",retired," Portable speakers ,Backpacks ",Explorer;Critic
+210,Raymond Brady,male,53,"independent,fun-loving,patient,ambitious",retired," Home workout equipment ,Binoculars ",Watcher;Chatter
+211,Isla Carroll,male,35,"compassionate,caring",doctor," Fitness equipment ,Cycling ",Watcher;Critic;Chatter
+212,Hudson Clay,male,48,"independent,compassionate,ambitious",entrepreneur," Books ,Healthy snacks ",Explorer;Critic;Chatter;Poster
+213,Wesley Powell,female,44,"fun-loving,independent,ambitious,energetic",scientist," Sustainable products ,Hiking boots ",Chatter
+214,Luke Boyd,male,51,"independent,compassionate,fun-loving,practical",photographer," Fitness tracker ,Board games ",Watcher;Critic;Poster
+215,Aaron Baldwin,male,39,"independent,patient,ambitious",scientist," Smart home devices ,Hiking boots ",Watcher;Chatter
+216,Finn Kennedy,male,55,"independent,compassionate,patient,ambitious,optimistic",lawyer," Healthy snacks ,Fitness equipment ",Watcher;Explorer
+217,Robert Durham,female,40,"compassionate,caring",farmer," Gardening tools ,Outdoor recreation ",Poster
+218,Delilah Collins,male,57,"fun-loving,practical,energetic",farmer," Home improvement supplies ,Portable speakers ",Explorer
+219,Blake Underwood,female,64,"compassionate,caring,ambitious,practical,patient",designer," Home decor ,Golf clubs ",Watcher;Critic;Chatter
+220,Delilah Turner,male,38,"independent,creative,caring,ambitious",scientist," photography ,Traveling ,Reading",Watcher;Chatter
+221,Olivia Evans,male,35,"fun-loving,creative,practical,energetic,patient",actor," Sports ,Music ,Traveling",Watcher
+222,Chloe Donaldson,male,52,"compassionate,caring,ambitious,optimistic",lawyer," Fitness ,Traveling ,Cooking ,Hiking",Explorer;Poster
+223,David Buck,female,60,"fun-loving,creative,practical,energetic,patient",writer," Traveling ,Food ,Sports",Watcher;Explorer
+224,Gavin Clarke,male,51,"independent,compassionate",lawyer," Fishing ,Golfing ",Poster
+225,Daniel Fitzpatrick,male,49,"compassionate,caring,ambitious,optimistic",engineer," Cars ,Gardening ,Reading",Explorer;Poster
+226,Andrew Chase,male,23,"independent,creative,patient,empathetic",musician," Painting ,Video games ",Explorer;Chatter
+227,Ruby Albert,male,39,"independent,creative,compassionate",teacher," Yoga ,Volunteering ,Hiking ",Watcher;Chatter
+228,Thomas Foster,male,58,"compassionate,caring,ambitious,optimistic",farmer," Cooking ,Fishing ,Gardening",Watcher
+229,Lucas Blanks,male,48,"compassionate,caring,practical,energetic,patient",writer," Music ,Playing an instrument ",Watcher;Explorer
+230,Alexander Friedman,male,37,"fun-loving,creative,practical,energetic,patient",musician," Dancing ,Movies ,Cooking ",Explorer
+231,Alexander Brooks,male,50,"independent,creative,caring,ambitious",scientist," Astronomy ,Skiing ,Metal detecting ",Watcher;Chatter
+232,Luke Donaldson,female,52,"compassionate,caring,ambitious,optimistic",engineer," Gardening ,Baking ,Arts and crafts",Watcher;Poster
+233,Willow Donaldson,male,41,"fun-loving,creative,practical,energetic,patient",musician," Photography ,Coffee tasting ",Chatter
+234,David Garcia,female,36,"fun-loving,creative,practical,energetic,patient",writer," Drawing ,Camping ,Foreign language learning ",Poster
+235,Daisy Roberts,male,31,"compassionate,caring,practical,energetic,patient",writer," Painting ,Hiking ",Explorer;Poster
+236,Ian Dalton,female,35,"compassionate,caring,practical,energetic,patient",farmer," Gardening ,Pottery ,Baking",Explorer;Chatter;Poster
+237,William Underwood,male,43,"independent,creative,patient,empathetic",photographer," Bird watching ,Calligraphy ",Critic;Chatter;Poster
+238,Sophia Ewing,female,52,"compassionate,caring,ambitious,optimistic",photographer," Scrapbooking ,Fishing ,Playing musical instruments ",Watcher;Poster
+239,Natalie Morgan,female,51,"fun-loving,creative,practical,energetic,patient",student," Belly dancing ,Magic ,Candle making ",Watcher;Explorer;Critic;Chatter
+240,Emily Morgan,male,39,"fun-loving,creative,practical,energetic,patient",writer," pottery ,Movie memorabilia ",Watcher;Explorer
+241,William Dixon,male,59,"caring,ambitious,optimistic,patient",student," Failed  app ,Pens ",Watcher;Critic
+242,Charlotte Lee,male,39,"fun-loving,creative,ambitious,patient",writer," Lamps ,Watches ,Tablets ",Watcher;Explorer;Critic;Chatter;Poster
+243,Gabriel Bennett,male,59,"compassionate,caring,ambitious,optimistic",retired," Computers ",Watcher;Chatter;Poster
+244,Grace Johnson,female,62,"compassionate,caring,ambitious",nurse," Nail arts ,Outdoor  shoes ",Explorer;Critic
+245,Elijah Davidson,male,68,"fun-loving,compassionate,caring,ambitious,optimistic",photographer," Office appliances ,Bags ",Watcher;Chatter
+246,Sarah Cook,female,56,"compassionate,patient,empathetic,practical",teacher," Vacuum cleaners ,Exercise equipment ",Explorer;Poster
+247,Lucas Bell,female,55,"compassionate,caring",artist," Tablets ",Poster
+248,Felix Bauer,male,48,"good at recommendations, popular, enthusiastic, humorous, and good at live streaming",network anchor,"technology, gaming, gadgets, and lifestyle",Poster
+249,Brooklyn Clay,female,40,"independent,creative,patient",entrepreneur," Tablets ",Watcher
+250,Isabella Kennedy,female,39,"caring,ambitious,optimistic",photographer," Virtual reality headsets ",Critic;Poster
+251,David Charles,male,53,"caring,ambitious,optimistic",photographer," Office decorations ",Critic;Poster
+252,Vincent Burks,female,28,"independent,creative,patient",entrepreneur," Decorative pillows ",Poster
+253,Daniel Coleman,male,37,"caring,ambitious,optimistic",nurse," Perfumes ,Bumper stickers ",Poster
+254,Daisy Olson,female,54,"fun-loving,practical,energetic,patient",lawyer," Jewelry ,Vintage Cameras ",Watcher
+255,Katherine Baldwin,female,40,"fun-loving,creative",artist," Table games ",Watcher;Critic
+256,William Armstrong,male,49,"fun-loving,independent,creative,patient",photographer," Pets ,Hair care products ",Watcher;Explorer;Chatter
+257,Xavier Gibson,male,37,"caring",scientist," Myths ,Musical instruments ",Critic;Chatter;Poster
+258,Elijah Smith,female,43,"independent,compassionate,caring",entrepreneur," Vases ",Chatter
+259,Patrick Forbes,male,51,"compassionate,caring,ambitious",nurse," Wooden toys ",Watcher;Poster
+260,Vincent Gonzalez,female,21,"fun-loving,creative,practical,energetic,patient",writer," earbuds ,Baby strollers ",Poster
+261,Sarah Bennett,male,53,"independent,compassionate",designer," Golf bags ",Poster
+262,David Cody,female,47,"compassionate,caring,ambitious,optimistic,independent,creative,patient,empathetic",writer," Outdoor gear ,Car accessories ,Scissors ",Critic;Chatter;Poster
+263,Faith Blair,female,50,"caring",writer," Table tennis paddles ,Makeup brushes ",Critic;Poster
+264,Elijah Fitzpatrick,male,22,"fun-loving,creative,practical,energetic,ambitious,optimistic",musician," Camping tables ",Chatter
+265,Isabella Gibson,female,32,"independent,compassionate",farmer," Kids ",Poster
+266,Brooklyn Richardson,female,35,"fun-loving,creative,ambitious,practical,energetic,patient,empathetic,compassionate,caring,independent,optimistic,ambitious",entrepreneur," Binoculars ,Outdoor gear ,Golf clubs ,Poker tables ",Explorer
+267,Gabriel Parker,female,56,"fun-loving,creative,practical,energetic",retired," Home decor ,Dumbbells ",Chatter;Poster
+268,Gabriel Olson,female,61,"fun-loving,creative,practical,energetic,ambitious,optimistic",student," Communication ,LCD TVs ,Mineral water taffy ",Chatter;Poster
+269,Benjamin Alexander,male,34,"independent,creative,patient,empathetic",artist," Pencils ",Watcher;Chatter
+270,Fiona Dean,female,50,"caring,compassionate",nurse," Gardening gloves ",Watcher;Poster
+271,Madison Armstrong,male,59,"compassionate,caring,ambitious,optimistic",retired," Swiss army knife ",Explorer;Chatter
+272,Addison Brooks,female,67,"compassionate,caring,ambitious,optimistic,independent,creative,practical,energetic,patient,empathetic",writer," Table tennis balls ",Watcher
+273,Gabriel Carey,male,46,"compassionate,caring,ambitious,optimistic,independent,creative,practical,patient,empathetic",doctor," Fire extinguisher ",Critic;Chatter;Poster
+274,Delilah Underwood,male,51,"compassionate,caring,ambitious,optimistic",lawyer," Lanterns ",Watcher
+275,Evan Gibson,female,33,"independent,creative,patient,empathetic",musician," Camping cots ,Bowling balls ",Watcher;Explorer
+276,Kevin Turner,female,60,"independent,creative,patient,empathetic",actor," Lavalier microphones ",Watcher
+277,Victoria Grant,female,46,"independent,creative,patient,empathetic",musician," Clarinets ",Watcher
+278,Faith Edwards,female,38,"fun-loving,creative,practical,energetic,patient,empathetic,compassionate,caring",photographer," Camera stands ",Watcher;Explorer;Chatter;Poster
+279,Zachary Ferguson,female,50,"compassionate,caring,ambitious,optimistic",retired," Picnic blankets ,Running shoes ",Watcher;Explorer;Poster
+280,Olivia Albert,male,45,"fun-loving,energetic,compassionate,ambitious,friendly",entrepreneur," Gardening ,Jigsaws ",Chatter
+281,Charlotte Darling,male,42,"fun-loving,adventurous,patient,creative,friendly",musician," Fishing ,Sewing machines ,Architecture Models",Watcher;Explorer;Critic;Poster
+282,Gabriel Lee,male,37,"fun-loving,adventurous,energetic,creative,friendly",writer," Video Games ,Balloons ,Color pencils ,Easels",Watcher;Explorer;Chatter
+283,Theodore Allen,female,65,"compassionate,caring,patient,ambitious,optimistic",artist," Bicycles ,Scrapbooking ",Watcher;Critic
+284,Jasmine English,female,39,"compassionate,caring,practical,patient,empathetic",student," Computers ",Watcher
+285,Hannah Allen,male,57,"fun-loving,compassionate",actor," Boardgames ",Poster
+286,Matthew Bell,male,62,"fun-loving,patient,empathetic,ambitious,friendly",engineer," Gardening ",Watcher;Chatter;Poster
+287,Matthew Conner,female,54,"optimistic,compassionate,caring,patient,adventurous",designer," Fashion Design ,Camping gear ,Knitting needles ,Treadmills ",Watcher
+288,Henry Underwood,female,49,"optimistic,compassionate,patient,practical,friendly",designer," Knitting supplies ,Fishing gear ,Fabric ",Watcher;Explorer;Chatter
+289,Ruby Anderson,male,50,"fun-loving,compassionate,adventurous",student," Puzzles ",Watcher;Poster
+290,Piper Bowen,female,33,"creative,compassionate,caring,patient",nurse," Gardening tools ,Chocolate ,Novels ",Watcher;Critic;Chatter
+291,Olivia Ewing,male,28,"fun-loving,creative,practical,caring,patient",photographer," Photography equipment ",Watcher
+292,Olivia Carroll,female,68,"compassionate,caring,adventurous",actor," Yoga mats ,Knitting yarn ",Explorer
+293,Faith Ferguson,female,58,"compassionate,caring,adventurous,practical,patient",doctor," Coloring books ",Explorer;Chatter
+294,Lucas Richardson,female,61,"compassionate,caring,patient,wise,practical",teacher," Quilting supplies ",Poster
+295,Eleanor Campbell,female,54,"compassionate,caring,adventurous,practical,patient",doctor," Sewing machines ",Explorer;Chatter
+296,Amelia Bell,female,61,"fun-loving,adventurous,creative,practical,caring",musician," Puzzles ,Fanfiction ",Watcher;Explorer;Critic;Poster
+297,Ian Buck,female,48,"adventurous,creative,practical,caring,friendly",lawyer," Writing tools ",Explorer;Critic;Chatter
+298,Ella Brown,male,52,"fun-loving,compassionate,creative,ambitious,friendly",writer," Gardening tools ",Watcher;Critic
+299,Ella Burks,male,36,"fun-loving,adventurous,creative,practical,friendly",farmer," Flower pots ",Watcher;Poster
+300,Rachel Bell,female,50,"fun-loving,creative,practical,energetic,patient",writer," electronics ,Camping stoves ",Watcher;Critic
+301,Hudson Grant,female,29,"fun-loving,creative,optimistic,empathetic",designer," Non-Fiction Books ,Frisbee ",Watcher;Explorer;Poster
+302,Chloe Cox,female,48,"compassionate,caring,ambitious,optimistic",artist," Painting ,Glassblowing ",Watcher;Chatter
+303,Peter Coleman,female,21,"fun-loving,compassionate,caring,energetic,patient",musician,"  ,Electric guitars  ",Watcher;Explorer;Poster
+304,Abigail Collins,male,39,"independent,creative,practical,energetic,patient",engineer," Model Building ,Robotics ",Watcher;Explorer
+305,Grayson Allen,male,31,"independent,patient",actor," Musical instruments  ",Poster
+306,Andrew Albert,female,42,"caring,ambitious,patient,empathetic",photographer," Canvas ,Baking ",Critic;Chatter
+307,Hazel Farmer,female,56,"compassionate,caring,ambitious,optimistic",farmer," Woodworking Tools ,Camping gear ",Explorer
+308,Tyler Allen,female,59,"creative,practical,energetic",actor," Books ,Clothes ",Explorer
+309,Robert Johnson,male,35,"fun-loving,creative,practical,energetic,empathetic",engineer," Drones ,Computer hardware ",Watcher
+310,Grayson Albert,female,37,"independent,compassionate,caring,ambitious,optimistic",teacher," Musical instruments ,Photography ",Poster
+311,Lucy Evans,female,50,"independent,compassionate,caring,optimistic",entrepreneur," Books ,Antiques ",Poster
+312,Harper Walker,female,65,"compassionate,caring,ambitious,patient",scientist," Gardening tools ,Star gazing equipment ",Watcher;Explorer
+313,Grayson Gray,male,48,"fun-loving,compassionate,caring,optimistic",farmer," Fishing gear ,Gardening Tools ",Explorer
+314,Emily Blanks,female,40,"fun-loving,compassionate,caring,ambitious,patient",farmer,"  ,Antiques ",Critic
+315,Lily Clay,female,56,"independent,compassionate,caring,optimistic",engineer," Handyman tools ,Cooking Gadgets ,Art supplies  ",Watcher;Explorer;Critic;Poster
+316,Felix Ferguson,male,69,"fun-loving,compassionate,caring,ambitious,optimistic",student," Art supplies ,Telescope ",Watcher;Poster
+317,Piper Harris,female,50,"independent,creative,practical,energetic,patient",farmer," Books ,Gardening Tools ,Sports Gear ",Watcher;Explorer;Chatter;Poster
+318,Peter Powell,female,51,"fun-loving,compassionate,caring,ambitious,optimistic",designer," Sewing machines ,Knitting needles ",Critic;Chatter;Poster
+319,Mason Lee,male,50,"independent,creative,practical,energetic",artist," Drawing Pencils ,Sculpting Tools ",Watcher;Critic
+320,Harper Clarke,female,55,"compassionate,caring,energetic,practical",teacher," Cooking ,Kites ",Explorer
+321,Nora Bass,female,38,"fun-loving,caring,energetic,patient,empathetic",student," Electronics ,Scuba diving ",Explorer;Critic
+322,Gabriel Boyd,female,64,"caring,energetic,ambitious,practical,empathetic,independent",lawyer," Reading ,Traveling ",Explorer;Critic
+323,Harper Garcia,female,30,"compassionate,fun-loving,caring,energetic,patient",artist," Cooking ,Painting ",Watcher;Explorer
+324,Raymond Lee,female,30,"fun-loving,energetic,ambitious",engineer," Gardening ",Chatter
+325,Willow Cochran,male,66,"ambitious,compassionate,independent",engineer," DIY home improvement ,Video games ",Poster
+326,Felix Alexander,female,49,"fun-loving,ambitious,energetic,patient",teacher," Knitting ,Geocaching",Watcher;Critic
+327,Liam Alexander,female,26,"fun-loving,creative,energetic,patient,independent",writer," Board games ",Watcher
+328,David Blanks,female,54,"ambitious,compassionate,independent",engineer," Kitesurfing ",Watcher;Explorer
+329,Hunter Campbell,female,42,"compassionate,energetic,ambitious,independent",designer," Pottery ,Collecting artwork",Explorer;Critic
+330,Christopher Blair,female,44,"ambitious,compassionate,caring,creative",teacher," Acting ,Coffee roasting ",Critic;Chatter
+331,Lauren Clark,male,47,"caring,compassionate,creative,patient,practical",teacher," Flower arranging ,Matchstick model building ",Watcher;Critic;Poster
+332,Thomas Underwood,female,45,"fun-loving,caring,energetic,practical,patient",photographer," Photography ,Sketching ",Poster
+333,Hazel Albert,female,63,"compassionate,creative,energetic,patient",engineer," Birdwatching ,Cooking ,Dancing",Chatter;Poster
+334,Isabella Friedman,male,60,"patient,compassionate,independent",photographer," Painting ,Surfing",Poster
+335,Thomas Fraser,male,39,"caring,creative,compassionate,independent",nurse," Soccer ,Airbrushing ",Critic;Chatter
+336,Elijah English,female,43,"fun-loving,ambitious,energetic",engineer," Calligraphy ,Caving",Chatter
+337,Ian Boyd,female,67,"caring,compassionate,independent",farmer," Playing musical instruments ,Archery",Watcher
+338,Henry Turner,female,44,"creative,compassionate,energetic,patient,practical",photographer," Coin collecting ,Genealogy ",Critic
+339,Gavin Grant,male,31,"independent,creative,energetic,patient",photographer," Card games ,Motorcycling ",Poster
+340,Henry Cox,male,61,"fun-loving,compassionate,energetic",teacher," Sports equipment ,Boating ",Watcher;Chatter
+341,Jacob Cooper,female,50,"independent,compassionate,ambitious,energetic,fun-loving",farmer," Camping accessories ,Skating shoes ",Watcher;Critic;Chatter
+342,Xavier Donahue,female,43,"fun-loving,caring,patient,diligent",actor," gardening tools ",Watcher;Chatter
+343,Blake Bauer,female,41,"compassionate,caring",engineer," Musical instruments ,Non-fiction ",Watcher;Explorer
+344,Harper Dixon,male,58,"independent,compassionate,energetic",scientist," Running shoes ,Video games ",Critic;Chatter
+345,Kyle Conley,female,54,"fun-loving,compassionate,energetic",artist," Camping equipment,Knitting needles ",Watcher
+346,Matthew Diaz,female,42,"fun-loving,ambitious,empathetic",lawyer," Fitness equipment ",Poster
+347,Nora Burns,female,49,"fun-loving,compassionate",artist," Cooking equipment ,Sailing equipment ",Watcher;Explorer
+348,Peter Coffey,female,54,"independent,compassionate,energetic",entrepreneur," Power tools ,Golf clubs ",Watcher;Critic
+349,Olivia Morgan,male,33,"caring,compassionate,responsible,empathetic",teacher," Cycling equipment ,Golf clubs ",Explorer;Chatter;Poster
+350,Sarah Grant,male,48,"fun-loving,compassionate,patient",writer," Action figures ,Musical instruments ",Watcher;Critic
+351,Delilah Diaz,male,37,"fun-loving,patient,adventurous,empathetic",photographer," Videogames consoles ,Outdoor Equipment ",Chatter
+352,David Dalton,female,65,"fun-loving,compassionate,practical,energetic,patient",lawyer," Wine glasses ,Camping gear ",Watcher
+353,Finnegan Parker,female,51,"fun-loving,compassionate,practical,empathetic",teacher," Art supplies ,Sports equipment ",Watcher;Critic;Poster
+354,Katherine Allen,female,31,"fun-loving,compassionate,courageous",farmer," Gardening tools ,Baking supplies ",Watcher;Critic
+355,Finn Chase,female,54,"fun-loving,compassionate,energetic",artist," Yoga mats ,Hiking equipment ",Watcher;Explorer
+356,Michael Lewis,male,65,"compassionate,caring,responsible,empathetic",student," Stationery ,Basketball hoop ",Watcher;Poster
+357,Blake Charles,male,52,"fun-loving,compassionate,energetic,adventurous",musician," DJ equipment ,Surfing equipment ",Watcher;Explorer;Critic;Poster
+358,Hunter Clark,male,55,"responsible,fun-loving,compassionate,adventurous",musician," Fishing gear ,Camping gear ",Explorer;Chatter;Poster
+359,Wesley Mitchell,female,47,"compassionate,courageous,energetic",artist," Drawing tablets ,Woodworking tools ",Watcher;Poster
+360,Brooklyn Blanks,male,43,"creative,patient,empathetic",farmer," Kids ,Tennis rackets ",Critic;Chatter
+361,Mason Donaldson,male,41,"fun-loving,energetic,optimistic",doctor," Golf Clubs ,Camping stoves ",Watcher
+362,William Bass,male,52,"energetic,practical,patient,ambitious",farmer," Tennis rackets ,Communication ",Watcher
+363,Thomas Fisher,female,51,"caring,patient,ambitious,optimistic",writer," Gardening tools ,Baking stoves ",Watcher;Critic
+364,Jasmine Farmer,female,56,"creative,patient,empathetic,ambitious,optimistic",teacher," Sketch pads ,Gardening tools ",Watcher;Chatter
+365,Jonah Clay,male,36,"fun-loving,practical,patient,ambitious,optimistic",designer," Running shoes ,Paints ",Watcher
+366,Finn Bernard,female,39,"creative,compassionate,artistic",artist," Paints ,Sketch pads ",Watcher;Critic;Poster
+367,Zoe Duncan,female,45,"compassionate,caring,outgoing",photographer," Communication ,Travel books ",Poster
+368,Aaron Lee,male,62,"fun-loving,caring,adventurous",musician,"Vinyl records",Watcher;Critic
+369,Fiona Johnson,male,48,"energetic,ambitious,patient",lawyer," Baking stoves",Critic;Chatter
+370,Thomas Garcia,female,27,"independent,practical,energetic,ambitious",nurse," Running shoes ,Camping stoves ",Watcher;Explorer
+371,Tyler Ferguson,male,50,"creative,practical,patient,adventurous,friendly",actor," Comedy Books ,Tickets to shows",Watcher;Critic
+372,Ryan Friedman,male,31,"fun-loving,independent,adventurous",musician," Musical instruments ,Vinyl records ",Watcher;Poster
+373,Finn Coffey,female,54,"caring,practical,adventurous",lawyer," Seat covers ,Outdoor furniture ",Explorer;Poster
+374,Jonah Buck,female,59,"creative,practical,patient,optimistic",student,"Watercolor paints",Watcher
+375,Felix Carey,male,60,"creative,ambitious,patient",writer," Camping stoves ,Gardening tools ",Critic;Chatter;Poster
+376,Finn Blair,male,45,"independent,compassionate,adventurous",retired,"Walking shoes",Watcher;Explorer;Critic;Chatter
+377,Abigail Clarke,female,63,"fun-loving,caring,friendly",doctor," Medicine ,Travel books ",Watcher;Chatter;Poster
+378,Lucas Dalton,male,48,"creative,practical,patient",writer," Typewriters ,Bookshelves ",Critic
+379,Lily Bauer,male,50,"compassionate,caring,patient",teacher," Pencils ,Sketch pads ",Critic
+380,Emma Anderson,male,46,"fun-loving,creative",entrepreneur," Surfboards,Bicycles ",Watcher;Critic;Poster
+381,Lucy Bowen,female,39,"compassionate,caring,ambitious,independent,creative",designer," Paintbrushes,Fabric ,Fashion magazines ",Watcher;Poster
+382,Zoe Allen,female,45,"empathetic,compassionate,caring",photographer," Communication,Outdoor,Seat covers,Kitchen Appliances",Critic;Chatter
+383,Rachel Flores,female,35,"creative,practical,empathetic,ambitious",retired," Animals ,Candles ",Critic;Chatter
+384,Victoria Foster,male,63,"fun-loving,caring",retired," Family vacations ",Watcher;Poster
+385,Jacob Bernard,male,32,"ambitious",retired," Sports memorabilia ",Watcher
+386,Thomas Blevins,male,50,"caring,patient,practical,fun-loving",nurse," Healthy cookbooks,Essential oils ",Poster
+387,Katherine Anderson,male,63,"compassionate,caring,patient,fun-loving",designer," Sewing machines ",Critic;Chatter
+388,Owen Baldwin,male,70,"fun-loving",musician," Mixers,Electric guitars ",Watcher;Poster
+389,Avery Charles,male,41,"independent,patient,compassionate,fun-loving",actor," Board games ",Watcher
+390,Felix Fraser,female,36,"practical",student," Textbooks ",Critic
+391,Sarah Walker,female,34,"independent,energetic,ambitious,compassionate,creative",lawyer," Office supplies ",Watcher;Poster
+392,Zoe Bowen,male,45,"fun-loving,energetic,patient,compassionate",teacher," Classroom supplies,Educational games ",Explorer;Critic
+393,Oliver Gray,male,23,"independent,creative,patient,empathetic",engineer," Keyboards,Non-fiction ",Watcher;Critic
+394,Finnegan Berry,female,52,"patient,creative",lawyer," Art supplies ",Poster
+395,Daisy Bauer,male,57,"compassionate,caring,patient,ambitious,fun-loving",lawyer," Office furniture,Legal dramas ",Watcher;Chatter
+396,Luke Fitzpatrick,female,49,"fun-loving,compassionate",musician," Sheet music,Microphones ",Critic;Poster
+397,Faith Lee,female,45,"empathetic,caring,independent,ambitious,patient",scientist," Science kits ",Watcher;Chatter
+398,Charlotte Blanks,female,58,"compassionate,energetic,patient,creative",designer," Paint samples,Sketchbooks ",Watcher;Poster
+399,Olivia Conley,male,31,"independent,creative,patient,empathetic",engineer," Robotics kits ",Critic
+400,Luke Richardson,female,54,"caring,ambitious,compassionate,independent",student," sewing ,Birdwatching ,Quilting ",Chatter
+401,Addison Diaz,male,50,"creative,practical,empathetic,energetic",photographer," Communication ,Fitness equipment ",Chatter;Poster
+402,Robert Bell,male,34,"creative,patient,compassionate,practical,fun-loving",student," Running shoes ,Scrapbooking ,Sewing machine accessories ",Chatter;Poster
+403,Kevin Morgan,female,55,"optimistic,energetic,independent",student," Quilting ,Toys & games ",Poster
+404,Zachary Fisher,male,45,"ambitious,compassionate,creative,practical,fun-loving",designer," Non-fiction ,Camping stoves ",Watcher;Explorer;Critic;Chatter
+405,Zachary Cox,female,30,"optimistic,ambitious,patient,caring",farmer," Non-fiction ,Fishing rods ,Scuba diving equipment ",Explorer;Critic
+406,Eleanor Bauer,female,32,"patient,caring,compassionate,creative,ambitious",doctor," Hunting ,Bicycles ,Toys & games ",Explorer;Critic
+407,Nora Byrd,male,51,"empathetic,caring,practical,ambitious",retired," Table tennis equipment ,Non-fiction ,Fitness Tech ",Explorer
+408,Willow Buck,male,52,"compassionate,ambitious,creative",entrepreneur," Non-fiction ,Digital cameras ,Camping stoves ",Critic;Chatter;Poster
+409,Vincent Gonzalez,female,39,"fun-loving,empathetic,optimistic,caring",retired," Table tennis equipment ,Outdoor ,Walking devices,toys & games ",Explorer;Poster
+410,Daisy Blevins,male,41,"independent,optimistic,energetic,fun-loving",nurse," Non-fiction ,Binoculars ,Hunting ",Watcher
+411,Thomas Fowler,male,34,"creative,optimistic,compassionate,fun-loving,energetic",musician," Non-fiction ,Outdoor ,Yoga ball ,Tennis equipment ",Poster
+412,Andrew Charles,female,36,"compassionate,caring,ambitious,practical,fun-loving",entrepreneur," Outdoor ,Toys & games ,Quilting ",Watcher;Explorer;Poster
+413,Hannah Allen,female,49,"independent,caring,practical,ambitious,compassionate",designer," Toys & games ,Sewing machine accessories ",Watcher;Chatter
+414,Elizabeth Brooks,female,35,"fun-loving,practical,compassionate,independent,energetic",actor," Walking devices ,Non-fiction ,Hunting ",Chatter
+415,Lucy Parker,male,54,"empathetic,independent,compassionate,practical",nurse," boats ",Explorer;Poster
+416,Ian Kennedy,female,55,"fun-loving,practical,energetic,patient,independent",nurse," Outdoor ,Non-fiction ,Camping stoves ",Critic;Chatter
+417,Finnegan Carroll,female,33,"empathetic,ambitious,creative,independent,energetic",designer," Binoculars ,Walking devices ",Critic
+418,Matthew Roberts,male,41,"empathetic,ambitious,independent,practical,patient",musician," Outdoor ,Non-fiction ,Skates,boats ",Watcher;Chatter;Poster
+419,Brooklyn Olson,male,54,"compassionate,creative,ambitious",artist," Fitness Tech ,Non-fiction ,Tennis rackets ",Explorer;Critic;Chatter
+420,Bennett Byrd,female,41,"independent,creative,patient,empathetic",designer," Chess ,Rock collecting ",Critic;Chatter;Poster
+421,Elijah Brown,male,35,"fun-loving,practical,energetic,patient",engineer," Skiing ,Basketball hoops ",Chatter
+422,Henry Fraser,female,49,"compassionate,ambitious,optimistic",entrepreneur," Arts,Crafts ",Watcher;Explorer
+423,Tyler Harris,male,65,"independent,creative,patient,empathetic",designer," Antiquing; Air sports ",Critic;Chatter
+424,Blake Dawson,male,43,"compassionate,ambitious,optimistic",entrepreneur," Sketching,Yoga ",Watcher;Poster
+425,Ava Burks,male,44,"independent,creative,patient,empathetic",musician," Video Gaming ,Fishing ",Poster
+426,Piper Harris,male,51,"compassionate,caring,ambitious,optimistic",lawyer," Juggling ,Woodworking ",Watcher;Critic
+427,Christopher Berry,female,25,"fun-loving,creative,practical,energetic,patient",engineer," Video Gaming ,Fishing ",Watcher;Explorer;Critic;Chatter;Poster
+428,Oliver Friedman,female,47,"fun-loving,practical,energetic,patient",teacher," Soap Making ,Pottery ",Watcher;Poster
+429,Andrew Duncan,female,42,"fun-loving,creative,practical,energetic,patient",musician," Soap Making ,Pottery ",Watcher;Chatter
+430,Alexander Gonzalez,male,39,"fun-loving,practical,energetic,patient",lawyer," Yoga ,Basketball hoops ",Watcher;Explorer
+431,Faith Smith,male,56,"compassionate,caring,ambitious,optimistic",nurse," Knitting,Yoga ",Watcher;Poster
+432,Hazel Parker,male,50,"fun-loving,compassionate,practical,energetic",farmer," Pet Hobbies ,Gunsmithing ",Chatter
+433,Simon Buck,male,41,"fun-loving,practical,energetic,patient",student," Fishing ,Metal Detecting ",Chatter;Poster
+434,Evan Buck,male,26,"compassionate,ambitious,optimistic",student," Magic ,Robotics ",Watcher;Poster
+435,David Ewing,male,38,"independent,compassionate",actor," Birding ,Amateur geology ",Watcher
+436,Noah Baldwin,female,48,"full of life,smart,lively",student," Model Rockets ,jewelry ",Watcher;Explorer
+437,Madison Donaldson,female,51,"fun-loving,practical,energetic,patient",retired," Dance ,Yoga ",Chatter
+438,Blake Byrd,female,32,"independent,creative,patient,empathetic",farmer," Pottery ,Macrame ",Watcher;Explorer
+439,Mason Barker,male,51,"fun-loving,practical,energetic,patient",engineer," Fishing ,Video Gaming ",Watcher;Poster
+440,Kyle Clark,male,42,"fun-loving,independent,practical",retired," Sewing ,Coffee Making",Watcher;Poster
+441,Natalie Charles,male,50,"compassionate,caring,ambitious,optimistic",photographer," Communication ,Outdoor ,Seat covers ,Kitchen Appliances",Watcher;Explorer;Poster
+442,Ian Donaldson,female,52,"caring,compassionate,practical",farmer," Engineering ,Ballet ,Photography ",Poster
+443,Alexander Fitzpatrick,female,51,"fun-loving,independent,friendly,patient,flexible",retired," Sewing ",Chatter;Poster
+444,Christopher Berg,female,29,"adventurous,artistic,practical",musician," Writing Instruments,Snowboarding ",Chatter
+445,Grace Byrd,female,70,"fun-loving,compassionate,creative,practical,patient",actor," Embroidery ,Motorcycle Riding",Watcher;Chatter
+446,Harper Barker,female,45,"ambitious,compassionate,friendly,patient",doctor," Sand castles ",Chatter;Poster
+447,Aaron Evans,male,28,"compassionate,caring,ambitious,practical",engineer," Cookbooks,Gaming ,Computer Programming,Knitting ",Watcher;Explorer
+448,Madison Davidson,female,28,"compassionate,creative,patient,empathetic",writer," Keyboards,Non-fiction ",Watcher;Explorer;Chatter
+449,Sophia Cochran,female,46,"flexible",musician," Candle Making",Watcher
+450,Evan Simmons,male,28,"compassionate,caring,ambitious,optimistic",entrepreneur," Entrepreneurship ,resourcefulness ,Gardening ",Watcher;Explorer;Poster
+451,Kaitlyn Albert,female,41,"caring,ambitious,optimistic",engineer," civil engineering ,Cooking ,Learning A Foreign Language ,Airbrushing ",Chatter
+452,Mason Carey,female,67,"independent,compassionate,fun-loving,flexible",retired," Crocheting ,Sailing ",Watcher;Critic
+453,Harper Cooper,female,43,"caring,ambitious,optimistic",photographer," Learning A New Language ,Sushi Making ,Scrapbooking",Watcher;Critic
+454,Madison Barker,male,55,"compassionate,caring,ambitious,optimistic",writer," Engineering ,Baseball ,Disc Golf ,Reading",Watcher;Critic;Poster
+455,Finn Fowler,female,43,"independent,compassionate,creative,flexible",teacher," Electronics ,Lego Building ",Watcher;Critic;Poster
+456,Isla Blanks,female,47,"ambitious,friendly,energetic,empathetic",student," Jai Alai,Parkour,",Watcher;Explorer;Chatter;Poster
+457,Amelia Barker,female,64,"compassionate,caring,fun-loving,practical",photographer," Candle Making ,Listening to music ",Watcher;Critic
+458,Gabriel Dalton,male,49,"adventurous,fun-loving,independent",musician," Handball ,Cubing ",Explorer;Poster
+459,Jade Carroll,male,52,"independent,ambitious,energetic",lawyer," Dieting,Animal care ",Watcher;Explorer;Poster
+460,Madison Brown,female,53,"compassionate,independent,empathetic",doctor," Yoga ,Chalks",Watcher;Poster
+461,Theodore Morgan,male,52,"patient,adventurous,fun-loving",designer," Chalks ,Binoculars",Watcher;Critic
+462,Kevin Underwood,male,23,"energetic,practical,ambitious,caring",actor," Camping stoves,Bronze coins ,Books",Watcher;Explorer;Chatter;Poster
+463,Ryan Campbell,female,39,"caring,energetic,adventurous,compassionate",scientist," Netbook ,Dolls,Outdoor",Critic;Poster
+464,Theodore Grant,female,55,"creative,empathetic,fun-loving,patient",lawyer," Pants ,Binoculars",Watcher
+465,Patrick Forbes,male,42,"compassionate,caring,adventurous",writer," Books ,Jackets",Watcher;Poster
+466,Mia Dixon,female,70,"practical,patient,optimistic,fun-loving",designer," Smartphones ,Wedding(Bridal)",Poster
+467,Andrew Gray,female,29,"compassionate,adventurous,caring,patient",engineer," Bowling balls ,Outdoor",Explorer;Poster
+468,Finnegan Fisher,female,27,"adventurous,compassionate,fun-loving,creative",artist," Drawing pad ,Tablet",Explorer;Poster
+469,Georgia Carey,male,42,"creative,adventurous,caring,practical",designer," Digital Camera ,Kitchen Goods ",Explorer
+470,Isabella Donahue,male,46,"adventurous,caring,energetic,fun-loving",artist," Luxury watches ,Toys",Watcher
+471,Sadie Brown,female,46,"fun-loving,compassionate,patient,caring",doctor," Kids ,Jackets",Critic;Poster
+472,Isaac Bell,female,55,"compassionate,caring,creative",farmer," Kids ,Pants ,Shoes ,Hat",Poster
+473,Isabella Burks,female,27,"compassionate,caring,creative,adventurous",photographer," Cell Phone ,Exercise Equipment ",Critic;Poster
+474,Madison Kennedy,male,50,"fun-loving,adventurous,compassionate,patient",doctor," Massage Oils ,Watches ,Toys",Watcher;Critic;Chatter;Poster
+475,Hunter Carey,female,38,"compassionate,caring,ambitious,optimistic",doctor," Hanging Pot",Watcher;Critic
+476,Lauren Anderson,male,70,"adventurous,fun-loving,energetic",actor," Folding table,Sports Equipment ",Watcher;Chatter
+477,Lily Morgan,female,45,"compassionate,caring,patient,creative",student," Bicycle ,Binoculars",Explorer;Chatter
+478,Oliver Campbell,female,51,"patient,caring,practical,optimistic",nurse," Business books ",Watcher
+479,Thomas Deleon,female,51,"creative,compassionate,fun-loving,caring",writer," Woody plants ,Pan ",Watcher;Critic
+480,Ian Albert,male,44,"compassionate,caring,ambitious,patient,practical,fun-loving",artist," Paint ,Camping stoves ,Bikes",Watcher;Poster
+481,Ian Burns,female,44,"ambitious,practical,patient",scientist," Power drills ",Chatter
+482,Peter Burks,male,68,"patient,independent,caring,compassionate,optimistic,fun-loving",artist," Sewing machines ",Watcher
+483,Mason Dunn,male,32,"fun-loving,outgoing,caring,ambitious,patient",doctor," Outdoor ,Kitchen Appliances ,Kids ",Watcher;Critic;Chatter
+484,Brooklyn Powell,female,53,"compassionate,caring,fun-loving",musician," Audio books ",Watcher
+485,Katherine Forbes,male,64,"fun-loving,compassionate,caring",teacher," Exercise balls ,Sewing machines ,Outdoor ",Watcher;Explorer;Critic
+486,Tyler Chase,male,53,"independent,fun-loving",doctor," Camping stoves ,Power drills ",Critic;Chatter
+487,Elizabeth Brooks,male,25,"compassionate,caring,ambitious,practical,fun-loving",actor," Communication ,Sport watches ,Camping stoves ",Watcher;Critic
+488,Brooklyn Olson,male,45,"fun-loving,practical,compassionate",artist," Sewing machines ,Camping cookware ,Outdoor ",Explorer
+489,Mason Parker,female,41,"compassionate,caring,outgoing",farmer," Communication ,Kids ,Exercise balls ",Watcher;Critic
+490,Mason Gray,female,50,"fun-loving,caring,ambitious,patient",farmer," Sewing machines ,Communication ,Seat covers ,Exercise balls",Watcher;Chatter
+491,Ruby Simmons,female,56,"caring,compassionate,ambitious,optimistic,practical",student," Tennis rackets ,Power drills ",Watcher;Chatter;Poster
+492,Blake Coleman,male,43,"independent,creative,ambitious,compassionate",writer," Sewing machines ,Bikes ",Watcher;Explorer;Poster
+493,Vincent Davidson,female,50,"compassionate,caring,ambitious,optimistic,outgoing",photographer," Communication ,Bikes ,Camping cookware ",Critic;Poster
+494,Blake Fitzpatrick,female,57,"outgoing,fun-loving,creative,compassionate",retired," Exercise balls ",Chatter
+495,Benjamin Conley,male,45,"compassionate,caring,ambitious",designer," Sport watches ,Power drills ,Sewing machines ",Explorer;Critic;Poster
+496,Liam Diaz,male,33,"ambitious,patient,compassionate,caring,optimistic",nurse," Camping stoves ,Bikes ,Power drills ",Explorer;Chatter;Poster
+497,Daisy Coffey,male,48,"fun-loving,ambitious,compassionate,caring,practical",retired," Kids ,Power drills ",Explorer;Critic
+498,Fiona Harris,female,44,"independent,fun-loving,caring,compassionate",photographer," Bikes ,Camping cookware ,Seat covers ",Watcher;Critic;Chatter
+499,Mia Kennedy,male,50,"compassionate,caring,ambitious,patient,fearless,practical",farmer," Sewing machines ,Camping stoves ,Power drills ,Exercise balls",Watcher;Critic;Chatter;Poster
+500,Raymond Allen,male,35,"creative,energetic,fun-loving,practical",musician," Guitars ,Architecture ",Explorer;Chatter
+501,Felix Cochran,female,50,"compassionate,caring",retired," Painting ,Fine wines ",Chatter;Poster
+502,Hunter Farmer,male,44,"adventurous",farmer," Farming tools ",Explorer
+503,Luke Gonzalez,female,57,"compassionate,caring,ambitious,optimistic",student," Home improvement ,Reading ",Watcher;Critic
+504,Liam Friedman,male,48,"creative,fun-loving,practical,patient,empathetic",student," Gaming consoles ,Cooking ",Watcher;Chatter
+505,Xavier Berry,female,53,"independent,creative,patient,empathetic",entrepreneur," Antiques ,Photography ,Stand-up paddleboarding ",Explorer;Poster
+506,Owen Bell,male,44,"compassionate,ambitious,optimistic",scientist," Astrology,Bus spotting ",Critic;Poster
+507,Christopher Bauer,female,43,"fun-loving,energetic",entrepreneur," Painting ,Yoga ",Watcher;Chatter
+508,Mason Cooper,male,44,"energetic",farmer," Woodworking ,Meteorology",Chatter
+509,Taylor Fitzpatrick,female,48,"creative,energetic,adventurous",musician," Photography ,Skateboarding ",Explorer
+510,Liam Kennedy,male,49,"fun-loving,energetic",farmer," Gardening,Camping ",Watcher;Chatter
+511,Kaitlyn Bauer,male,46,"compassionate,independent,patient,empathetic",musician," Woodworking,Stand-up comedy",Watcher
+512,Andrew Bauer,female,20,"adventurous,ambitious",entrepreneur," Birdwatching,Scrapbooking ",Chatter
+513,Jasmine Friedman,male,55,"compassionate,caring,practical,ambitious,patient",lawyer," Boating ,Sewing",Watcher
+514,Blake Bauer,male,59,"caring,patient",doctor," Brewing beer ,Scrapbooking ",Watcher
+515,Jade Fraser,male,49,"compassionate,caring",scientist," Playing with pets ,Aircraft spotting ",Watcher;Chatter
+516,Ian Carlson,female,22,"creative,patient,empathetic",farmer," Puzzles ,Juggling ",Critic;Poster
+517,Isla Underwood,female,50,"compassionate,caring",teacher," Cooking ,Dance ",Critic
+518,Charlotte Evans,female,44,"energetic,adventurous,patient",nurse," Knitting ,Pottery ,Paintball ",Watcher;Explorer;Poster
+519,Wesley Deleon,male,52,"fun-loving,energetic,practical",actor," Fishing ,Video Games ,Paintball ",Poster
+520,Fiona Barker,female,54,"independent,creative,compassionate,ambitious",designer," Oil Painting ,Quilting ",Critic;Poster
+521,Ella Brock,male,28,"fun-loving,energetic,patient,empathetic,practical",teacher," Hiking Boots ,Air Humidifiers ",Poster
+522,Mia Bennett,female,51,"compassionate,caring,ambitious,optimistic",lawyer," Backgammon ,RC Cars ",Watcher;Critic;Chatter;Poster
+523,Jade Blevins,female,30,"fun-loving,independent,creative,compassionate,ambitious",entrepreneur," Dog training equipment ,Binoculars ,Cookware ",Watcher;Critic;Chatter
+524,Hannah Bell,female,32,"compassionate,caring",retired," Exercise equipment ,Knitting supplies ",Watcher;Explorer;Critic;Chatter
+525,Isaac Blanks,female,23,"independent,creative,patient,empathetic",designer," Tennis rackets ,Gardening tools ",Watcher;Critic
+526,Jack Durham,female,47,"compassionate,creative",writer," Fishing rods ,Musical instruments ",Critic;Chatter;Poster
+527,Abigail Powell,female,44,"fun-loving,creative,empathetic,ambitious",musician," Skateboards ,Board games ",Watcher;Poster
+528,Olivia Underwood,female,24,"independent,caring,ambitious",photographer," Headphones ,Baking supplies ",Watcher;Poster
+529,Emily Farmer,male,36,"fun-loving,energetic,patient,empathetic,practical",artist," Fishing gear ,Camping tents ",Watcher
+530,Ella Davidson,male,59,"independent,compassionate",farmer," Wind chimes ,Bird feeders ",Watcher;Poster
+531,Sarah Berg,female,62,"caring",photographer," Yoga mats ,Camping cookware ",Watcher;Poster
+532,Fiona Burks,male,45,"fun-loving,independent,ambitious,optimistic",designer," Musical instruments ,Art supplies ",Explorer;Critic
+533,Ella Fisher,male,33,"fun-loving,practical,energetic,patient",teacher," Cooking utensils ,Sports equipment ",Chatter
+534,George Donaldson,male,57,"independent,compassionate,patient,empathetic",musician," DJ equipment ,Vinyl records ",Watcher;Critic;Chatter
+535,Kyle Brooks,male,44,"practical,patient,empathetic",designer," Toolboxes ,Power drills ",Chatter;Poster
+536,Jasmine Byrd,male,29,"creative,compassionate",writer," Adult coloring books ,Calligraphy supplies ",Critic;Poster
+537,Owen Adams,male,59,"compassionate,ambitious,optimistic",designer," 3D printers ,Remote control vehicles ",Watcher;Chatter;Poster
+538,Wesley Brown,male,32,"independent,fun-loving,energetic,patient,ambitious",designer," Collectible card games ,Video game consoles ",Watcher;Explorer;Critic
+539,Elizabeth Carey,male,46,"independent,creative,energetic,patient,ambitious",photographer," Drones ,Underwater diving equipment ",Explorer;Poster
+540,Liam Adams,male,24,"independent,creative,patient,empathetic",artist," Drawing ,Glassblowing ,Listening to music ",Watcher;Chatter
+541,Elijah Bauer,female,53,"compassionate,caring,ambitious,optimistic,easy-going",retired," Quilting ,Snorkeling ,Listening to music ",Critic;Poster
+542,Simon Darling,male,46,"outgoing,optimistic,practical,empathetic",scientist," Gardening ,Cooking gadgets ,Cooking classes ",Watcher;Chatter;Poster
+543,Amelia Byrd,female,20,"fun-loving,creative,practical,energetic,patient",farmer," Vegetable growing ,Beekeeping ,Painting and drawing ",Watcher;Explorer;Critic
+544,Abigail Roberts,female,32,"compassionate,caring,ambitious,optimistic",teacher," Jigsaw puzzles ,Pottery ,Listening to music ",Watcher;Critic;Poster
+545,Raymond Walker,male,61,"compassionate,caring",farmer," Fishing ,Playing musical instruments ",Watcher;Explorer;Critic;Chatter
+546,Tyler Roberts,female,56,"compassionate,caring,ambitious,optimistic,easy-going",retired," Candle making ,Traveling ",Watcher;Explorer;Chatter
+547,Benjamin Boyd,male,31,"fun-loving,energetic,impassioned",designer," Knitting ,Quilting ",Chatter;Poster
+548,Patrick Cody,female,24,"outgoing,practical,energetic",farmer," Vineyard touring ,Sewing and needlework ",Poster
+549,Katherine Garcia,male,41,"compassionate,caring,ambitious,optimistic",photographer," Playing team sports ,Scrapbooking ",Watcher;Explorer
+550,Natalie Gibson,male,62,"fun-loving,energetic,cosmopolitan,practical",artist," Bowling ,Desktop publishing ",Chatter;Poster
+551,Ella Walker,male,54,"compassionate,caring,optimistic",student," Candle making ,Dancing ",Watcher;Explorer;Chatter;Poster
+552,Kaitlyn Olson,male,37,"compassionate,caring,ambitious,optimistic",musician," Bowling ,Calligraphy ",Watcher;Critic
+553,Ian Coffey,male,47,"independent,competitive,ambitious,practical",musician," Geocaching ,Model building ",Chatter;Poster
+554,David English,female,46,"fun-loving,creative,energetic,practical,patient",farmer," Camping ,Book restoration and binding ",Explorer;Critic;Poster
+555,Jade Dunn,female,31,"compassionate,caring,ambitious,optimistic",student," Geocaching ,Collecting memorabilia ",Poster
+556,Isaac Garcia,male,43,"compassionate,caring,ambitious,optimistic",nurse," Xpogo ,Cross stitch ",Watcher;Explorer;Critic;Poster
+557,Addison Albert,female,62,"compassionate,caring,ambitious,optimistic",retired," Fencing ,Puppetry ",Watcher;Critic;Poster
+558,Andrew Dunn,male,51,"fun-loving,compassionate",retired," Knife making ,Stand-up paddleboarding ",Watcher;Explorer;Poster
+559,Oliver Buck,male,26,"compassionate,caring,ambitious,optimistic",designer," Journaling ,Skydiving ,Magic ",Critic
+560,Daniel Walker,female,21,"intelligent,adventurous,resourceful,independent",photographer," Feeders,Nonfiction,Tablecloths ",Poster
+561,Simon Walker,female,34,"fun-loving,ambitious,independent,adventurous,patient",farmer," Cushions,Fishing reels,Miniatures,Underwater Hockey ",Explorer
+562,Gabriel Blevins,female,48,"compassionate,practical,creative,honest,empathetic",teacher," Teddy bears,Meditation pillows,Drones,Watercolor Paintings ",Watcher
+563,Hudson Mitchell,female,30,"creative,fun-loving,adventurous,patient,ambitious",photographer," Dolls,Candles,Picnic baskets,Bathroom Scales ",Watcher;Chatter;Poster
+564,Sadie Baldwin,male,65,"outgoing,friendly,empathetic,good-humored,patient",retired," Sewing machines,Knitting needles,Casseroles,Fishing flies ",Watcher;Explorer;Poster
+565,Lily Lewis,female,64,"intelligent,compassionate,adventurous,patient",engineer," Hammocks,Telescopes,Kites ",Watcher;Explorer
+566,Harper Clay,male,38,"compassionate,adventurous,good-humored",scientist," Cooking appliances,Picture frames,GPS receivers ",Critic
+567,Georgia Foster,male,51,"fun-loving,ambitious,independent,adventurous",engineer," Barbecue Grill Brushes,Rain Gauges,Telescopes ",Explorer;Critic
+568,Lucas Fisher,female,23,"fun-loving,adventurous,compassionate",farmer," Food processors,Coolers,Golf clubs ",Watcher;Poster
+569,Willow Ewing,female,33,"compassionate,adventurous,fun-loving,creative,honest",scientist," Snowboards,Bassoons,Aprons,Pasta makers ",Watcher;Chatter;Poster
+570,Lauren Lee,female,25,"outgoing,creative,honest,friendly,empathetic",actor," Picture frames,Video projectors,VR headsets ",Watcher
+571,Gabriel Duncan,female,64,"intelligent,caring,honest,ambitious",doctor," Running Strollers,Baby Swings,Baby Jumpers ",Watcher;Chatter;Poster
+572,Abigail Bell,female,49,"creative,caring,practical,good-humored,patient",farmer," Bookcases,Wine Racks,Dining Tables,Blenders ",Watcher;Chatter;Poster
+573,Jack Boyd,female,55,"compassionate,adventurous,creative,intelligent",engineer," Garden Hoses,Mailboxes,Toilet Brushes ",Explorer
+574,Ella Campbell,male,50,"fun-loving,adventurous,independent,patient,compassionate",artist," Makeup Mirrors,Paints,Canvases ",Explorer;Chatter
+575,Finnegan Olson,male,51,"intelligent,compassionate,honest,creative,ambitious",retired," Rugs,Fireplace Screens,Lawn Mowers ",Chatter
+576,Hudson Forbes,male,34,"outgoing,independent,friendly,adventurous,good-humored",student," Musical Instruments,Board Games,Chess Sets,Video games ",Poster
+577,Hazel Grant,male,53,"creative,independent,caring,good-humored",designer," Lamps,Light Switch Plates,Home Decor,Shelves ",Poster
+578,Mia Donaldson,male,51,"intelligent,ambitious,adventurous,independent",lawyer," Luxury watches,Cufflinks,Leather briefcases,Fountain pens ",Watcher;Critic;Chatter;Poster
+579,Blake Carey,female,38,"adventurous,independent,ambitious,compassionate,creative",engineer," Workout equipment,Camping gear,Adventure travel gear ",Explorer
+580,Rachel Richardson,female,58,"independent,compassionate,practical,empathetic",engineer," Reading ,Computer programming ",Watcher;Explorer
+581,Simon Baldwin,female,45,"creative,practical,compassionate,energetic",farmer," Kids ,Board games ",Watcher;Chatter
+582,William Cody,male,38,"independent,creative,patient,optimistic",lawyer," video games,Photography ",Critic
+583,Nora Chase,female,47,"independent,compassionate,ambitious,patient",farmer," kids ,Pet grooming ,Bikes ",Critic;Chatter;Poster
+584,Theodore Morgan,female,25,"compassionate,caring,ambitious,optimistic",retired," Outdoor ,Seat covers ,Kitchen Appliances",Critic
+585,Hannah Fitzpatrick,male,45,"fun-loving,creative,practical,energetic,patient",farmer," Board games ,Collecting artwork ",Explorer;Chatter
+586,Jonah Baldwin,male,35,"creative,compassionate,ambitious,energetic,patient",artist," Collecting artwork ,Vintage cars ",Watcher;Chatter;Poster
+587,Sophia Donahue,male,30,"fun-loving,independent,patient,empathetic",farmer," Kayaking ",Poster
+588,Faith Durham,male,37,"fun-loving,creative,practical,energetic,patient,compassionate",photographer," stargazing ,Scrapbooking ",Watcher;Explorer;Critic;Chatter;Poster
+589,Nora Durham,female,26,"independent,compassionate,practical,empathetic,patient",actor," candle making ",Watcher;Critic
+590,Grace Roberts,female,29,"fun-loving,creative,patient,optimistic",artist," knitting ,Bird watching ",Explorer;Critic
+591,Christopher Berg,male,40,"fun-loving,independent,practical,empathetic",musician," Pottery ,Beer brewing ",Poster
+592,Faith Simmons,male,45,"independent,compassionate,practical,energetic,optimistic",musician," Puzzle solving ",Watcher;Explorer;Critic;Chatter;Poster
+593,Hazel Cooper,male,30,"creative,practical,ambitious,patient",retired," listening to music ,Skateboarding ",Watcher
+594,Daisy Lee,female,40,"compassionate,caring,practical,energetic,patient",retired," Reading ,Cooking ",Explorer;Poster
+595,Luke Parker,male,40,"fun-loving,independent,ambitious,optimistic",entrepreneur," Fishing ,Rock climbing ",Watcher;Explorer
+596,Katherine Armstrong,male,22,"compassionate,caring,ambitious,optimistic",doctor," Video editing ,Canoeing ",Watcher;Explorer;Critic
+597,Sadie Coleman,female,58,"independent,compassionate,practical,empathetic",artist," Soap making ,Playing musical instruments ",Watcher;Explorer;Critic;Poster
+598,Christopher Duncan,male,43,"fun-loving,practical,energetic,patient,compassionate",engineer," Painting ,Fishing ",Watcher;Critic;Chatter
+599,Lauren Adams,male,23,"independent,creative,practical,empathetic",retired," Papermaking ,Woodworking ",Watcher;Critic;Poster
+600,Olivia Coleman,female,37,"fun-loving,practical,empathetic,patient",scientist," Microscopes ,Bunsen burners ",Watcher;Poster
+601,Brooklyn Burks,female,39,"compassionate,energetic",actor," Audition guitars ",Watcher;Chatter
+602,Madison Grant,male,66,"independent,patient,ambitious",entrepreneur," Presentation tools ,Specialty books ,Printers ",Watcher;Chatter
+603,Blake Smith,male,35,"creative,practical,compassionate",engineer," Keyboards ,Non-fiction ",Critic;Poster
+604,Henry Brock,female,59,"compassionate,caring,energetic,patient",nurse," Stethoscopes ,Comfortable shoes ",Explorer
+605,Timothy Collins,female,59,"independent,fun-loving,compassionate,creative,practical",actor," Audition guitars ",Watcher;Critic
+606,Brooklyn Bernard,male,59,"fun-loving,ambitious,energetic",writer," Specialty pens ,Typewriters ",Watcher;Explorer;Poster
+607,Noah Gibson,male,53,"independent,ambitious,optimistic,practical",farmer," Planting tools ,Tractors ",Chatter;Poster
+608,Chloe Turner,female,63,"independent,fun-loving,ambitious",designer," Color palette ,Sewing machine ",Watcher;Explorer;Poster
+609,Lauren Fisher,female,49,"caring,patient",teacher," Dry erase markers ,Books ,Educational toys ",Chatter;Poster
+610,Abigail Conley,female,28,"ambitious,optimistic",farmer," Planting tools ,Tractors ",Poster
+611,Amelia Brady,female,60,"compassionate,caring,patient",artist," Canvases ,Paint brushes ",Explorer;Critic
+612,Amelia Powell,male,33,"fun-loving,creative,compassionate,practical",musician," Acoustic guitars ,Sheet music ",Watcher;Critic;Chatter;Poster
+613,Victoria Blanks,female,60,"compassionate,caring,ambitious,optimistic",designer," Color palette ,Sewing machine ",Critic
+614,Michael Bass,female,43,"fun-loving,creative,patient,empathetic",photographer," Communication ,Outdoor ,Seat covers ,Kitchen Appliances",Watcher;Poster
+615,Christopher Ewing,female,46,"patient,ambitious",retired," Books ,Golf clubs ",Watcher;Chatter
+616,Harper Carey,male,35,"energetic,patient",engineer," Keyboards ,Non-fiction",Chatter
+617,Zachary Evans,male,64,"independent,creative,patient,empathetic",artist," Canvases ,Paint brushes ",Watcher;Critic;Poster
+618,Taylor Burns,male,60,"caring,patient",photographer," Communication ,Outdoor ,Seat covers ,Kitchen Appliances",Watcher
+619,Grayson Simmons,male,27,"fun-loving,ambitious",actor," Audition guitars ",Chatter
+620,Jade Fitzpatrick,female,48,"caring,energetic,independent,fun-loving,empathetic",lawyer," Astronomy ,Puzzles ",Watcher;Explorer
+621,Lucas Donaldson,male,57,"optimistic,ambitious,patient,practical,caring",artist," Water bottles  ,Skis ",Watcher;Explorer
+622,Jack Barber,female,35,"independent,empathetic,compassionate",doctor," Smart home devices ,Gardening ",Watcher;Critic;Poster
+623,Addison Foster,female,62,"patient,creative,energetic,ambitious,fun-loving",writer," Paint brushes ,Telescope ",Watcher;Critic;Chatter;Poster
+624,Brooklyn Charles,female,43,"compassionate,optimistic",entrepreneur," Travel mugs ",Poster
+625,Zachary Bell,male,58,"fun-loving,practical,patient,ambitious,energetic",engineer," Binoculars ",Poster
+626,Gabriel Watson,male,38,"independent,patient,compassionate,caring,ambitious",retired," Sunglasses ",Watcher;Poster
+627,Grayson English,female,26,"fun-loving,energetic,compassionate,ambitious",photographer," Baking equipment ,Yoga mats ",Explorer
+628,Raymond Turner,female,36,"compassionate,caring,patient,empathetic",photographer," Dog Leashes ,Kitchen Appliances",Chatter
+629,George Mitchell,female,43,"independent,creative,energetic,patient,empathetic",lawyer," Soccer Balls ,Fishing gear ",Critic
+630,Charlotte Clark,female,68,"compassionate,caring,ambitious,optimistic",nurse," Jigsaw puzzles ",Critic;Poster
+631,Olivia Conner,female,26,"fun-loving,creative,patient,energetic,practical",nurse," Hammocks ",Watcher;Chatter
+632,Xavier Diaz,female,33,"caring ,fun-loving,practical,creative,energetic",musician," Headphones ,Food processors ",Watcher
+633,Sadie Clay,male,46,"independent,compassionate,caring",actor," Instant Cameras ",Critic
+634,Zachary Roberts,female,34,"ambitious,patient,compassionate,caring,optimistic",actor," Polaroid Camera ",Watcher
+635,Sophia Turner,male,52,"compassionate,ambitious,caring,patient",engineer," Headphone stands ,Bookshelves ",Chatter;Poster
+636,Michael Powell,female,35,"caring,patient,optimistic,compassionate,ambitious",designer," Backpacks ,Plants",Watcher;Chatter;Poster
+637,Blake Campbell,female,57,"compassionate,independent,caring,practical,patient",farmer," Gardening shears ,Watering cans ",Watcher;Chatter
+638,Liam Anderson,male,47,"caring,independent,practical,optimistic",artist," Sketchbooks ",Chatter
+639,Katherine Charles,female,40,"fun-loving,compassionate,caring,creative,practical",farmer," Vegetable seeds ,Hiking boots ",Explorer;Critic
+640,Wesley Clark,female,67,"fun-loving,independent,compassionate,caring",farmer," Gardening ,Woodworking ",Watcher;Chatter;Poster
+641,Julia Eaton,male,37,"fun-loving,independent,compassionate,friendly,patient",entrepreneur," Astronomy ,Sewing ",Critic
+642,Henry Berg,male,33,"independent,creative,practical,patient,optimistic",engineer," Martial arts ,Pottery ",Watcher;Explorer
+643,Tyler Turner,female,46,"ambitious,practical,patient,empathetic,friendly",engineer," Origami ,Metalworking ",Critic
+644,Taylor Mitchell,female,42,"compassionate,caring,ambitious,optimistic",teacher," Baking ,Glassblowing ",Poster
+645,Daniel Roberts,male,46,"compassionate,caring,ambitious,optimistic",artist," Jewelry making ,Leatherworking ",Poster
+646,Gabriel Carroll,female,66,"fun-loving,independent,compassionate,caring,patient",retired," Knitting ,Woodworking ",Explorer
+647,Ruby Bowen,male,39,"fun-loving,creative,practical,energetic,optimistic",musician," Fishing ,Painting ",Explorer;Critic;Chatter
+648,Kyle Diaz,male,54,"fun-loving,compassionate,friendly,practical,energetic",student," Metalworking ,Brewing ",Watcher;Explorer;Critic;Chatter
+649,Hudson Carroll,male,28,"fun-loving,independent,compassionate,ambitious,friendly",lawyer," Calligraphy ,Pottery ",Watcher;Poster
+650,Jonah Fitzpatrick,female,32,"fun-loving,ambitious,friendly,practical,energetic",writer," Candle making ,Knitting ",Watcher;Chatter
+651,Emma Albert,male,45,"ambitious,practical,friendly,patient",teacher," Model building ,Beekeeping ",Chatter
+652,Matthew Flores,male,33,"fun-loving,independent,compassionate,caring",lawyer," Homebrewing ,Model engineering ",Critic
+653,Madison Darling,male,38,"independent,compassionate,ambitious,patient,optimistic",photographer," Birdwatching ,Kayaking ",Poster
+654,Daisy Cooper,male,68,"independent,caring,ambitious,patient,friendly",actor," Gardening ,Antiquing ",Critic;Poster
+655,Benjamin Blevins,male,42,"fun-loving,compassionate,caring,friendly,patient",nurse," Jewelry making ,Book restoration ",Watcher;Poster
+656,Benjamin Ferguson,female,42,"fun-loving,independent,compassionate,caring,energetic",photographer," Pottery ,Sculpting ",Watcher;Chatter
+657,Charlotte Evans,female,46,"fun-loving,independent,compassionate,caring,patient",nurse," Beekeeping ,Quilling ",Watcher;Explorer;Critic
+658,Sophia Turner,male,33,"independent,compassionate,friendly,practical,energetic",retired," Marquetry ,Woodworking ",Explorer;Critic;Chatter
+659,Simon Flores,female,35,"independent,creative,friendly,practical,energetic",entrepreneur," Whittling ,Urban exploration ",Critic;Chatter
+660,Grace Gibson,female,49,"caring,adventurous,confident,observant,curious",retired," art supplies ,Fishing rods ",Watcher;Critic
+661,Peter Brady,female,45,"independent,friendly,creative,energetic,patient",photographer," Camera lenses ,Sketchbooks ",Explorer;Chatter
+662,Ava Duncan,male,58,"adaptable,patient,flexible,intelligent",teacher," Card games ,Globes ",Critic
+663,Jade Barber,male,26,"artistic,creative,independent,practical,adventurous",writer," Journals ,Fountain pens ",Poster
+664,Jade Dalton,male,41,"compassionate,generous,ambitious,organized,practical",engineer," Keyboards ,Non-fiction ",Watcher;Explorer
+665,Julia Richardson,male,32,"friendly,adventurous,compassionate,flexible,ambitious",photographer," Communication ,Outdoor ,Seat covers ,Kitchen Appliances",Critic;Chatter
+666,Timothy Kennedy,female,34,"compassionate,caring,practical,adventurous,ambitious",farmer," Kids ",Explorer;Critic
+667,George Simmons,male,39,"adaptable,confident,ambitious,generous",musician," Music stands ,Sheet music ",Poster
+668,Hudson Bauer,male,36,"fun-loving,creative,practical,energetic,patient",lawyer," Reading lights ,Newsprint ",Watcher;Explorer;Poster
+669,Oliver Cochran,female,43,"generous,independent,compassionate,friendly,patient",musician," Piano benches ,Drumsticks ",Watcher;Poster
+670,Benjamin Powell,male,50,"compassionate,caring,ambitious,optimistic",photographer," Dance floors ,Stage lighting ",Watcher
+671,Grayson Boyd,female,45,"independent,creative,caring,compassionate,flexible",designer," Sewing supplies ,Mood boards ",Watcher
+672,Elizabeth Carroll,male,47,"fun-loving,adaptable,creative,independent,ambitious",scientist," Microscopes ,Safety goggles ",Watcher;Chatter
+673,Aaron Lee,female,55,"compassionate,caring,flexible,fun-loving,patient",teacher," Textbooks ,Whiteboards ",Watcher
+674,Gabriel Bennett,male,58,"adaptable,confident,ambitious,compassionate",scientist," Prototyping materials ,Safety equipment ",Watcher;Critic
+675,Liam Blanks,female,41,"independent,energetic,patient,caring,ambitious",designer," Tailoring equipment ,Fabric ",Watcher
+676,Faith Chase,male,42,"adventurous,compassionate,caring,creative,friendly",photographer," Camera bags ,Camera straps ",Watcher;Explorer;Poster
+677,Emily Ewing,female,32,"fun-loving,friendly,practical,energetic,patient",scientist," Microscopes ,Safety goggles ",Watcher;Chatter
+678,Taylor Grant,female,38,"compassionate,caring,ambitious,optimistic",musician," Guitar accessories ,Sheet music ",Watcher;Critic;Poster
+679,Simon Bell,male,33,"fun-loving,compassionate,caring,adventurous,practical",farmer," Seeds ,Gardening tools ",Watcher;Explorer;Critic;Poster
+680,Georgia Watson,male,32,"compassionate,caring,ambitious,optimistic",teacher," Drawing ,Geocaching ",Watcher;Poster
+681,David Cochran,female,46,"fun-loving,practical,energetic,patient",retired," Xbox ,Sky diving ,Astronomy ,Softball",Watcher;Chatter;Poster
+682,Willow Flores,male,43,"creative,compassionate,caring,ambitious,optimistic",student," Bowling ,Button Collecting ,Metal detecting ",Watcher;Explorer;Critic;Chatter;Poster
+683,Hannah Gibson,male,64,"creative,compassionate,caring,ambitious",artist," Spelunking ,Astrology",Explorer;Poster
+684,Delilah Brown,female,68,"compassionate,caring",scientist," Scrapbooking ,Birdwatching ,Gourmet cooking ",Watcher;Explorer;Chatter
+685,Piper Johnson,male,59,"compassionate,caring,ambitious,optimistic",musician," Bowling ,Cigar Smoking ,Leathercrafting ",Watcher;Explorer;Chatter;Poster
+686,Ryan Ewing,male,42,"independent,compassionate,caring",artist," Hiking ,Origami ",Watcher;Explorer
+687,Lucy Adams,male,54,"fun-loving,creative,practical,energetic,patient,empathetic",designer," Computer programming ,Knitting ,Surfing ",Critic;Poster
+688,Gabriel Brock,female,39,"compassionate,caring,ambitious",lawyer," Baking ,Genealogy ",Watcher;Poster
+689,Timothy Roberts,female,53,"independent,creative,compassionate,caring,ambitious,patient",writer," Pottery ,Surfing ",Watcher;Explorer;Critic
+690,Zachary Donahue,male,28,"compassionate,caring,ambitious",scientist," Quilting ,Knife making ,Jigsaw puzzles,Plastic arts ",Poster
+691,Victoria Fraser,male,44,"compassionate,caring,ambitious",teacher," Jigsaw puzzles ,Pottery ",Chatter;Poster
+692,Thomas Ewing,female,28,"fun-loving,creative,practical,energetic,patient",photographer," Drawing ,Jewelry making ",Explorer;Poster
+693,Wesley Conley,female,36,"fun-loving,creative,practical,energetic,patient,empathetic",artist," Painting ,Boxing ,Magic ",Explorer;Critic;Chatter
+694,Piper Berry,female,65,"fun-loving,creative,practical,energetic,patient,empathetic",student," Beekeeping ,Yoga ",Chatter
+695,Lucy Bell,male,28,"compassionate,caring,ambitious,optimistic",musician," Skydiving ,Metalworking ",Watcher;Critic
+696,Oliver Powell,female,41,"compassionate,caring,ambitious,optimistic",engineer," Board/tabletop games ,Snorkeling ,Card games ",Critic
+697,Ava Carey,female,51,"independent,compassionate,caring,optimistic",engineer," Beekeeping ,Gunsmithing ",Watcher;Critic;Chatter
+698,Ava Coffey,male,57,"compassionate,caring,ambitious",musician," Kitesurfing ,Drama ",Watcher;Critic;Chatter
+699,Finn Flores,male,62,"fun-loving,practical,energetic,patient",farmer," Amateur radio ,Solve puzzles ",Watcher;Critic
+700,Vincent Armstrong,female,49,"compassionate,caring,optimistic",nurse," Knitting ,Gardening ,Fishing tackle ",Watcher;Poster
+701,Harper Dixon,male,63,"fun-loving,caring,energetic,independent",doctor," Remote control vehicles ,Knitting ,Car stereos ",Critic;Chatter;Poster
+702,Felix Byrd,male,47,"patient,empathetic",retired," Magnets ,Networking gear ",Explorer
+703,Lauren Brown,female,55,"caring,energetic,independent,fun-loving",actor," Video Games ,Cake Pans ,Compasses ",Watcher;Critic;Chatter
+704,Grace Bennett,male,46,"fun-loving,caring,practical",entrepreneur," Electronics ,Photography gear ",Watcher;Chatter;Poster
+705,Simon Dalton,female,69,"independent,creative,patient",engineer," Keyboards ,Non-fiction ",Watcher
+706,Aaron Richardson,female,42,"compassionate,caring,energetic",designer," Bicycles ,Scooters ,Archery sets",Watcher
+707,Lauren Duncan,female,37,"energetic,independent,patient,empathetic",lawyer," Textbooks ,Tap handles ,Bicycles ",Watcher;Explorer;Poster
+708,Hannah Clay,male,46,"independent,creative,patient,empathetic",designer," Alarm clocks ,Remote controls ,Masks ",Watcher;Critic;Poster
+709,Evan Forbes,female,40,"caring,ambitious,optimistic",engineer," Smartwatches ,Rugs ,Blenders ",Explorer;Critic;Chatter
+710,Christopher Bell,female,58,"fun-loving,creative,practical,energetic,patient",artist," Action figures ,Smartwatches ,Rubber ducks ",Watcher;Critic
+711,Ryan Brock,female,22,"independent,compassionate",retired," Musical instruments ,Ceramic decals ,Stuffed animals ",Watcher;Poster
+712,Felix Dawson,male,34,"energetic,independent,patient,empathetic",doctor," Musical instruments ,Snow globes ,Wax ",Chatter;Poster
+713,Madison Roberts,female,34,"compassionate,caring,ambitious,optimistic",doctor," Paintbrushes ,Sculpting tools ,Nail art supplies ",Critic
+714,Oliver Roberts,male,38,"caring,optimistic",artist," Art supplies ,Pottery wheels ",Critic;Poster
+715,Evan Roberts,male,48,"independent,compassionate",scientist," Indoor gardening kits ,Gardening gloves ",Watcher;Critic
+716,Jasmine Carroll,male,28,"fun-loving,creative,practical,energetic",farmer," Garden gnomes ,Wind chimes ,Bird feeders ",Poster
+717,Robert Smith,male,46,"independent,creative,patient,empathetic",lawyer," Nunchucks ,Mancalas ,Javelins ",Critic
+718,Mia Fitzpatrick,male,55,"fun-loving,creative,practical,energetic",actor," Karaoke machines ,Theater tickets ",Chatter
+719,Mason Lewis,male,46,"independent,compassionate",lawyer," Brownie pans ,Pasta makers ,Cocktail shakers ",Watcher;Explorer;Chatter
+720,Liam Conner,male,62,"fun-loving,practical,compassionate",photographer," Painting ,Kitchen Appliances ",Explorer
+721,Finnegan Eaton,female,67,"caring,patient,ambitious,empathetic,energetic",actor," Sewing machines ,Watches ,Non-fiction ",Critic
+722,Patrick Berry,male,47,"fun-loving,compassionate,practical,optimistic,energetic",retired," Stitching,Sewing machines ",Poster
+723,Wesley Blevins,female,58,"fun-loving,compassionate,creative,practical,patient",writer," digital books ,Vintage books ",Critic;Chatter
+724,Taylor Cody,male,34,"fun-loving,compassionate,practical,independent",lawyer," Camping stoves,Tents,Ropes,Maps ",Watcher
+725,Blake Bass,male,60,"caring,compassionate,independent",engineer," Kids ,Parrots ",Watcher;Chatter
+726,Blake Deleon,female,48,"creative,ambitious,energetic,caring",student," Writing ,Camping stoves,Sewing machines ",Critic;Chatter
+727,Fiona Buck,male,46,"fun-loving,creative,practical,patient,energetic",nurse," Biographies,Crafts,Sewing machines,Stickers ",Watcher;Explorer;Poster
+728,Addison Turner,male,41,"fun-loving,creative,practical,energetic,patient",doctor," Audio books,Music CDs ",Watcher;Explorer
+729,Charlotte Fisher,male,46,"fun-loving,practical,energetic,patient,compassionate",entrepreneur," Watches ,Popcorn poppers ",Watcher;Critic
+730,Hudson Fowler,female,48,"caring,compassionate,practical,energetic",lawyer," Hiking boots ,Walkie-talkies ",Watcher;Critic;Poster
+731,Avery Cochran,male,27,"fun-loving,creative,practical,independent,energetic",farmer," Gardening tools,Plant seeds,Bird feeders,Watering cans ",Watcher;Chatter
+732,Hudson Blair,female,29,"fun-loving,creative,practical,independent,energetic",lawyer," Theatres,Garden supplies,Dog supplies ",Chatter;Poster
+733,Xavier Dunn,male,35,"independent,compassionate,creative,patient,ambitious",doctor," Model cars ,Drones ",Explorer
+734,Theodore Friedman,male,28,"fun-loving,compassionate,ambitious,optimistic,energetic",lawyer," Hiking boots ,Binoculars ",Watcher
+735,Wesley Olson,male,30,"fun-loving,creative,practical,energetic,patient",artist," Oil paint ,Watercolor paint ",Watcher
+736,Addison Lawson,female,56,"independent,ambitious,caring",lawyer," Collecting ,Calligraphy ,Playing musical instruments ",Chatter
+737,Bennett Fraser,male,70,"independent,compassionate,caring",musician," Guitars ,Bass Guitars ",Watcher;Explorer
+738,Ella Charles,male,53,"fun-loving,creative,practical,compassionate",entrepreneur," Candy making ,Ship models ,Mosaics ",Watcher;Critic;Chatter
+739,Hunter Bennett,male,31,"fun-loving,creative,practical,independent,energentic",designer," Comic books ,String instruments",Watcher;Chatter
+740,Isabella Albert,male,39,"fun-loving,creative,patient,empathetic",teacher,"Jigsaw puzzles,Pottery",Explorer  
+741,Daisy Gibson,male,60,"compassionate,caring,ambitious,optimistic",farmer,"Classic rock,Gardening,Woodworking",Critic;Chatter;Poster  
+742,Jade Carroll,female,51,"compassionate,caring,ambitious,optimistic",farmer,"Reading,Painting,Cooking",Watcher;Explorer;Poster  
+743,Daniel Burns,female,70,"independent,empathetic,patient,practical",student,"Hiking,Meditation,Traveling",Watcher;Chatter  
+744,Lucy Simmons,female,63,"compassionate,caring,ambitious,optimistic",photographer,"Blogging,Playing an instrument,Virtual reality",Watcher;Chatter  
+745,Abigail Foster,female,50,"caring,compassionate,practical,energetic,patient",entrepreneur,"Scrapbooking,Graphic design,Calligraphy",Poster  
+746,Kyle Lewis,male,31,"fun-loving,independent,compassionate,creative",engineer,"Wine tasting,Cooking,Yoga",Poster  
+747,Gabriel Coffey,female,60,"caring,compassionate,ambitious,optimistic",musician,"Theater,Playing an instrument,Vintage clothing",Watcher;Critic  
+748,Ruby Buck,female,39,"independent,empathetic,patient,practical",photographer,"Dancing,Knitting,Antiquing",Watcher;Critic  
+749,Charlotte Gibson,male,39,"fun-loving,compassionate,ambitious,optimistic",entrepreneur,"Home brewing,Podcasting,Stand-up comedy",Watcher  
+750,Grayson Bowen,female,29,"fun-loving,creative,compassionate,ambitious,patient",lawyer,"Fashion design,Astrology,Stand-up comedy",Critic  
+751,Christopher Chase,female,41,"independent,caring,ambitious",musician,"Fishing,Pottery,Painting",Watcher  
+752,Zachary Carroll,male,63,"independent,compassionate,ambitious,patient",engineer,"History,International travel,Beekeeping",Watcher;Poster  
+753,Mia Walker,female,26,"fun-loving,creative,practical,energetic,patient",designer,"Fencing,Birdwatching,Playing an instrument",Watcher;Poster  
+754,Isla Bell,male,59,"caring,compassionate,ambitious,patient",retired,"Volunteering,Learning a new language,Tai chi",Critic;Poster  
+755,Liam Burks,male,43,"independent,caring,ambitious",designer,"Pottery,Disc golf,DIY home improvement",Watcher  
+756,Blake Edwards,female,52,"compassionate,creative,practical,patient",farmer,"Hiking,Baking,Soap making",Explorer  
+757,Ella Farmer,female,26,"fun-loving,independent,creative,practical,energetic",actor,"Fashion design,Cosplay,Binge-watching TV series",Poster  
+758,Georgia Underwood,female,53,"caring,compassionate,practical,energetic,patient",designer,"Playing a musical instrument,Urban exploration,Book clubs",Watcher;Explorer;Poster  
+759,Zachary Gray,female,59,"caring,compassionate,practical,energetic,patient",nurse,"Ceramics,Quilting,Photography",Poster
+760,Vincent Baldwin,female,63,"caring,patient,practical",student," Scrapbooking ,Cooking ,Outdoor cooking ",Chatter
+761,Katherine Anderson,male,49,"compassionate,ambitious,optimistic,independent",doctor," Wireless & Streaming Video ,Pet cameras ,Home theater ,Tools & Home Improvement ",Watcher;Explorer;Poster
+762,Julia Berg,female,64,"patient,creative,empathetic,ambitious",engineer," Fitness ,Decor ,Handbags ,Guitars ",Critic
+763,Chloe Gibson,male,56,"caring,practical,energetic",lawyer,"Boating & Sailing ,Motor Sports ,Car Care ,Power & Hand Tools ,Computers & Accessories ",Chatter;Poster
+764,Willow Davidson,female,44,"compassionate,creative,ambitious",engineer," Tablecloths ,Candles ,Wall Art ,Tennis Gear ",Critic
+765,Benjamin Byrd,female,23,"fun-loving,independent",engineer," Automotive ,number plates ,Martial Arts Weapons ,Emergency & Survival Kits ,Frying ",Watcher;Critic;Chatter
+766,Lucy Albert,male,30,"ambitious,compassionate,caring,practical",artist," Running ,Painting ,Action figures ,Button ",Watcher;Chatter
+767,Avery Clarke,male,44,"creative,practical",teacher," Sports equipment ,Scuba Gear ",Explorer;Poster
+768,Daisy Richardson,female,60,"empathetic,energetic,independent,ambitious,compassionate",photographer," Lighting ,Outdoor ,Educational ",Watcher;Explorer;Critic;Poster
+769,Ian Buck,male,23,"empathetic,caring",scientist," Inspection camera ,Borescopes ,Kids ,Wigs ",Watcher
+770,Daniel Friedman,female,32,"fun-loving,creative,ambitious,practical,energetic",retired," Darts ,Card Games ,Kitchen equipment ,Protective Gear ",Watcher;Explorer;Chatter;Poster
+771,Grayson Blair,female,34,"compassionate,caring",writer," Electronics ,Camping stoves ,Kitchen Appliances ",Watcher;Critic;Poster
+772,Felix Anderson,male,42,"creative,practical",entrepreneur," Water Filters ,Cat trees & condos ",Watcher;Critic;Chatter
+773,Taylor Parker,male,29,"empathetic",designer,"Action Sports ,Photographer ,Outdoor Recreation ",Watcher
+774,Abigail Fowler,female,51,"compassionate,practical",photographer,"House Warming ,Decorative Accessories ",Critic;Chatter
+775,Caleb Durham,male,45,"fun-loving,independent,energetic",lawyer," Outdoor Lighting ,Baby Monitors ",Watcher;Explorer;Critic;Chatter
+776,Gabriel Darling,male,38,"compassionate,practical,fun-loving",lawyer,"Interior accessories ",Watcher;Explorer;Chatter
+777,Willow Cochran,female,47,"caring,practical",student," Art ",Poster
+778,Amelia Diaz,female,43,"compassionate,creative,energetic,practical,independent",writer," Lighting ,Home Accessories ",Explorer;Critic;Chatter
+779,Katherine Donahue,male,36,"ambitious,optimistic,independent,compassionate",artist," Tennis rackets ",Watcher;Explorer
+780,Sophia Durham,male,51,"adventurous,compassionate,optimistic",photographer," Photograpy  Cinemas ,Picnic blankets ",Watcher;Explorer
+781,Addison Brooks,female,27,"fun-loving,creative,practical,energetic,patient",farmer," Rice cookers ,Pet care ",Poster
+782,Sophia Davidson,male,30,"practical,independent,creative,patient",student," Plants ,Rain gear ",Explorer
+783,Owen Cody,female,50,"fun-loving,creative,practical,energetic,patient",student," Board games ",Explorer;Poster
+784,Isaac Kennedy,female,39,"fun-loving,compassionate,practical,energetic,patient,optimistic",nurse," Coffee accessories ",Watcher;Poster
+785,Ruby Barker,male,44,"independent,creative,patient,empathetic",nurse," Skin care ",Watcher;Chatter
+786,William Farmer,male,60,"compassionate,caring,ambitious,practical",entrepreneur," Wind instruments ",Watcher;Critic
+787,Jonah Cook,female,43,"compassionate,caring,ambitious,practical,energetic",doctor," Camping stoves ,Weightlifting ",Watcher;Chatter
+788,Daniel Evans,male,49,"compassionate,caring,ambitious,practical,energetic",teacher," Cooking tools ",Watcher
+789,Grayson Johnson,female,55,"adventurous,compassionate,optimistic",student," Binoculars ,Hiking gear ",Chatter
+790,William Blair,male,36,"adventurous,independent,creative,patient",entrepreneur," Windsurf boards ,Rock collecting ",Watcher;Explorer
+791,Owen Conley,female,40,"compassionate,caring,ambitious,patient",engineer," Food ,Home decor ,Beauty ",Explorer;Chatter
+792,Chloe Kennedy,female,47,"independent,creative,patient,empathetic",farmer," Bicycles ,Non-fiction books ",Watcher;Explorer;Critic;Chatter
+793,Eleanor Cook,female,39,"fun-loving,compassionate,optimistic",musician," Guitars ",Watcher;Explorer;Poster
+794,George Gibson,male,33,"compassionate,caring,ambitious,practical,energetic",entrepreneur," Motorcycling ,Air filters ",Watcher
+795,Eleanor Chase,female,44,"fun-loving,compassionate,practical,energetic,patient,optimistic",scientist," Sports memorabilia ",Watcher
+796,Taylor Armstrong,female,57,"compassionate,caring,ambitious,practical",retired," Microphones ",Watcher;Critic;Chatter
+797,Ryan Donahue,male,56,"compassionate,caring,ambitious,practical,energetic",engineer," Soap making cola-bottles ",Watcher;Poster
+798,Chloe Alexander,male,25,"fun-loving,compassionate,optimistic",artist," Canvas ,Graffiti magazines ",Watcher;Explorer;Critic;Chatter
+799,Georgia Carroll,female,41,"adventurous,compassionate,practical,energetic",artist," Cross-stitch sampler ",Explorer;Chatter
+800,Lucas Coffey,female,61,"expressive,practical,hardworking,ambitious,compassionate",doctor," Hiking boots ,Indoor plants ",Explorer;Poster
+801,Raymond Cox,female,48,"energetic",artist," Yoga mats ",Chatter
+802,Kaitlyn Armstrong,female,33,"fun-loving,creative,independent,practical,energetic",nurse," Cooking utensils ,Backpacking gear ",Explorer;Chatter
+803,Lauren Watson,female,38,"ambitious,optimistic",doctor," Gardening tools ,Exercise equipment ,Tablet computers ,Camping Lanterns",Critic
+804,Daniel Darling,female,43,"empathetic,patient,practical,ambitious",entrepreneur," Coffee makers ,Board games ",Watcher
+805,Sadie Ewing,male,22,"empathetic,ambitious,patient,creative,independent",writer," Fishing rods ,Video games ",Watcher;Chatter
+806,Nora Simmons,female,61,"fun-loving,optimistic,energetic,caring",actor," Video games ",Watcher
+807,Lauren Dixon,female,44,"independent,optimistic,compassionate",artist," Paint brushes ,Musical Instruments ",Chatter
+808,Lily Blanks,male,41,"creative,independent,practical,ambitious",writer," Musical Instruments ,Backpacking gear ",Watcher;Critic
+809,Noah Duncan,female,50,"compassionate,creative,independent,ambitious",engineer," Cooking utensils ,Musical Instruments ",Critic;Chatter
+810,Vincent Buck,male,29,"ambitious,optimistic,energetic,empathetic",entrepreneur," Outdoor apparel ,Compact cameras ",Watcher;Explorer
+811,Robert Simmons,male,60,"independent,patient,compassionate",photographer," Hiking boots ,Musical Instruments ,Gardening tools ",Explorer;Critic;Poster
+812,Jonah Bernard,male,58,"empathetic,caring,ambitious,patient",engineer," Outdoor power equipment ,Home Gym Equipment ",Watcher;Chatter
+813,Ryan Donaldson,female,54,"creative,energetic",retired," Fishing rods ,Running shoes ",Explorer;Poster
+814,Ava Forbes,male,50,"patient,compassionate,ambitious",photographer," Camping cookware ,Musical Instruments ",Watcher
+815,Kevin Burks,male,29,"independent,creative,practical,hardworking,energetic",designer," Video games ,Camping stoves ",Explorer;Critic
+816,Natalie Watson,male,50,"compassionate,ambitious,caring,energetic,independent",scientist," Power generators ,Compasses ,Camping stoves ,Running shoes ",Watcher;Poster
+817,Willow Powell,male,60,"patient,compassionate",teacher," Kids ",Critic;Poster
+818,Taylor Barber,female,62,"independent,energetic,optimistic,caring",lawyer," Musical Instruments ,Coffee makers ,Indoor plants ",Watcher
+819,Faith Ewing,male,43,"empathetic,caring,ambitious",student," Fishing rods ,Camping stoves ",Watcher;Critic
+820,Hannah Coffey,male,50,"communicative,practical,patient,energetic",writer," craft beers ,Electric razors ",Watcher
+821,Emily Durham,male,32,"communicative,fun-loving,creative,optimistic,patient",writer," Headphones ,Yoga mats ",Chatter
+822,Grace English,female,34,"independent,caring",writer," Shoes ",Watcher
+823,Raymond Carlson,female,26,"creative,compassionate,ambitious,practical",lawyer," Outdoor decor ,Meditation cushions ",Explorer;Critic
+824,Patrick Cox,male,51,"compassionate,independent,ambitious",entrepreneur," Cosmetics ",Explorer
+825,Jonah Fraser,female,34,"communicative,practical,patient,empathetic",photographer," Hiking pants ,Fitness trackers ,Headphones ",Watcher;Explorer
+826,Hunter Fraser,male,62,"caring,ambitious",nurse," Beeswax candles ",Watcher;Poster
+827,Theodore Davidson,female,49,"fun-loving,compassionate,caring,ambitious,communicative",engineer," Baby gear ,Movie posters ",Explorer;Critic;Chatter;Poster
+828,Zachary Blanks,female,28,"fun-loving,creative,compassionate,ambitious,practical",musician," Fitness watches ",Watcher
+829,Kyle Eaton,male,44,"energetic,creative,caring,optimistic,practical,patient,empathetic",engineer," Camping food ,Sunglasses ",Watcher;Explorer;Chatter
+830,Taylor Lawson,male,47,"creative,practical,patient,empathetic",artist," Cuff links ,Barbecues ",Watcher;Critic
+831,Sadie Bowen,male,25,"fun-loving,creative,optimistic,patient",farmer," Kids ,Photography ,Gardening gloves ",Watcher;Critic;Poster
+832,Blake Ewing,male,33,"compassionate,caring,ambitious,optimistic",artist," Earrings ,Watercolors ",Critic;Poster
+833,Gavin Lee,male,57,"creative,practical,patient,empathetic",musician," Fishing gear ,Musical instruments ",Watcher;Poster
+834,Blake Roberts,female,53,"independent,compassionate,caring,optimistic",teacher," Vinyl records ,Bird feeders ",Watcher;Critic;Chatter
+835,Blake Clarke,female,61,"communicative,compassionate,caring,ambitious,practical,patient",actor," Designer handbags ,Contemporary artwork ",Watcher;Explorer;Critic
+836,Bennett Clay,female,49,"fun-loving,ambitious,practical",teacher," Landscaping tools ,Garden hoes ",Watcher;Explorer;Poster
+837,Kevin Conley,male,56,"compassionate,caring,ambitious,optimistic",photographer," BBQ tools ,Beach umbrellas ",Explorer;Critic
+838,Finnegan Davidson,male,55,"communicative,compassionate,caring,practical",designer," Industrial machinery ,Model cars ",Explorer;Chatter
+839,Wesley Kennedy,female,40,"fun-loving,creative,compassionate,practical,patient",student," Stationery ,Educational books ",Watcher;Chatter
+840,Vincent English,female,69,"fun-loving,creative,practical,energetic,patient",student," Cycling ,Sketching ",Watcher
+841,Lucy Bernard,female,45,"compassionate,caring,ambitious,optimistic",nurse," Cooking ranges ,Makeup ,Camping stoves",Watcher
+842,Jasmine Charles,female,58,"independent,compassionate",actor," Tennis ,Water sports ,Poster making",Explorer;Poster
+843,Rachel Cook,male,38,"fun-loving,creative,practical,energetic,patient",artist," Music players ,Photography ,Poster making",Watcher;Explorer;Critic;Poster
+844,George Buck,female,36,"compassionate,caring,ambitious,optimistic",musician," Headphones ,Strings ,Poster making",Watcher;Critic
+845,David Byrd,female,61,"independent,compassionate",retired," Garden sheds ,Tile saws ,Poster making",Explorer;Critic
+846,Grayson Roberts,female,28,"fun-loving,creative,practical,energetic,patient",engineer," Keyboards ,Non-fiction ,Poster making",Critic;Poster
+847,Ella Ewing,male,45,"compassionate,caring,ambitious,optimistic",lawyer," Storage ,Wrenches ,Poster making",Explorer;Poster
+848,Taylor Lewis,female,31,"independent,compassionate",photographer," Communication ,Outdoor ,Seat covers ,Kitchen Appliances",Watcher;Explorer;Critic
+849,Tyler Bernard,female,35,"independent,compassionate",nurse," Cooking ,Car accessories ,Poster making",Watcher;Poster
+850,Michael Smith,female,66,"independent,compassionate",engineer," Keyboards ,Non-fiction ,Poster making",Chatter;Poster
+851,Zoe Underwood,female,41,"compassionate,caring,ambitious,optimistic",student," Music players ,Photography ,Poster making",Watcher;Explorer;Critic;Poster
+852,Abigail Brock,male,35,"independent,compassionate",entrepreneur," Dressers ,Vacuums ,Poster making",Watcher;Poster
+853,Patrick Forbes,male,42,"independent,compassionate",actor," Scented candles ,Clocks ,Poster making",Watcher;Explorer;Critic;Chatter;Poster
+854,Owen Watson,female,40,"compassionate,caring,ambitious,optimistic",teacher," Kitchen Utensils ,Power drills ,Poster making",Watcher;Poster
+855,Thomas Coleman,male,68,"independent,creative,patient,empathetic",retired," Wall decor ,Grills ,Poster making",Watcher;Chatter
+856,Faith Watson,male,23,"independent,compassionate",actor," Aquascaping ,Music ,Poster making",Watcher;Critic
+857,William Underwood,female,68,"independent,compassionate",retired," Garden sheds ,Tile saws ,Poster making",Watcher
+858,Andrew Bass,male,41,"independent,compassionate",doctor," Radios ,Tool Belts ,Poster making",Watcher;Critic;Poster
+859,Felix Simmons,female,62,"independent,compassionate",engineer," Communication ,Outdoor ,Seat covers ,Kitchen Appliances",Critic
+860,Owen Conner,male,37,"intelligent,hardworking,organized,patient,adventurous",lawyer," Boating ,Collecting antiques ,Exploring caves ",Watcher;Explorer;Poster
+861,Georgia Johnson,female,63,"creative,practical,patient",actor," DIY projects ,Playing musical instruments ,Beekeeping ",Watcher
+862,Daniel Carey,female,35,"intelligent,ambitious,compassionate,energetic",doctor," Hiking ,Calligraphy ,Virtual reality ",Explorer;Poster
+863,Blake Underwood,male,51,"fun-loving,creative,practical,patient",lawyer," Fishing ,Billiards ,Robotics ",Watcher;Critic
+864,David Morgan,male,35,"intelligent,creative,ambitious,patient",musician," Brewing beer ,Baking ,Stone skipping ",Explorer
+865,Finnegan Blair,female,43,"independent,compassionate",artist," Yoga ,Needlepoint ,Swimming ",Watcher;Critic
+866,Georgia Forbes,female,51,"fun-loving,ambitious,compassionate,talkative",doctor," Traveling ,Jewelry making ",Watcher;Chatter
+867,Elijah Foster,male,70,"compassionate,ambitious,optimistic",writer," Writing poetry ,Rock climbing ",Explorer;Critic
+868,Jade Fitzpatrick,male,36,"intelligent,ambitious,adventurous,patient",photographer," Meditation ,Gaming ,Bird watching ",Explorer
+869,Caleb Morgan,male,56,"independent,adventurous,patient",entrepreneur," Woodworking ,Geocaching ,Scrapbooking ",Critic;Poster
+870,Mia Dalton,male,40,"creative,practical,adventurous,patient",photographer," Genealogy ,Pottery ,Painting ",Watcher;Explorer;Critic
+871,Harper Flores,male,34,"intelligent,creative,talkative,patient,adventurous",lawyer," Skateboarding ,Stand-up comedy ",Explorer;Chatter;Poster
+872,Aaron Grant,male,70,"independent,ambitious,optimistic",writer," Learning guitar ,Tai chi ",Critic
+873,Delilah Forbes,female,56,"creative,ambitious,compassionate,talkative",actor," Acting ,Ballroom dancing ,Photography ",Explorer;Critic;Chatter;Poster
+874,Brooklyn Evans,female,34,"independent,creative,practical,adventurous,patient",musician," Homebrewing ,Archery ,Wood carving ",Watcher;Critic
+875,Grace Carey,female,37,"intelligent,hardworking,organized,adventurous,patient",doctor," Origami ,Gardening ,Tai chi ",Watcher;Explorer
+876,David Burks,female,48,"independent,creative,practical,energetic,patient",artist," Knitting ,Blacksmithing ,Bird watching ",Watcher;Explorer;Poster
+877,Sarah Gray,female,43,"caring",lawyer," Horseback riding ,Skydiving ",Poster
+878,Ian Morgan,female,64,"intelligent,energetic,adventurous,patient",entrepreneur," Astronomy ,Skydiving ",Watcher;Explorer
+879,Georgia Dixon,female,43,"independent,adventurous,patient",teacher," Parkour ,Scuba diving ",Watcher;Explorer
+880,Kevin Blair,female,31,"fun-loving,ambitious,practical,empathetic",designer," Pottery ,Cooking ,Pets ",Explorer;Poster
+881,Julia Lewis,female,21,"independent,patient,compassionate,practical,energetic",photographer," Communication ,Outdoor ,Seat covers ,Kitchen Appliances",Watcher;Explorer;Critic;Poster
+882,Jack Burns,female,31,"ambitious,independent,energetic",farmer," Bird watching ,Baking ",Watcher;Poster
+883,Hazel Burns,female,51,"caring,patient,creative,empathetic",student," Computers,Drawing,Origami ",Poster
+884,Liam Garcia,female,55,"independent,patient,empathetic,creative,ambitious",lawyer," Hiking,Woodworking,Brewing beer ",Watcher;Critic
+885,Jacob Berg,female,34,"fun-loving,practical,energetic,patient",designer," Calligraphy,Gardening ,Volunteering ",Watcher;Explorer;Chatter;Poster
+886,Henry Baldwin,male,68,"adventurous,practical,compassionate,fun-loving",lawyer," Playing musical instruments ,Arts and crafts ",Chatter
+887,Emma Berg,male,36,"independent,patient,ambitious,energetic",lawyer," Photography,Jewelry making ",Watcher;Critic;Poster
+888,Madison Clarke,male,37,"adventurous,energetic,fun-loving",doctor," Fishing ,Biking ,Metalworking ",Chatter
+889,Eleanor Bauer,female,28,"compassionate,caring,ambitious,optimistic",farmer," Gardening ,Quilting ,Rock climbing ",Critic;Chatter
+890,Addison Gibson,female,24,"independent,creative,patient,ambitious,empathetic",writer," Scrapbooking,Knitting ,Jewelry making ",Watcher;Poster
+891,George Lawson,female,47,"independent,patient,ambitious,energetic",photographer," Pottery ,Genealogy ,Beekeeping ",Watcher
+892,Julia Blevins,male,53,"adventurous,practical,compassionate,fun-loving",designer," Beekeeping ,Stand-up comedy ",Watcher;Explorer;Poster
+893,Matthew Lewis,female,37,"independent,patient,compassionate,energetic,fun-loving",student," Candle making,Card games ,Upcycling ",Watcher;Explorer
+894,Lucas Burks,male,46,"adventurous,independent,compassionate",writer," Astronomy ,Home repair ,Collecting ",Watcher;Critic;Poster
+895,Emily Cook,female,48,"practical,energetic,compassionate,ambitious,patient",entrepreneur," Graphic design,Blogging ,Scuba diving ",Watcher;Explorer;Critic
+896,Christopher Duncan,male,56,"fun-loving",nurse," Meditation ,Pottery ,Stand-up comedy ",Watcher
+897,Daniel Albert,male,50,"independent,patient,energetic,compassionate",designer," Metalworking ,Soap making ,Salsa dancing ",Watcher;Chatter;Poster
+898,Eleanor Alexander,female,45,"caring,ambitious,compassionate,independent,patient",doctor," Parkour ,upcycling ,Robotics ",Critic;Poster
+899,Michael Blevins,male,44,"practical,energetic,fun-loving",doctor," Yoga,Calligraphy,Volunteering ",Explorer;Poster
+900,Georgia Foster,female,33,"fun-loving,creative,practical,energetic,patient",actor," Watches ,Grills ",Watcher
+901,Xavier Bernard,female,39,"compassionate,caring,ambitious,optimistic",entrepreneur," Cookbooks ,Binoculars ",Critic;Chatter;Poster
+902,Lucy Alexander,male,64,"independent,creative,patient,empathetic",writer," Makeup ,Hiking gear ",Watcher;Chatter
+903,Raymond Grant,female,59,"caring,determined,sensible",designer," Speakers ",Chatter;Poster
+904,Lucas Brock,female,29,"fun-loving,creative,practical",designer," Watches ",Chatter
+905,Timothy Cochran,male,51,"compassionate,caring,ambitious,optimistic",designer," Lighting ,Fishing gear ",Chatter
+906,Emily Johnson,female,31,"fun-loving,creative,practical,energetic,patient",designer," Furniture ,Binoculars ",Watcher;Critic;Poster
+907,Matthew Blanks,male,44,"independent,compassionate",actor," Laptops ,Picnic baskets ",Critic;Chatter
+908,Xavier Lawson,female,39,"compassionate,caring,ambitious,optimistic",farmer," Cameras ",Poster
+909,Tyler Allen,male,56,"independent,compassionate",scientist," Tea ,Bookshelves ",Critic;Poster
+910,Isabella Farmer,female,36,"fun-loving,creative,practical",nurse," Puzzles ",Critic
+911,Ryan Friedman,female,58,"fun-loving,creative,practical,energetic,patient",designer," Blankets ,Movies ",Watcher;Chatter
+912,Hannah Grant,male,67,"compassionate,caring,ambitious,optimistic",artist," Sculptures ,Painting ",Watcher;Critic
+913,Oliver Grant,female,26,"independent,patient,empathetic",doctor," Tablets ",Watcher;Critic
+914,Nora Clay,male,58,"independent,compassionate,patient,empathetic",lawyer," Cigars ",Watcher;Chatter;Poster
+915,Isla Blair,male,42,"fun-loving,compassionate,determined",retired," Golf clubs ,Headphones ",Explorer;Critic;Chatter;Poster
+916,Emma Dixon,male,36,"compassionate,caring",actor," Tablets ,Bicycles ",Watcher;Critic;Chatter;Poster
+917,Vincent Dalton,male,56,"independent,compassionate,caring,ambitious",designer," Telescopes ",Watcher;Critic
+918,Daisy Flores,male,61,"compassionate,caring,ambitious",actor," Musicals ",Watcher;Poster
+919,Bennett Deleon,male,25,"fun-loving,creative,practical,patient,empathetic",entrepreneur," Video games ,Musical instruments ",Watcher;Critic;Poster
+920,Lucas Coleman,female,53,"caring,compassionate,independent,energetic,patient",musician," guitars,sheet music",Watcher;Chatter;Poster
+921,Piper Parker,female,37,"independent,patient,compassionate,fun-loving,energetic",doctor," hiking,cooking",Watcher;Explorer;Chatter
+922,Bennett Eaton,female,28,"creative,practical,persistent,problem-solving",lawyer," podcasts,online shopping",Poster
+923,Elizabeth Fisher,male,61,"ambitious,optimistic,patient,compassionate",writer," fiction books,fountain pens",Watcher;Critic;Chatter;Poster
+924,Simon Anderson,female,54,"fun-loving,compassionate,caring,energetic,independent",designer," photography,baking",Watcher;Critic;Poster
+925,Avery Ewing,male,63,"patient,practical,ambitious,optimistic",doctor," golfing,stamp collecting",Watcher;Chatter
+926,Jack Walker,male,61,"compassionate,kind,patient,fun-loving,adventurous",teacher," woodworking,gardening",Watcher;Explorer
+927,Harper Parker,female,38,"fun-loving,independent,compassionate,energetic,patient",actor," painting,meditation",Watcher;Poster
+928,Avery Cook,male,57,"independent,practical,ambitious,persistent",teacher," Sudoku,knitting",Chatter
+929,Willow Underwood,female,42,"compassionate,caring,ambitious,energetic,patient",actor," sketching,knitting",Watcher;Poster
+930,Thomas Coffey,male,33,"fun-loving,practical,energetic,adventurous,independent",farmer," cooking,painting",Watcher;Chatter
+931,Christopher Cochran,female,54,"compassionate,caring,ambitious,patient",scientist," scrapbooking,pottery",Watcher
+932,Ava Barker,female,40,"independent,creative,patient,empathetic",lawyer," calligraphy,wine tasting",Explorer;Critic;Chatter
+933,Jade Buck,female,43,"empathetic,adventurous,independent,compassionate,caring",designer," traveling,knitting",Watcher
+934,Raymond Simmons,female,54,"compassionate,caring,ambitious,optimistic",photographer," yoga,home decor",Watcher;Critic
+935,Christopher Brock,female,52,"creative,compassionate,caring,patient,ambitious",writer," journaling,bird watching",Critic
+936,Avery Deleon,male,58,"independent,adventurous,patient,persistent,caring",entrepreneur," woodworking,cooking",Explorer;Critic
+937,Jack Cody,female,40,"compassionate,caring,energetic",photographer," biking,knitting",Explorer;Poster
+938,Tyler Brown,female,32,"practical,persistent,ambitious,optimistic",farmer," gardening,DIY projects",Watcher;Explorer;Critic;Poster
+939,Kyle Berg,male,52,"caring,compassionate,patient,empathetic",nurse," fishing,playing guitar",Poster
+940,Theodore Flores,male,48,"compassionate,creative,generous,patient,curious",lawyer," Rock climbing ,DIY",Watcher;Explorer;Poster
+941,Daniel Ewing,male,54,"fun-loving,ambitious,patient,practical,energetic",lawyer," Golf clubs ,Soccer balls",Explorer
+942,Sadie Evans,male,26,"compassionate,practical,energetic,ambitious,caring",teacher," Fitness ,Outdoor",Watcher;Explorer
+943,Bennett Garcia,female,55,"independent,empathetic,ambitious,caring,compassionate",teacher," Gardening tools ,Yoga mats",Watcher;Poster
+944,Isaac Berry,female,57,"compassionate,caring,creative,empathetic",farmer," Kids ,Sports equipment ",Watcher;Poster
+945,Andrew Cook,female,56,"independent,compassionate,ambitious",lawyer," Bluetooth speakers ,Headphones",Watcher;Explorer;Critic;Chatter
+946,Victoria Davidson,female,30,"fun-loving,energetic,independent",student," Mobile phones ",Watcher;Chatter
+947,Faith Donaldson,female,41,"caring,adventurous,fun-loving,energetic",entrepreneur," Books ",Watcher;Chatter
+948,Henry Burks,male,59,"fun-loving,adventurous,patient,energetic,ambitious",musician," Musical instruments ,Records",Watcher;Explorer
+949,Kyle Dixon,male,68,"fun-loving,adventurous,patient,ambitious,creative",photographer," Drones ,GoPro cameras ",Poster
+950,Christopher Cook,female,42,"independent,compassionate,creative,caring",actor," Scriptwriting ,Wardrobes",Watcher;Chatter
+951,Ruby Simmons,male,39,"compassionate,caring,energetic,ambitious,independent",teacher," Educational games ,Educational DVDs",Watcher;Explorer
+952,Sadie Burns,female,45,"caring,empathetic,ambitious,creative",retired," Creative arts,Indoor plants ",Critic
+953,Delilah Allen,female,55,"compassionate,adventurous,curious,practical,energetic",musician," Sheet music ,Musical accessories",Explorer;Critic;Chatter;Poster
+954,Kevin Cochran,female,60,"fun-loving,energetic,independent,ambitious",teacher," Pencils ,Notebooks ",Watcher;Explorer;Poster
+955,Hazel Turner,female,44,"independent,compassionate,caring",nurse," First aid kits ",Watcher
+956,Raymond Bell,male,33,"compassionate,creative,adventurous,empathetic,caring",designer," Art supplies ,Books ",Critic;Poster
+957,Luke Turner,female,57,"caring",doctor," Medical equipment ",Chatter
+958,Finnegan Underwood,male,22,"creative,energetic,adventurous,independent,practical",doctor," Stethoscopes ,Medical scrubs  ",Watcher;Explorer;Poster
+959,Liam Bauer,female,27,"independent,caring,compassionate",musician," Flute,Music stand ",Watcher;Poster
+960,Nora Friedman,female,34,"caring,practical,patient,compassionate,peaceful,logical",retired," Yoga ,Rock Climbing ,Drawing",Explorer;Critic;Chatter
+961,Finn Lawson,male,52,"cooperative,determined,fun-loving,responsible",designer," Watches ,Knitting",Critic
+962,Vincent Lee,female,42,"loyal,logical,extroverted,responsible",designer," Sewing ,Musical Instruments ,Sculpting",Watcher;Critic;Chatter;Poster
+963,Zachary Fowler,female,54,"optimistic,ambitious,practical,caring,logical",teacher," Walking ,Paintball ,RC cars",Watcher;Chatter
+964,Matthew Burks,male,41,"cooperative,responsible,optimistic,logical",lawyer," Swimming ,Badminton ,Monopoly",Watcher;Poster
+965,Andrew Garcia,female,58,"creative,compassionate,energetic,practical",musician," Rock Climbing ,Astronomy ,Jigsaw Puzzles",Critic;Chatter
+966,Elizabeth Byrd,male,37,"patient,fun-loving,creative,practical,ambitious",writer," Bookbinding ,Surfing ,Fishing",Critic;Poster
+967,Alexander Garcia,female,53,"loyal,ambitious,empathetic",student," Calligraphy ,Bowling ,Birdwatching",Watcher
+968,Gabriel Evans,male,46,"independent,logical,practical,adventurous,energetic",teacher," Pottery ,Cooking ,Robotics",Chatter
+969,Henry Fowler,female,32,"ambitious,practical,cooperative,compassionate,caring,determined",writer," Dancing ,Gardening ,Calligraphy",Explorer;Chatter
+970,Avery Diaz,male,26,"loyal,practical,responsible,cooperative",retired," Wine Making ,Leather crafting ,Billiards",Critic
+971,Elijah Bauer,male,46,"fun-loving,extroverted,optimistic,adventurous,cooperative,energetic",farmer," Beekeeping ,Beekeeping ,Wine making",Watcher;Explorer;Poster
+972,Aaron Cooper,male,46,"independent,ambitious,loyal,compassionate",retired," Pottery ,Canoeing ,Graffiti",Watcher;Critic;Poster
+973,Lily Bauer,male,49,"creative,cooperative,determined,practical",photographer," Stamps ,Sports cards ,Batcave",Critic
+974,Taylor Albert,female,23,"loyal,energetic,ambitious,determined,empathetic",nurse," Urban Exploration ,Paintball ,Metal Detecting",Chatter
+975,Jade Lewis,female,47,"patient,loyal,fun-loving,compassionate,ambitious",student," Handball ,Fingerprinting ,Jigsaw puzzles",Watcher;Poster
+976,Andrew Berg,male,55,"cooperative,logical,energetic,determined,responsible",photographer," Playing musical instruments ,Sketching ,Sketching",Critic
+977,Chloe Donahue,female,37,"caring,fun-loving,determined,adventurous,energetic",musician," Fire Poi ,Nail Art ,Alcohology",Watcher;Explorer;Critic
+978,Faith Durham,male,29,"loyal,adventurous,caring",doctor," Vintage cars ,Vintage cars ,Graffiti",Watcher
+979,Sophia Baldwin,female,39,"compassionate,patient,determined,loyal,energetic,caring",lawyer," Noodling ,Pottery ,Scrapbooking",Chatter
+980,Daisy Burns,male,39,"outgoing,practical",student," Knitting ,Stamps,Birdwatching ",Watcher;Explorer;Chatter
+981,Robert Garcia,female,32,"patient,funny,empathetic",musician," Painting ,Calligraphy ",Chatter
+982,Charlotte Dean,female,62,"fun-loving,caring,ambitious,loyal,empathetic",entrepreneur," Running ,Football ,Mobile phone cases ",Watcher;Poster
+983,Oliver Brady,female,39,"adventurous,ambitious,optimistic",nurse," Bookbinding ,Soapmaking ,Candlemaking ",Watcher;Explorer;Critic
+984,Grace Kennedy,female,67,"loyal,affectionate",nurse," Watches,Air purifiers ,Food dehydrators ",Watcher;Poster
+985,Grace Olson,female,30,"kind,compassionate,adventurous",student," Baking ,Calligraphy ,Woodworking ",Explorer;Poster
+986,Thomas Dean,female,51,"creative,fun-loving,practical,energetic",farmer," Dogs,Nostalgia ,Coffee ",Chatter
+987,Theodore Carroll,female,24,"adventurous,ambitious,optimistic",engineer," Pottery ,Hiking,Headphones ",Watcher
+988,Ella Forbes,male,43,"patient,determined,optimistic",musician," Video games,Sewing ,Whittling ",Chatter
+989,Jonah Carey,male,36,"loyal,compassionate,ambitious,loyal,empathetic",lawyer," Knitting ,Photography ,Brew coffee ",Explorer;Critic
+990,Isaac Richardson,female,58,"free-spirited,practical,blunt",teacher," Kitesurfing ,Skateboarding,Food processors ",Watcher;Critic;Chatter
+991,Sarah Berry,male,33,"independent,compassionate",lawyer," Wine tasting,Motorcycle riding ",Critic;Chatter
+992,Vincent Byrd,male,53,"kind,compassionate,adventurous",musician," Leathercraft ,Cooking ,Astronomy ",Watcher;Critic;Chatter;Poster
+993,Theodore Charles,male,33,"fun-loving,patient,funny,empathetic",musician," Playing musical instruments,Gardening ,Gunsmithing ",Critic;Chatter
+994,Victoria Conley,female,43,"daring,ambitious,loyal",farmer," Antiquing ,Digital arts,Crystal growing ",Watcher;Explorer;Critic;Chatter
+995,Hudson Davidson,male,45,"fun-loving,creative,ambitious,patient",lawyer," Surfing ,Beekeeping,Bicycles ",Watcher;Explorer;Poster
+996,Ella Lee,male,35,"kind,compassionate,fun-loving",writer," Garden railways ,Dioramas ",Watcher;Poster
+997,Avery Boyd,male,27,"outgoing,practical,blunt,energetic",designer," Parkour ,Snorkeling ,Calligraphy ",Watcher;Explorer;Critic
+998,Jasmine Brooks,female,35,"loyal,compassionate",actor," Beer tasting,Camping stoves,Playing musical instruments ",Watcher
+999,Tyler Garcia,female,69,"daring,creative,ambitious,patient",writer," Homebrewing ,Casino gambling,Painting ",Watcher;Explorer;Chatter;Poster

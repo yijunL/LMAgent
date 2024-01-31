@@ -1,0 +1,11 @@
+id,name,gender,age,traits,status,interest,feature
+0,Madison Edwards,female,37,"creative, caring, ambitious, patient, energetic",artist," Dance , Pottery , Woodworking ",Watcher
+1,Isabella Dean,male,26,"fun-loving, adventurous, ambitious, practical, patient",entrepreneur," Coffee makers , Camping stoves , Garden tools ",Watcher;Chatter
+2,Alexander Ferguson,female,53,"independent, compassionate, patient, optimistic",farmer," Gardening , Cooking , Animal care ",Critic
+3,Hannah Burns,female,51,"good at recommendations, popular, enthusiastic, humorous, and good at live streaming",network anchor,"cooking, baking, home decor, gardening, and travel",Watcher;Poster
+4,Nora Forbes,female,27,"analytical, logical, creative, patient",scientist," Hiking gear , DIY kits ",Poster
+5,Lauren Fitzpatrick,male,37,"intuitive, patient, empathetic, ambitious",scientist," Cooking utensils , Gardening tools ",Poster
+6,Owen Buck,female,36,"creative, caring, social, patient",artist,"Scrapbooking, Pottery",Watcher;Chatter;Poster
+7,Peter Walker,male,37,"confident, ambitious, logical, practical",lawyer,"Soccer, Cooking",Explorer;Chatter;Poster
+8,Delilah English,female,62,"creative, practical, energetic, patient, empathetic",lawyer,"Sculpting, Gardening, Knitting",Explorer;Chatter;Poster
+9,Christopher Brady,female,35,"fun-loving, creative, practical, energetic",actor,"Painting, Photography, Hiking",Explorer;Poster
