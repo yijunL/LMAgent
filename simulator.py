@@ -238,6 +238,10 @@ class Simulator:
                 content=str(post_history_list),
             )
         )
+
+        # make a plan
+        agent.generate_plan(self.now)
+
         choice, observation = agent.take_action(self.now)
         with lock:
             heapq.heappush(self.working_agents, agent)

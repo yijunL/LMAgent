@@ -10,6 +10,10 @@ from llm import *
 from yacs.config import CfgNode
 import os
 from langchain.chat_models import ChatOpenAI
+import requests as req
+from PIL import Image
+from io import BytesIO
+
 
 COLOR_TAG = 0
 
@@ -606,3 +610,17 @@ def get_avatar_url(id:int,gender:str,type:str="origin",role=False):
         return target+str(id%10)+'.png'
     target='/asset/img/avatar/'+type+"/"+gender+'/'
     return target+str(id%10)+'.png'
+
+def extract_link(string):
+    pattern = r'\((.*?)\)'
+    match = re.search(pattern, string)
+    if match:
+        return match.group(1)
+    else:
+        return None
+    
+def link2base64(link):
+    response = req.get(link) 
+    image = Image.open(BytesIO(response.content))
+    ls_f= base64.b64encode(BytesIO(response.content).read())
+    return ls_f

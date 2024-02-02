@@ -18,6 +18,7 @@ from langchain.experimental.generative_agents import (
 )
 from utils import utils
 from utils.event import Event
+from utils.utils import extract_link, link2base64
 from agents.recagent_memory import RecAgentMemory
 
 
@@ -383,26 +384,24 @@ class RecAgent(GenerativeAgent):
             result = self.memory.format_memories_simple(result)
         return result
 
-    def generate_plan(
-        self, observation: str, now: Optional[datetime] = None
-    ) -> Tuple[bool, str]:
+    def generate_plan(self, now):
         call_to_action_template = (
-            "What is {agent_name}'s plan for today? Write it down in an hourly basis, starting at 9:00, a time point, 24-hour format. "
-            + "Here is {agent_name}'s plan today: "
+            "Given the profile of {agent_name} provided above, please make a plan for {agent_name} in the context of e-commerce in a CONCISE sentence"
+            + "(for example, asking friends for advice on buying a simple and easy-to-use storage box or searching for affordable dog food in the shopping system). "
+            + "Please note that {agent_name} can only engage in social and shopping behaviors, and do not create any behaviors beyond these for {agent_name}."
             + "\n\n"
         )
+        observation = f"{self.name} is making a plan."
         result = self._generate_reaction(observation, call_to_action_template, now=now)
 
         self.memory.save_context(
             {},
             {
-                self.memory.add_memory_key: f"{self.name} observed "
-                f"{observation} and reacted by {result}",
+                self.memory.add_memory_key: f"{self.name} has made the following plan: {result}",
                 self.memory.now_key: now,
             },
         )
 
-        return False, result
 
     def take_action(self, now) -> Tuple[str, str]:
         """Take one of the actions below.
@@ -702,9 +701,18 @@ class RecAgent(GenerativeAgent):
         )
 
         result = self._generate_reaction(observation, call_to_action_template, now)
-        # generate pic
-        # post_prompt = "The accompanying image of the post. The image matches the text below:\n" + result
-        # post_pic = get_base64(post_prompt)
+
+        # generate pic GPT-4
+        # post_pic_prompt = PromptTemplate.from_template("Generate one matching picture for a post based on the following:\n" + result + "\n\nThe image is given as a link.")
+        # result = LLMChain(llm=self.llm, prompt=post_pic_prompt).run({})
+        # pic_link = extract_link(result)
+        # # print(pic_link)
+        # if pic_link is not None:
+        #     post_pic = link2base64(pic_link)
+        # else:
+        #     post_pic = ""
+
+        # no pic
         post_pic = ""
 
         self.memory.save_context(
