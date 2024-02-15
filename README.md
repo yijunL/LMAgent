@@ -15,7 +15,7 @@ Moreover, we propose a fast memory mechanism combined with the small-world model
 
 * **Self-consistency Prompting:** A novel mechanism that ensures consistent and coherent agent behaviors.
 
-* **Fast Memory Mechanism:** Utilizes a small-world model to improve memory access and retrieval, enhancing performance.
+* **Fast Memory Mechanism:** The caching function of the memory bank greatly accelerates the efficiency of basic operations.
 
 * **Multi-user Simulation:** Simulates complex social interactions among multiple users, providing a rich environment for research.
 
