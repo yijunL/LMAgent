@@ -57,6 +57,9 @@ For a Website-based demonstration, execute the following:
    ```
 This command will start a local web server that serves the simulation environment. You can interact with the simulation through your web browser.
 
+## Acknowledgements
+The LMAgent system is built on [YuLan-Rec](https://github.com/RUC-GSAI/YuLan-Rec), many thanks to RUC-GSAI for the open-source resource.
+
 # 🤝 Contributing
 We welcome contributions from the community. If you'd like to contribute, please fork the repository and use a feature branch. Pull requests are warmly welcome.
 
