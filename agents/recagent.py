@@ -1,6 +1,8 @@
 import re
+import json
 from datetime import datetime
 from typing import Any, Dict, List, Optional, Tuple
+import requests
 from utils.item_pic import get_base64
 
 from pydantic import BaseModel, Field
@@ -80,6 +82,10 @@ class RecAgent(GenerativeAgent):
 
     posting_url:str
 
+    multimodal_model: str = "gpt-4o-mini"
+    multimodal_endpoint: str = "/chat/completions"
+    multimodal_max_images: int = 6
+
     @classmethod
     def from_roleagent(cls, roleagent_instance: "RecAgent"):
         # 使用RoleRecAgent实例的属性来创建一个RecAgent实例
@@ -117,6 +123,91 @@ class RecAgent(GenerativeAgent):
     def update_from_dict(self, data_dict: dict):
         for key, value in data_dict.items():
             setattr(self, key, value)
+
+    @staticmethod
+    def _normalize_api_key(api_key: Any) -> str:
+        if api_key is None:
+            return ""
+        if hasattr(api_key, "get_secret_value"):
+            api_key = api_key.get_secret_value()
+        return str(api_key).strip()
+
+    @staticmethod
+    def _normalize_image_data_url(image_base64: str) -> str:
+        image_base64 = image_base64.strip()
+        if image_base64.startswith("data:image"):
+            return image_base64
+        return f"data:image/png;base64,{image_base64}"
+
+    def _get_multimodal_client_config(self) -> Tuple[str, str, str]:
+        api_base = getattr(self.llm, "openai_api_base", None) or "https://api.132999.xyz/v1"
+        model_name = getattr(self.llm, "model_name", None) or getattr(self.llm, "model", None)
+        model_name = model_name or self.multimodal_model
+        # Ensure image understanding always uses a multimodal-capable model.
+        if "gpt-4o" not in str(model_name):
+            model_name = self.multimodal_model
+        api_key = self._normalize_api_key(getattr(self.llm, "openai_api_key", None))
+        return api_base.rstrip("/"), str(model_name), api_key
+
+    def _call_multimodal_llm(
+        self,
+        instruction: str,
+        context: str,
+        image_base64_list: Optional[List[str]] = None,
+    ) -> Optional[str]:
+        api_base, model_name, api_key = self._get_multimodal_client_config()
+        if not api_key:
+            return None
+
+        image_base64_list = image_base64_list or []
+        valid_images = [img for img in image_base64_list if isinstance(img, str) and img.strip()]
+        valid_images = valid_images[: self.multimodal_max_images]
+
+        user_content: List[Dict[str, Any]] = [{"type": "text", "text": context}]
+        for image_base64 in valid_images:
+            user_content.append(
+                {
+                    "type": "image_url",
+                    "image_url": {"url": self._normalize_image_data_url(image_base64)},
+                }
+            )
+
+        payload = {
+            "model": model_name,
+            "messages": [
+                {"role": "system", "content": instruction},
+                {"role": "user", "content": user_content},
+            ],
+            "temperature": float(getattr(self.llm, "temperature", 1.0)),
+            "max_tokens": int(getattr(self.llm, "max_tokens", 256) or 256),
+        }
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {api_key}",
+        }
+        try:
+            response = requests.post(
+                f"{api_base}{self.multimodal_endpoint}",
+                headers=headers,
+                data=json.dumps(payload),
+                timeout=60,
+            )
+            if response.status_code >= 400:
+                return None
+
+            response_json = response.json()
+            content = response_json.get("choices", [{}])[0].get("message", {}).get("content", "")
+            if isinstance(content, list):
+                content = "".join(
+                    part.get("text", "")
+                    for part in content
+                    if isinstance(part, dict) and part.get("type") == "text"
+                )
+            if isinstance(content, str):
+                return content.strip()
+        except Exception:
+            return None
+        return None
 
     def interact_agent(self):
         """
@@ -447,7 +538,13 @@ class RecAgent(GenerativeAgent):
         )
         return choice, result
 
-    def take_recommender_action(self, observation, now) -> Tuple[str, str]:
+    def take_recommender_action(
+        self,
+        observation,
+        now,
+        recommended_items: Optional[List[str]] = None,
+        recommended_item_images: Optional[List[str]] = None,
+    ) -> Tuple[str, str]:
         """Take one of the four actions below.
         (1) Buy products among the recommended items.
         (2) Check the product details among the recommended items. 
@@ -469,9 +566,34 @@ class RecAgent(GenerativeAgent):
             + "\nTo search for a specific item, write:\n[SEARCH]:: {agent_name} want to search <product name>."
             + "\nTo leave the shopping system, write:\n[LEAVE]:: {agent_name} leaves the shopping system."
         )
-        full_result = self._generate_reaction(observation, call_to_action_template, now)
+        candidate_text = "No candidate products were provided."
+        if recommended_items:
+            candidate_lines = [f"{idx + 1}. {item}" for idx, item in enumerate(recommended_items)]
+            candidate_text = "\n".join(candidate_lines)
 
-        result = full_result.strip()
+        multimodal_context = (
+            f"Agent name: {self.name}\n"
+            f"Agent interest: {self.interest}\n"
+            f"Agent feature: {self.feature}\n"
+            f"Recently heard products: {self.heared_history if self.heared_history else 'nothing'}\n"
+            f"Recently bought products: {self.watched_history if self.watched_history else 'nothing'}\n"
+            f"Current observation: {observation}\n"
+            f"Recommended products (same order as images):\n{candidate_text}\n\n"
+            "Decision output format:\n"
+            f"{call_to_action_template.format(agent_name=self.name)}"
+        )
+        multimodal_result = self._call_multimodal_llm(
+            instruction=(
+                "You are an autonomous shopping decision agent. "
+                "You can read both product text and product images. "
+                "Choose exactly one action and strictly follow the required output format."
+            ),
+            context=multimodal_context,
+            image_base64_list=recommended_item_images,
+        )
+        full_result = multimodal_result if multimodal_result else self._generate_reaction(observation, call_to_action_template, now)
+
+        result = full_result.strip().split("\n")[0]
         
         if result.find("::") != -1 and len(result.split("::"))==2:
             choice, action = result.split("::")
@@ -547,7 +669,14 @@ class RecAgent(GenerativeAgent):
         )
         return result
     
-    def check_item_detail_action(self, observation, now, item_name,detail) -> str:
+    def check_item_detail_action(
+        self,
+        observation,
+        now,
+        item_name,
+        detail,
+        item_image_base64: Optional[str] = None,
+    ) -> str:
         """Take one of the four actions below.
         (1) Buy this item.
         (2) Do nothing and return.
@@ -561,9 +690,28 @@ class RecAgent(GenerativeAgent):
             + "\nTo buy "+item_name+", write:\n[BUY]"
             + "\nTo do nothing and return, write:\n[NOTHING]"
         )
-        full_result = self._generate_reaction(observation, call_to_action_template, now)
+        multimodal_context = (
+            f"Agent name: {self.name}\n"
+            f"Agent interest: {self.interest}\n"
+            f"Agent feature: {self.feature}\n"
+            f"Current observation: {observation}\n"
+            f"Product name: {item_name}\n"
+            f"Product detail: {detail}\n\n"
+            "Decision output format:\n"
+            f"{call_to_action_template.format(agent_name=self.name)}"
+        )
+        multimodal_result = self._call_multimodal_llm(
+            instruction=(
+                "You are an autonomous shopping decision agent. "
+                "You can read both product text and product images. "
+                "Return only one action token."
+            ),
+            context=multimodal_context,
+            image_base64_list=[item_image_base64] if item_image_base64 else None,
+        )
+        full_result = multimodal_result if multimodal_result else self._generate_reaction(observation, call_to_action_template, now)
 
-        result = full_result.strip()
+        result = full_result.strip().split("\n")[0]
         return result
     
 

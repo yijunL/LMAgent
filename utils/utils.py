@@ -534,7 +534,16 @@ def get_llm(config, logger, api_key):
         logger (Logger): The logger.
         api_key (str): The API key.
     """
-    if config["llm"] == "gpt-4":
+    if config["llm"] == "gpt-4o-mini":
+        LLM = ChatOpenAI(
+            max_tokens=config["max_token"],
+            temperature=config["temperature"],
+            openai_api_key=api_key,
+            openai_api_base="https://api.132999.xyz/v1",
+            model="gpt-4o-mini",
+            max_retries=config["max_retries"]
+        )
+    elif config["llm"] == "gpt-4":
         LLM = ChatOpenAI(
             max_tokens=config["max_token"],
             temperature=config["temperature"],
@@ -573,6 +582,8 @@ def get_llm(config, logger, api_key):
     elif config["llm"] == "custom":
         LLM = CustomLLM(max_token=2048, logger=logger)
         # LLM = CustomLLM()
+    else:
+        raise ValueError(f"Unsupported llm config: {config['llm']}")
     return LLM
 
 

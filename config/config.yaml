@@ -30,8 +30,8 @@ max_token: 2048
 execution_mode: serial
 # time interval for action of agents. The form is a number + a single letter, and the letter may be s, m, h, d, M, y
 interval: 5h
-# name of LLM model custom, gpt-3.5, gpt-4
-llm: gpt-3.5
+# name of LLM model custom, gpt-3.5, gpt-4, gpt-4o-mini
+llm: gpt-4o-mini
 # number of max retries for LLM API
 max_retries: 3
 # verbose mode

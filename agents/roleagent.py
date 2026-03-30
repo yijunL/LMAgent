@@ -140,7 +140,13 @@ class RoleAgent(RecAgent):
         )
         return choice, result
 
-    def take_recommender_action(self, observation,now) -> Tuple[str, str]:
+    def take_recommender_action(
+        self,
+        observation,
+        now,
+        recommended_items: Optional[List[str]] = None,
+        recommended_item_images: Optional[List[str]] = None,
+    ) -> Tuple[str, str]:
         """
         Require the user choose one action below by inputting:
         (1) Buy products among the recommended items.
@@ -233,7 +239,14 @@ class RoleAgent(RecAgent):
         )
         return feelings
 
-    def check_item_detail_action(self, observation, now, item_name,detail) -> str:
+    def check_item_detail_action(
+        self,
+        observation,
+        now,
+        item_name,
+        detail,
+        item_image_base64: Optional[str] = None,
+    ) -> str:
         """Take one of the four actions below.
         (1) Buy this item.
         (2) Do nothing and return.

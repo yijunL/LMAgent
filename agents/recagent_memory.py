@@ -9,6 +9,7 @@ Script: This is the memory module for recagent.
 import logging
 import random
 import re
+from collections import OrderedDict
 from copy import deepcopy
 from datetime import datetime
 from typing import Any, Dict, List, Optional
@@ -28,6 +29,171 @@ from langchain.experimental.generative_agents.memory import GenerativeAgentMemor
 from langchain.schema import BaseOutputParser
 
 logger = logging.getLogger(__name__)
+
+IMPORTANCE_PROMPT_TEMPLATE = """
+            Please give an importance score between 1 to 10 for the following observation. Higher score indicates the observation is more important. More rules that should be followed are
+            \n(1) The observation that includes entering social media is not important. e.g., David Smith takes action by entering the world of social media.
+            \n(2) The observation that describes chatting with someone but no specific product name is not important. e.g., David Smith observed that David Miller expressed interest in chatting about products.
+            \n(3) The observation that includes 'chatting' is not important. e.g., David Smith observed that David Miller expressed interest in chatting about products, indicating a shared passion for films.
+            \n(4) The observation that includes 'enter the shopping system' is not important. e.g. David Smith enters the Shopping System to explore product recommendations based on his interests and preferences.
+            \n(5) The observation that recommends or mentions specific products is important.
+            \n(6) More informative indicates more important, especially when two people are chatting.
+            Please respond with a single integer.
+            \nObservation:{memory_content}
+            \nRating:
+"""
+
+
+def _normalize_text_for_cache(text: str) -> str:
+    if text is None:
+        return ""
+    return re.sub(r"\s+", " ", str(text)).strip()
+
+
+def _parse_importance_score(score: str, importance_weight: float) -> float:
+    match = re.search(r"^\D*(\d+)", score)
+    if match:
+        return (float(match.group(1)) / 10) * importance_weight
+    return 0.0
+
+
+def _fast_basic_operation_importance(memory_content: str, importance_weight: float) -> Optional[float]:
+    text = _normalize_text_for_cache(memory_content).lower()
+    if not text:
+        return 0.0
+
+    # If explicit product names are mentioned, let the model judge importance.
+    if re.search(r"<[^>]+>", text):
+        return None
+
+    basic_keywords = (
+        "enter the social media",
+        "enters the social media",
+        "entering social media",
+        "enter the shopping system",
+        "enters the shopping system",
+        "entering the shopping system",
+        "is browsing the shopping system",
+        "views the next page",
+        "looks next page",
+        "leaves the shopping system",
+        "does nothing",
+        "do nothing",
+    )
+    if any(keyword in text for keyword in basic_keywords):
+        return 0.1 * importance_weight
+
+    # Plain chat without concrete product mention is also low-value memory.
+    if ("chat" in text or "chatting" in text) and "recommend" not in text and "buy" not in text:
+        return 0.2 * importance_weight
+
+    return None
+
+
+class FastMemoryCache:
+    """A lightweight LRU-like cache for memory importance and text embeddings."""
+
+    def __init__(self, importance_cache_size: int = 2048, embedding_cache_size: int = 4096):
+        self.importance_cache_size = importance_cache_size
+        self.embedding_cache_size = embedding_cache_size
+        self.importance_cache: OrderedDict[str, float] = OrderedDict()
+        self.embedding_cache: OrderedDict[str, List[float]] = OrderedDict()
+
+    def _get(self, cache: OrderedDict, key: str):
+        value = cache.get(key)
+        if value is not None:
+            cache.move_to_end(key)
+        return value
+
+    def _set(self, cache: OrderedDict, key: str, value: Any, max_size: int):
+        cache[key] = value
+        cache.move_to_end(key)
+        if len(cache) > max_size:
+            cache.popitem(last=False)
+
+    def get_importance(self, scope: str, memory_content: str) -> Optional[float]:
+        normalized = _normalize_text_for_cache(memory_content)
+        if not normalized:
+            return None
+        return self._get(self.importance_cache, f"{scope}::{normalized}")
+
+    def set_importance(self, scope: str, memory_content: str, score: float):
+        normalized = _normalize_text_for_cache(memory_content)
+        if not normalized:
+            return
+        self._set(
+            self.importance_cache,
+            f"{scope}::{normalized}",
+            score,
+            self.importance_cache_size,
+        )
+
+    def get_embedding(self, memory_content: str) -> Optional[List[float]]:
+        normalized = _normalize_text_for_cache(memory_content)
+        if not normalized:
+            return None
+        return self._get(self.embedding_cache, normalized)
+
+    def set_embedding(self, memory_content: str, embedding: List[float]):
+        normalized = _normalize_text_for_cache(memory_content)
+        if not normalized:
+            return
+        self._set(self.embedding_cache, normalized, embedding, self.embedding_cache_size)
+
+    def clear(self):
+        self.importance_cache.clear()
+        self.embedding_cache.clear()
+
+
+def _score_memory_importance_with_cache(
+    llm: BaseLanguageModel,
+    memory_content: str,
+    importance_weight: float,
+    cache: Optional[FastMemoryCache] = None,
+    cache_scope: str = "default",
+    verbose: bool = False,
+) -> float:
+    normalized = _normalize_text_for_cache(memory_content)
+    if not normalized:
+        return 0.0
+
+    if cache is not None:
+        cached_score = cache.get_importance(cache_scope, normalized)
+        if cached_score is not None:
+            return cached_score
+
+    fast_score = _fast_basic_operation_importance(normalized, importance_weight)
+    if fast_score is not None:
+        if cache is not None:
+            cache.set_importance(cache_scope, normalized, fast_score)
+        return fast_score
+
+    prompt = PromptTemplate.from_template(IMPORTANCE_PROMPT_TEMPLATE)
+    score_text = LLMChain(llm=llm, prompt=prompt).run(memory_content=normalized).strip()
+    if verbose:
+        logger.info(f"Importance score: {score_text}")
+    score = _parse_importance_score(score_text, importance_weight)
+    if cache is not None:
+        cache.set_importance(cache_scope, normalized, score)
+    return score
+
+
+def _get_embedding_with_cache(
+    embeddings_model: OpenAIEmbeddings,
+    memory_content: str,
+    cache: Optional[FastMemoryCache] = None,
+) -> List[float]:
+    normalized = _normalize_text_for_cache(memory_content)
+    query_text = normalized if normalized else " "
+    if cache is not None:
+        cached_embedding = cache.get_embedding(query_text)
+        if cached_embedding is not None:
+            return cached_embedding
+
+    embedding = embeddings_model.embed_query(query_text)
+    if cache is not None:
+        cache.set_embedding(query_text, embedding)
+    return embedding
 
 
 class RecAgentRetriever(TimeWeightedVectorStoreRetriever):
@@ -70,7 +236,7 @@ class SensoryMemory():
     extract and summarize important elements by attention mechanism, and output them to short term memory.
     """
 
-    def __init__(self, llm, buffer_size=1):
+    def __init__(self, llm, buffer_size=1, fast_memory_cache: Optional[FastMemoryCache] = None):
         """
         Initialize the sensory memory.
         :param llm: The LLM object passed from RecAgentMemory.
@@ -86,6 +252,7 @@ class SensoryMemory():
 
         # Store a batch of observations.
         self.buffer = []
+        self.fast_memory_cache = fast_memory_cache
 
     def clear(self):
         """
@@ -99,26 +266,13 @@ class SensoryMemory():
         :param observation: The text of the observation.
         :return: (float) The importance of this observation.
         """
-        prompt = PromptTemplate.from_template(
-            """
-            Please give an importance score between 1 to 10 for the following observation. Higher score indicates the observation is more important. More rules that should be followed are
-            \n(1) The observation that includes entering social media is not important. e.g., David Smith takes action by entering the world of social media.
-            \n(2) The observation that describes chatting with someone but no specific product name is not important. e.g., David Smith observed that David Miller expressed interest in chatting about products.
-            \n(3) The observation that includes 'chatting' is not important. e.g., David Smith observed that David Miller expressed interest in chatting about products, indicating a shared passion for films.
-            \n(4) The observation that includes 'enter the shopping system' is not important. e.g. David Smith enters the Shopping System to explore product recommendations based on his interests and preferences.
-            \n(5) The observation that recommends or mentions specific products is important.
-            \n(6) More informative indicates more important, especially when two people are chatting.
-            Please respond with a single integer.
-            \nObservation:{observation}
-            \nRating:
-            """
+        return _score_memory_importance_with_cache(
+            llm=self.llm,
+            memory_content=observation,
+            importance_weight=self.importance_weight,
+            cache=self.fast_memory_cache,
+            cache_scope="sensory",
         )
-        score = LLMChain(llm=self.llm, prompt=prompt).run(observation=observation).strip()
-        match = re.search(r"^\D*(\d+)", score)
-        if match:
-            return (float(match.group(1)) / 10) * self.importance_weight
-        else:
-            return 0.0
 
     def dump_shortTerm_list(self):
         """
@@ -132,23 +286,27 @@ class SensoryMemory():
             """
             return [text]
 
-        # Construct a string which includes all the observations in the buffer.
-        obs_str = "The observations are as following:\n"
-        for ind, obs in enumerate(self.buffer):
-            obs_str += "[%d] %s\n" % (ind, obs)
+        if len(self.buffer) == 1 and _fast_basic_operation_importance(self.buffer[0], self.importance_weight) is not None:
+            # For basic operations, skip summarization LLM call and directly use raw observation.
+            result = [self.buffer[0]]
+        else:
+            # Construct a string which includes all the observations in the buffer.
+            obs_str = "The observations are as following:\n"
+            for ind, obs in enumerate(self.buffer):
+                obs_str += "[%d] %s\n" % (ind, obs)
 
-        # Construct the order for converting.
-        order_str = "You should summarize the above observation(s) into one independent sentence." \
-                    "If there is a person's name in the observation, use third person, otherwise use first person. " \
-                    "Please Note! The sentence obtained must clearly contain the action(s) that occurred during the observation(s), such as posting, chatting, entering the shopping system, etc." \
-                    "Note that the sentence should not only clearly include the action taken (post, chat, enter the shoping system, buy, search, etc.), but also pay more attention to the product interest and the reasons in the " \
-                    "observations." \
-                    "The summarization should not include the profile explicitly."
+            # Construct the order for converting.
+            order_str = "You should summarize the above observation(s) into one independent sentence." \
+                        "If there is a person's name in the observation, use third person, otherwise use first person. " \
+                        "Please Note! The sentence obtained must clearly contain the action(s) that occurred during the observation(s), such as posting, chatting, entering the shopping system, etc." \
+                        "Note that the sentence should not only clearly include the action taken (post, chat, enter the shoping system, buy, search, etc.), but also pay more attention to the product interest and the reasons in the " \
+                        "observations." \
+                        "The summarization should not include the profile explicitly."
 
-        # Construct the prompt for LLM.
-        prompt = PromptTemplate.from_template(obs_str + order_str)
-        result = LLMChain(llm=self.llm, prompt=prompt).run({})
-        result = parse_res(result)
+            # Construct the prompt for LLM.
+            prompt = PromptTemplate.from_template(obs_str + order_str)
+            result = LLMChain(llm=self.llm, prompt=prompt).run({})
+            result = parse_res(result)
         # Give the short term memory an importance score.
         result = [(self._score_memory_importance(text), text) for text in result]
         # Remove the short term memory whose importance score is lower than a threshold.
@@ -185,10 +343,17 @@ class ShortTermMemory():
     The short-term memory module is to temporally store the observations from sensory memory module,
     which can be enhanced by other observations or retrieved memories to enter the long-term memory module.
     """
-    def __init__(self, llm):
+    def __init__(
+        self,
+        llm,
+        embeddings_model: Optional[OpenAIEmbeddings] = None,
+        fast_memory_cache: Optional[FastMemoryCache] = None,
+    ):
         self.llm = llm
         """The core language model."""
         self.verbose: bool = False
+        self.embeddings_model = embeddings_model if embeddings_model is not None else OpenAIEmbeddings()
+        self.fast_memory_cache = fast_memory_cache
 
         self.capacity: int = 10
         """The capacity of Short-term memory"""
@@ -220,6 +385,13 @@ class ShortTermMemory():
 
     def chain(self, prompt: PromptTemplate) -> LLMChain:
         return LLMChain(llm=self.llm, prompt=prompt, verbose=self.verbose)
+
+    def _get_embedding(self, memory_content: str) -> List[float]:
+        return _get_embedding_with_cache(
+            embeddings_model=self.embeddings_model,
+            memory_content=memory_content,
+            cache=self.fast_memory_cache,
+        )
 
     def get_short_term_insight(self, content: str):
         """
@@ -344,8 +516,7 @@ class ShortTermMemory():
         """
         const = 0.1
         # compute the vector similarities between observation and the existing short-term memories
-        embeddings_model = OpenAIEmbeddings()
-        observation_embedding = embeddings_model.embed_query(observation)
+        observation_embedding = self._get_embedding(observation)
         for idx, memory_embedding in enumerate(self.short_embeddings):
             similarity = self.cosine_similarity(observation_embedding, memory_embedding)
             # primacy effect
@@ -359,7 +530,7 @@ class ShortTermMemory():
                 self.enhance_cnt[idx] += 1
                 self.enhance_memories[idx].append(observation)
         memory_content, memory_importance, insight_content = self.transfer_memories(observation)
-        if op == 'add':
+        if str(op).lower() == 'add':
             self.short_memories.append(observation)
             self.memory_importance.append(importance)
             self.short_embeddings.append(observation_embedding)
@@ -374,6 +545,8 @@ class LongTermMemory(BaseMemory):
     llm: BaseLanguageModel
     now: datetime
     memory_retriever: RecAgentRetriever
+    embeddings_model: Optional[OpenAIEmbeddings] = None
+    fast_memory_cache: Optional[FastMemoryCache] = None
 
     verbose: bool = False
 
@@ -404,6 +577,15 @@ class LongTermMemory(BaseMemory):
     def chain(self, prompt: PromptTemplate) -> LLMChain:
         return LLMChain(llm=self.llm, prompt=prompt, verbose=self.verbose)
 
+    def _get_embedding(self, memory_content: str) -> List[float]:
+        if self.embeddings_model is None:
+            self.embeddings_model = OpenAIEmbeddings()
+        return _get_embedding_with_cache(
+            embeddings_model=self.embeddings_model,
+            memory_content=memory_content,
+            cache=self.fast_memory_cache,
+        )
+
     @staticmethod
     def _parse_list(text: str) -> List[str]:
         """Parse a newline-separated string into a list of strings."""
@@ -433,26 +615,13 @@ class LongTermMemory(BaseMemory):
         :param memory_content: The text of the observation.
         :return: (float) The importance of this observation.
         """
-        prompt = PromptTemplate.from_template(
-            """
-            Please give an importance score between 1 to 10 for the following observation. Higher score indicates the observation is more important. More rules that should be followed are
-            \n(1) The observation that includes entering social media is not important. e.g., David Smith takes action by entering the world of social media.
-            \n(2) The observation that describes chatting with someone but no specific product name is not important. e.g., David Smith observed that David Miller expressed interest in chatting about products.
-            \n(3) The observation that includes 'chatting' is not important. e.g., David Smith observed that David Miller expressed interest in chatting about products, indicating a shared passion for films.
-            \n(4) The observation that includes 'enter the shopping system' is not important. e.g. David Smith enters the Shopping System to explore product recommendations based on his interests and preferences.
-            \n(5) The observation that recommends or mentions specific products is important.
-            \n(6) More informative indicates more important, especially when two people are chatting.
-            Please respond with a single integer.
-            \nObservation:{memory_content}
-            \nRating:
-            """
+        return _score_memory_importance_with_cache(
+            llm=self.llm,
+            memory_content=memory_content,
+            importance_weight=self.importance_weight,
+            cache=self.fast_memory_cache,
+            cache_scope="ltm",
         )
-        score = LLMChain(llm=self.llm, prompt=prompt).run(memory_content=memory_content).strip()
-        match = re.search(r"^\D*(\d+)", score)
-        if match:
-            return (float(match.group(1)) / 10) * self.importance_weight
-        else:
-            return 0.0
 
     def fetch_memories_with_list(self, observation, stm):
         """
@@ -592,15 +761,14 @@ class LongTermMemory(BaseMemory):
 
         pattern = r"(?<=\[)\d+(?=\])"
         indexes = []
-        embeddings_model = OpenAIEmbeddings()
-        embedding_1 = embeddings_model.embed_query(result_insight[0][0])
+        embedding_1 = self._get_embedding(result_insight[0][0])
         for memory_id in statements_id:
             if memory_id < 0 or memory_id >= len(self.memory_retriever.memory_stream):
                 continue
             memory = self.memory_retriever.memory_stream[memory_id].page_content
             if memory == '[MERGE]' or memory == '[FORGET]':
                 continue
-            memory_embedding = embeddings_model.embed_query(memory)
+            memory_embedding = self._get_embedding(memory)
             similarity = self.cosine_similarity(embedding_1, memory_embedding)
             # Sigmoid function
             value = 1 / (1 + np.exp(-similarity))
@@ -785,6 +953,8 @@ class RecAgentMemory(BaseMemory):
     sensoryMemory: SensoryMemory = None
     shortTermMemory: ShortTermMemory = None
     longTermMemory: LongTermMemory = None
+    fast_memory_cache: Optional[FastMemoryCache] = None
+    embeddings_model: Optional[OpenAIEmbeddings] = None
 
     importance_weight: float = 0.9
     """How much weight to assign the memory importance."""
@@ -804,10 +974,26 @@ class RecAgentMemory(BaseMemory):
 
         self.llm = llm
         self.now = now
-        self.sensoryMemory = SensoryMemory(llm)
-        self.shortTermMemory = ShortTermMemory(llm)
-        self.longTermMemory = LongTermMemory(llm=llm, memory_retriever=memory_retriever, now=self.now, verbose=verbose,
-                                             reflection_threshold=reflection_threshold)
+        self.fast_memory_cache = FastMemoryCache()
+        self.embeddings_model = OpenAIEmbeddings()
+        self.sensoryMemory = SensoryMemory(
+            llm=llm,
+            fast_memory_cache=self.fast_memory_cache,
+        )
+        self.shortTermMemory = ShortTermMemory(
+            llm=llm,
+            embeddings_model=self.embeddings_model,
+            fast_memory_cache=self.fast_memory_cache,
+        )
+        self.longTermMemory = LongTermMemory(
+            llm=llm,
+            memory_retriever=memory_retriever,
+            now=self.now,
+            verbose=verbose,
+            reflection_threshold=reflection_threshold,
+            embeddings_model=self.embeddings_model,
+            fast_memory_cache=self.fast_memory_cache,
+        )
 
     def chain(self, prompt: PromptTemplate) -> LLMChain:
         return LLMChain(llm=self.llm, prompt=prompt, verbose=self.verbose)
@@ -836,28 +1022,14 @@ class RecAgentMemory(BaseMemory):
 
     def _score_memory_importance(self, memory_content: str) -> float:
         """Score the absolute importance of the given memory."""
-        prompt = PromptTemplate.from_template(
-            """
-            Please give an importance score between 1 to 10 for the following observation. Higher score indicates the observation is more important. More rules that should be followed are
-            \n(1) The observation that includes entering social media is not important. e.g., David Smith takes action by entering the world of social media.
-            \n(2) The observation that describes chatting with someone but no specific product name is not important. e.g., David Smith observed that David Miller expressed interest in chatting about products.
-            \n(3) The observation that includes 'chatting' is not important. e.g., David Smith observed that David Miller expressed interest in chatting about products, indicating a shared passion for films.
-            \n(4) The observation that includes 'enter the shopping system' is not important. e.g. David Smith enters the Shopping System to explore product recommendations based on his interests and preferences.
-            \n(5) The observation that recommends or mentions specific products is important.
-            \n(6) More informative indicates more important, especially when two people are chatting.
-            Please respond with a single integer.
-            \nObservation:{memory_content}
-            \nRating:
-            """
+        return _score_memory_importance_with_cache(
+            llm=self.llm,
+            memory_content=memory_content,
+            importance_weight=self.importance_weight,
+            cache=self.fast_memory_cache,
+            cache_scope="recagent",
+            verbose=self.verbose,
         )
-        score = self.chain(prompt).run(memory_content=memory_content).strip()
-        if self.verbose:
-            logger.info(f"Importance score: {score}")
-        match = re.search(r"^\D*(\d+)", score)
-        if match:
-            return (float(match.group(1)) / 10) * self.importance_weight
-        else:
-            return 0.0
 
     def add_memory(self, memory_content: str, now: Optional[datetime] = None):
         """
@@ -937,3 +1109,5 @@ class RecAgentMemory(BaseMemory):
         Clear all the (long term) memory in RecAgentMemory.
         """
         self.longTermMemory.clear()
+        if self.fast_memory_cache is not None:
+            self.fast_memory_cache.clear()

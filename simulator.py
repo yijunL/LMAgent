@@ -268,46 +268,48 @@ class Simulator:
             cnt = 0
             searched_name = None
             while not leave:
+                rec_items_page = rec_items[page*self.recsys.page_size:(page+1)*self.recsys.page_size]
                 rec_items_pics_page = rec_items_pics[page*self.recsys.page_size:(page+1)*self.recsys.page_size]
                 pic_str = ""
                 for item_pic_idx in range(len(rec_items_pics_page)):
                     pic_str = pic_str + rec_items_pics_page[item_pic_idx] + "##**"
                 self.logger.info(
-                    f"{name} is recommended {rec_items[page*self.recsys.page_size:(page+1)*self.recsys.page_size]}."
+                    f"{name} is recommended {rec_items_page}."
                 )
                 message.append(
                     Message(
                         agent_id=agent_id,
                         action="SHOPPING",
-                        content=f"{name} is recommended {rec_items[page*self.recsys.page_size:(page+1)*self.recsys.page_size]}." + "**##" + pic_str ,
+                        content=f"{name} is recommended {rec_items_page}." + "**##" + pic_str ,
                     )
                 )
                 self.round_msg.append(
                     Message(
                         agent_id=agent_id,
                         action="SHOPPING",
-                        content=f"{name} is recommended {rec_items[page*self.recsys.page_size:(page+1)*self.recsys.page_size]}." + "**##" + pic_str ,
+                        content=f"{name} is recommended {rec_items_page}." + "**##" + pic_str ,
                     )
                 )
                 observation = f"{name} is browsing the shopping system."
                 if searched_name is not None:
                     observation = (
                         observation
-                        + f" {name} has searched for {searched_name} in shopping system and shopping system returns item list:{rec_items[page*self.recsys.page_size:(page+1)*self.recsys.page_size]} as search results."
+                        + f" {name} has searched for {searched_name} in shopping system and shopping system returns item list:{rec_items_page} as search results."
                     )
                 else:
                     observation = (
                         observation
-                        + f" {name} is recommended {rec_items[page*self.recsys.page_size:(page+1)*self.recsys.page_size]}."
+                        + f" {name} is recommended {rec_items_page}."
                     )
-                choice, action = agent.take_recommender_action(observation, self.now)
+                choice, action = agent.take_recommender_action(
+                    observation,
+                    self.now,
+                    recommended_items=rec_items_page,
+                    recommended_item_images=rec_items_pics_page,
+                )
                 self.recsys.update_history(
                     agent_id,
-                    rec_items[
-                        page
-                        * self.recsys.page_size : (page + 1)
-                        * self.recsys.page_size
-                    ],
+                    rec_items_page,
                 )
 
                 if "BUY" in choice and (agent.event.action_type == "idle" or agent.event.action_type == "posting"):
@@ -588,7 +590,13 @@ class Simulator:
                             )
                         )
 
-                        detail_choice = agent.check_item_detail_action(observation, self.now, item_names[0], item_details[0])
+                        detail_choice = agent.check_item_detail_action(
+                            observation,
+                            self.now,
+                            item_names[0],
+                            item_details[0],
+                            checkbuy_items_pics[0] if len(checkbuy_items_pics) > 0 else None,
+                        )
                         if("BUY" in detail_choice):
                             duration = 2 * len(item_names)
 
