@@ -66,14 +66,22 @@ We welcome contributions from the community. If you'd like to contribute, please
 # 📝 License
 LMAgent is licensed under the [MIT License](./LICENSE). Feel free to use and adapt it for your own projects.
 
-# 📄 Cite
-More details will be released soon.
+# 📄 Citation
+Please consider citing this paper if you find this repository useful:
 ```
-@article{liu2024lmagent,
-  title={LMAgent: A Large-scale Multimodal Agents Society for Multi-user Simulation},
-  author={Liu, Yijun and Liu, Wu and Gu, Xiaoyan and Rui, Yong and He, Xiaodong and Zhang, Yongdong},
-  journal={arXiv preprint arXiv:2412.09237},
-  year={2024}
+@article{DBLP:journals/tmm/LiuLGHRZ26,
+  author       = {Yijun Liu and
+                  Wu Liu and
+                  Xiaoyan Gu and
+                  Xiaodong He and
+                  Yong Rui and
+                  Yongdong Zhang},
+  title        = {LMAgent: {A} Large-Scale Multimodal Agents Society for Multi-User
+                  Simulation},
+  journal      = {{IEEE} Trans. Multim.},
+  volume       = {28},
+  pages        = {2668--2680},
+  year         = {2026},
 }
 ```
 <!-- If you use LMAgent in your research, please cite our work as follows:
